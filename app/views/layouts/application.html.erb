@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Customize the site name here and page names inside each view -->
+  <%= metamagic site: "Your Site Name", title: [:site, :title], separator: " | " %> 
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!-- Mobile responsiveness -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render "shared/header" %>
+  <div class="container">
+    <%= yield %>
+  </div>
+</body>
+<footer>
+  <%= render "shared/footer" %>
+</footer>
+</html>

@@ -1,0 +1,16 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  database: speedrail_dev
+
+test:
+  <<: *default
+  database: speedrail_test
+
+production:
+  <<: *default
+  database: speedrail_prod

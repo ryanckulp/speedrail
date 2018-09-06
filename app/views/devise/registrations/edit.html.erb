@@ -1,0 +1,25 @@
+<h2>Edit Account</h2>
+<%= gravatar_tag current_user.email, size: 100 %>
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :email, required: true, autofocus: true %>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+  </div>
+
+  <div class="form-inline">
+    <%= f.button :submit, "Update", class: "btn btn-primary" %> <%= link_to "Go Back", root_url, class: "btn btn-default" %>
+  </div>
+<% end %>
+
+<!-- <h3>Cancel my account</h3>
+
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p> -->
