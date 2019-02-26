@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.7'
+ruby '2.5.0'
 
 # basic
 gem 'rails', '~>  5.2.0'
@@ -39,11 +39,25 @@ group :development do
 end
 
 group :development, :test do
-
   gem 'spring'
   gem 'foreman'
   gem 'better_errors'
   gem 'pry'
   gem 'awesome_print'
   gem 'binding_of_caller'
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.6.0'
+  gem 'spring-commands-rspec'
+  gem 'factory_bot_rails', '~> 4.8.0'
+  gem 'rails-controller-testing'
+  gem 'chromedriver-helper'
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'webmock'
+  gem 'shoulda-callback-matchers', '~> 1.1.1'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
