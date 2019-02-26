@@ -25,26 +25,29 @@ module Speedrail
     ActionMailer::Base.smtp_settings = {
       :user_name => ENV['SENDGRID_USERNAME'],
       :password => ENV['SENDGRID_PASSWORD'],
-      :domain => 'ryanckulp.com',
+      :domain => 'speedrail.com',
       :address => 'smtp.sendgrid.net',
       :port => 587,
       :authentication => :plain,
       :enable_starttls_auto => true
     }
 
-    # paperclip
+    # paperclip - file uploads
     config.paperclip_defaults = {
       storage: :s3,
       s3_credentials: {
-          bucket: ENV['AWS_BUCKET'],
-          access_key_id: ENV['AWS_ACCESS'],
-          secret_access_key: ENV['AWS_SECRET']
+        bucket: ENV['AWS_BUCKET'],
+        access_key_id: ENV['AWS_ACCESS'],
+        secret_access_key: ENV['AWS_SECRET']
       }
     }
 
-    # disable superfluous generator extras
+    # disable superfluous generators
     config.generators do |g|
-      g.assets = false # remove auto stylesheets
+      g.test_framework  :rspec, :fixture => false
+      g.view_specs = false
+      g.helper_specs = false
+      g.assets = false # stylesheets
       g.helper = true
     end
 
