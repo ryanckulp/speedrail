@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.5.0'
+ruby '2.6.1'
 
 # basic
 gem 'rails', '~>  5.2.0'
@@ -33,6 +33,7 @@ gem 'seed_dump' # import / export seed data from existing db (https://github.com
 gem 'figaro' # private ENV vars for safe deployment
 gem 'rename' # rails g rename:into new_app_name
 gem 'rack-cors', :require => 'rack/cors'
+gem 'httparty' # external HTTP requests
 
 group :development do
   gem 'web-console', '~> 3.5.0'

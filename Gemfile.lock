@@ -154,6 +154,9 @@ GEM
     gravatarify (3.0.0)
     grease (0.3.1)
     hashdiff (0.3.8)
+    httparty (0.16.4)
+      mime-types (~> 3.0)
+      multi_xml (>= 0.5.2)
     i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -200,6 +203,7 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.6)
     multi_json (1.13.1)
+    multi_xml (0.6.0)
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
@@ -375,6 +379,7 @@ DEPENDENCIES
   font-awesome-rails
   foreman
   gravatarify (~> 3.0.0)
+  httparty
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks
@@ -406,7 +411,7 @@ DEPENDENCIES
   webmock
 
 RUBY VERSION
-   ruby 2.5.0p0
+   ruby 2.6.1p33
 
 BUNDLED WITH
-   1.17.1
+   1.17.2
