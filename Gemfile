@@ -37,6 +37,7 @@ gem 'httparty' # external HTTP requests
 
 group :development do
   gem 'web-console', '~> 3.5.0'
+  gem 'letter_opener' # view mailers in browser
 end
 
 group :development, :test do
