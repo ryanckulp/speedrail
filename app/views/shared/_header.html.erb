@@ -2,11 +2,17 @@
 
 <nav class="nav">
   <ul>
+    <% if current_user %>
+      <li>
+        <%= link_to 'dashboard', dashboard_index_path, class: active_tab(root_path)  %>
+      </li>
+    <% else %>
+      <li>
+        <%= link_to 'home', root_path, class: active_tab(root_path)  %>
+      </li>
+    <% end %>
     <li>
-      <%= link_to 'home', root_path, class: active_tab(root_path)  %>
-    </li>
-    <li>
-      <%= link_to 'login', new_user_session_path, class: active_tab(new_user_session_path) %>
+      <%= link_to 'login', new_user_session_path, class: active_tab(new_user_session_path) unless current_user %>
     </li>
     <li>
       <%= link_to 'logout', logout_path if current_user %>
