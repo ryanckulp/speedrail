@@ -1,16 +1,23 @@
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "form-signin"})do |f| %>
-  
+<%= form_for(@user, as: resource_name, url: registrations_path, html: {class: "form form-large form-signin"}) do |f| %>
   <h2 class="text-center">Sign Up</h2>
-  <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true %>
+  <div class="form__item">
+    <%= f.label "What's your name?" %>
+    <%= f.text_field :name, placeholder: 'Ryan Kulp', required: true, autofocus: true, class: 'form__input' %>
   </div>
 
-<!-- Submit -->
-  <div class="form-inline">
-    <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
-    <%= link_to "Go Back", root_path, class: "btn btn-default" %>
+  <div class="form__item">
+    <%= f.label "What's your Email?" %>
+    <%= f.text_field :email, placeholder: 'ryan@fomo.com', required: true, autofocus: true, class: 'form__input' %>
+  </div>
+
+  <div class="form__item">
+    <%= f.label 'Choose a Password' %>
+    <%= f.text_field :password, type: 'password', required: true, class: 'form__input' %>
+  </div>
+
+  <div class="form-actions">
+    <%= link_to "Go Back", root_path, class: "button button--secondary button--color-secondary" %>
+    <%= f.submit "Sign up", class: "button" %>
   </div>
 <% end %>

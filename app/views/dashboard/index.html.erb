@@ -1,0 +1,8 @@
+<h1>Dashboard</h1>
+
+<div class="row dashboard_stats">
+  <%= render partial: 'stat', locals: { value: @stat_1, title: 'Stat 1', color: 'orange' } %>
+  <%= render partial: 'stat', locals: { value: @stat_2, title: 'Stat 2', color: 'blue' } %>
+  <%= render partial: 'stat', locals: { value: @stat_3, title: 'Stat 3', color: 'gray' } %>
+  <%= render partial: 'stat', locals: { value: @stat_4, title: 'Stat 4', color: 'green' } %>
+</div>

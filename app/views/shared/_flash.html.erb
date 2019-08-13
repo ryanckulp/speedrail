@@ -1,0 +1,17 @@
+<% if notice %>
+  <div class="callout callout-dismissable callout--color-primary callout--shadow">
+    <p><%= notice %></p>
+  </div>
+<% end %>
+
+<% if alert %>
+  <div class="callout callout-dismissable callout--color-red callout--shadow">
+    <p><%= alert %></p>
+  </div>
+<% end %>
+
+<script type="text/javascript">
+  $('.callout-dismissable').on('click', function() {
+    $(this).hide();
+  });
+</script>

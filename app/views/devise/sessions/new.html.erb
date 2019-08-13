@@ -1,13 +1,25 @@
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form-signin"}) do |f| %>
-<h2 class="text-center">Log in</h2>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "form form-large form-signin"}) do |f| %>
+  <h2 class="text-center">Log in</h2>
+
+  <div class="form__item">
+    <%= f.label 'Your Email' %>
+    <%= f.text_field :email, required: false, placeholder: 'ryan@fomo.com', autofocus: true, class: 'form__input' %>
+  </div>
+
+  <div class="form__item">
+    <%= f.label 'Your Password' %>
+    <%= f.text_field :password, type: 'password', class: 'form__input' %>
+  </div>
+
+  <div class="form__item">
+    <label for="user_remember_me">
+      <%= f.check_box :remember_me, as: :boolean if devise_mapping.rememberable? %>
+      Remember Me
+    </label>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.submit 'Log in', class: 'button' %>
     <%= link_to "Forgot Password?", new_user_password_path %>
   </div>
 <% end %>

@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Customize the site name here and page names inside each view -->
-  <%= metamagic site: "Your Site Name", title: [:site, :title], separator: " | " %> 
+  <!-- Customize the site name here and page names inside each view -->
+  <%= metamagic site: "Speedrail", title: [:site, :title], separator: " | " %>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <!-- Mobile responsiveness -->
+
+  <link rel="stylesheet" href="https://cdn.orangecss.com/1.0.0/css/orange.min.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render "shared/header" %>
-  <div class="container">
+  <div class="container mt-24 container_padding">
+    <%= render "shared/header" %>
     <%= yield %>
   </div>
 </body>
