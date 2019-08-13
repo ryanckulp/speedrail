@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => {:registrations => "registrations"}
   devise_scope :user do
-    get 'start', to: "registrations#start", as: 'start'
     get 'signup', to: "registrations#new", as: 'signup'
+    post 'users', to: 'users#create', as: 'registrations'
     get 'login', to: "sessions#new", as: 'login'
-    get 'settings', to: "registrations#edit", as: 'settings'
-    delete 'logout', to: "sessions#destroy", as: 'logout'
+    get 'profile', to: "registrations#edit", as: 'profile'
+    match 'logout', to: "sessions#destroy", as: 'logout', via: [:get, :delete]
   end
 
 end

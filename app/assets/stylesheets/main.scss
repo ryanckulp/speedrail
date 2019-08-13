@@ -1,14 +1,58 @@
 /* Global */
+.empty-state__description { max-width: 100% !important; }
+.list a, .list a:hover { color: #000; }
+.callout { font-style: normal !important; }
+.display-inline { display: inline }
+.display-block { display: block }
+.form__description { color: $gray !important; }
+.text-underline { text-decoration: underline; }
 
+hr {
+  margin-bottom: 24px;
+  border-color: lightgray;
+  border: 1px solid $gray-lightest;
+}
+
+.container_margin {
+  margin-top: 120px !important;
+}
+
+.container_padding {
+  padding-left: 120px !important;
+  padding-right: 120px !important;
+}
 
 /* User Authentication */
 .form-signin {max-width: 350px; padding: 15px; margin: 0 auto;}
-.form-signin .form-signin-heading, .form-signin .checkbox {margin-bottom: 10px;}
-.form-signin .checkbox {font-weight: normal;}
-.form-signin .form-control {position: relative; height: auto; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 10px; font-size: 16px;}
-.form-signin .form-control:focus {z-index: 2;}
-.form-signin input {margin-bottom: 10px;}
-.form-signin input {margin-bottom: 0;}
+
+/* Stripe Checkout JS */
+.StripeElement {
+  box-sizing: border-box;
+
+  height: 40px;
+
+  padding: 10px 12px;
+
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: white;
+
+  box-shadow: 0px 0px 4px 2px #e6ebf1;
+  -webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+  box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+  border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
 
 // iPhone 4
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
@@ -22,7 +66,24 @@
 
 // iPhone 6
 @media only screen and (min-device-width : 375px) and (max-device-width : 627px) {
-	// insert
+  .container_margin {
+    margin-top: 20px !important;
+  }
+
+  .container_padding {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  nav.nav a {
+    font-size: 11.5px !important;
+    padding: 5px !important;
+    height: 30px !important;
+  }
+
+  nav.nav {
+    padding-bottom: 20px;
+  }
 }
 
 // iPhone 6+
