@@ -17,9 +17,10 @@ Libraries included in this rails app (from speedrail boilerplate):
 
 ## Installation
 1. Clone the repo
-2. Run `gem install bundle && bundle install`
-3. Run `rails db:setup && rails db:migrate` to create db and included Users table
-4. To use Figaro / application.yml, run `bundle exec figaro install`
+2. `gem install bundle && bundle install`
+3. `rails g rename:into new_app_name_here`
+4. `rails db:setup && rails db:migrate` to create db and included Users table
+5. To use Figaro / application.yml, run `bundle exec figaro install`
 
 ## Additional Options
 1. Configure AWS S3 in config/application.rb
