@@ -192,6 +192,7 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
+    orange-rails (0.2.2)
     orm_adapter (0.5.0)
     paperclip (5.2.1)
       activemodel (>= 4.2.0)
@@ -370,6 +371,7 @@ DEPENDENCIES
   letter_opener
   listen (>= 3.0.5, < 3.2)
   metamagic
+  orange-rails
   paperclip (~> 5.2.0)
   pg
   pry
