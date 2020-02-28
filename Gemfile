@@ -14,7 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # rails 5.2 upgrades
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'listen', '>= 3.0.5', '< 3.2'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 3.12'
 
 # speedrail
 gem 'font-awesome-rails'
