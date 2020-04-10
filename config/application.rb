@@ -1,4 +1,4 @@
-require File.expand_path('../boot', __FILE__)
+require_relative 'boot'
 
 require 'rails/all'
 
@@ -8,10 +8,10 @@ Bundler.require(*Rails.groups)
 
 module Speedrail
   class Application < Rails::Application
-    config.load_defaults 5.2
-    Figaro.load
-    config.autoload_paths << Rails.root.join('lib') # adds Lib folder to autoloaded files
-    config.autoload_paths += %W(#{config.root}/app/services)
+    # Settings in config/environments/* take precedence over those specified here.
+    # Application configuration can go into files in config/initializers
+    # -- all .rb files in that directory are automatically loaded after loading
+    # the framework and any gems in your application.
 
     # allow cross origin requests
     config.middleware.insert_before 0, Rack::Cors do
@@ -51,6 +51,5 @@ module Speedrail
       g.assets = false # stylesheets
       g.helper = true
     end
-
   end
 end
