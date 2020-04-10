@@ -14,6 +14,7 @@ gem 'bootsnap', '>= 1.4.6', require: false
 gem 'listen', '>= 3.0.5', '< 3.2'
 gem 'puma', '~> 3.11'
 gem 'coffee-rails'
+gem 'webpacker'
 
 # speedrail
 gem 'font-awesome-rails'
@@ -31,7 +32,6 @@ gem 'rename' # rails g rename:into new_app_name
 gem 'rack-cors', :require => 'rack/cors'
 gem 'httparty' # external HTTP requests
 gem 'stripe' # payments
-gem 'orange-rails' # design system (orangecss.com)
 
 group :development do
   gem 'web-console', '~> 3.5.0'

@@ -200,7 +200,6 @@ GEM
     nio4r (2.5.2)
     nokogiri (1.10.9)
       mini_portile2 (~> 2.4.0)
-    orange-rails (0.2.2)
     orm_adapter (0.5.0)
     paperclip (5.2.1)
       activemodel (>= 4.2.0)
@@ -216,6 +215,8 @@ GEM
     puma (3.12.0)
     rack (2.2.2)
     rack-cors (1.0.2)
+    rack-proxy (0.6.5)
+      rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (6.0.2.2)
@@ -303,6 +304,7 @@ GEM
     selenium-webdriver (3.141.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.2, >= 1.2.2)
+    semantic_range (2.3.0)
     shoulda-callback-matchers (1.1.4)
       activesupport (>= 3)
     shoulda-matchers (3.1.3)
@@ -345,6 +347,11 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
+    webpacker (5.0.1)
+      activesupport (>= 5.2)
+      rack-proxy (>= 0.6.1)
+      railties (>= 5.2)
+      semantic_range (>= 2.3.0)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.4)
@@ -377,7 +384,6 @@ DEPENDENCIES
   letter_opener
   listen (>= 3.0.5, < 3.2)
   metamagic
-  orange-rails
   paperclip (~> 5.2.0)
   pg
   pry
@@ -402,6 +408,7 @@ DEPENDENCIES
   uglifier (>= 1.3.0)
   web-console (~> 3.5.0)
   webmock
+  webpacker
 
 RUBY VERSION
    ruby 2.7.1p83
