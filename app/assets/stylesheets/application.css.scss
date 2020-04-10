@@ -11,9 +11,9 @@
  * file per style scope.
  *
  * Here you can require css as well as scss
+ *= require_self
  */
 
-@import "variables";
 @import "font-awesome";
 @import "orange";
 @import "main";

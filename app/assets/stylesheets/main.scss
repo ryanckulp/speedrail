@@ -4,13 +4,13 @@
 .callout { font-style: normal !important; }
 .display-inline { display: inline }
 .display-block { display: block }
-.form__description { color: $gray !important; }
+.form__description { color: #999 !important; }
 .text-underline { text-decoration: underline; }
 
 hr {
   margin-bottom: 24px;
   border-color: lightgray;
-  border: 1px solid $gray-lightest;
+  border: 1px solid #ebebeb;
 }
 
 .container_margin {
