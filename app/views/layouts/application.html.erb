@@ -10,8 +10,10 @@
 
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="container mx-auto">
   <%= render "shared/header" %>
+  <%= render "shared/flash" %>
+
   <%= yield %>
 </body>
 <footer>
