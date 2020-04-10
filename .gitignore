@@ -11,6 +11,8 @@
 /tmp
 .DS_Store
 .keep
+yarn-error.log
+node_modules
 
 # Ignore application configuration
 /config/application.yml
