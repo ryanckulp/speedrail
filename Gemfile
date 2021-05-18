@@ -12,7 +12,7 @@ gem 'sassc-rails'
 
 gem 'bootsnap', '>= 1.4.6', require: false
 gem 'listen', '>= 3.0.5', '< 3.2'
-gem 'puma', '~> 3.12'
+gem 'puma', '~> 4.3'
 gem 'coffee-rails'
 gem 'webpacker'
 
