@@ -142,14 +142,14 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
-    json (1.8.6)
     launchy (2.5.0)
       addressable (~> 2.7)
     letter_opener (1.7.0)
       launchy (~> 2.2)
-    listen (3.0.8)
+    listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
+      ruby_dep (~> 1.2)
     loofah (2.12.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -167,11 +167,13 @@ GEM
       nokogiri (~> 1)
       rake
     mini_mime (1.1.2)
+    mini_portile2 (2.6.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     multi_xml (0.6.0)
     nio4r (2.5.8)
-    nokogiri (1.12.5-x86_64-darwin)
+    nokogiri (1.12.5)
+      mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.2.3)
@@ -228,7 +230,7 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rdoc (4.3.0)
+    rdoc (6.3.2)
     regexp_parser (2.1.1)
     rename (1.0.8)
       activesupport
@@ -255,6 +257,7 @@ GEM
       rspec-mocks (~> 3.6.0)
       rspec-support (~> 3.6.0)
     rspec-support (3.6.0)
+    ruby_dep (1.5.0)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -264,9 +267,8 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sdoc (0.4.2)
-      json (~> 1.7, >= 1.7.7)
-      rdoc (~> 4.0)
+    sdoc (1.1.0)
+      rdoc (>= 5.0)
     seed_dump (3.3.1)
       activerecord (>= 4)
       activesupport (>= 4)
@@ -331,7 +333,7 @@ GEM
     zeitwerk (2.5.1)
 
 PLATFORMS
-  x86_64-darwin-20
+  ruby
 
 DEPENDENCIES
   awesome_print
@@ -363,7 +365,7 @@ DEPENDENCIES
   rename
   rspec-rails (~> 3.6.0)
   sassc-rails
-  sdoc (~> 0.4.0)
+  sdoc (= 1.1.0)
   seed_dump
   selenium-webdriver
   shoulda-callback-matchers (~> 1.1.1)
@@ -380,7 +382,7 @@ DEPENDENCIES
   webpacker
 
 RUBY VERSION
-   ruby 3.0.2p107
+   ruby 2.7.4p191
 
 BUNDLED WITH
-   2.2.22
+   2.1.4

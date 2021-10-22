@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '3.0.2'
+ruby '2.7.4'
 
 # basic
 gem 'rails', '~> 6.0.2.2'
@@ -7,7 +7,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.10.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc', '1.1.0', group: :doc
 gem 'sassc-rails'
 
 gem 'bootsnap', '>= 1.4.6', require: false
@@ -30,6 +30,7 @@ gem 'rename' # rails g rename:into new_app_name
 gem 'rack-cors', :require => 'rack/cors'
 gem 'httparty' # external HTTP requests
 gem 'stripe' # payments
+# gem 'json', '2.6.0'
 
 group :development do
   gem 'web-console', '~> 3.5.0'
