@@ -32,16 +32,6 @@ module Speedrail
       enable_starttls_auto: true
     }
 
-    # paperclip - file uploads
-    config.paperclip_defaults = {
-      storage: :s3,
-      s3_credentials: {
-        bucket: ENV['AWS_BUCKET'],
-        access_key_id: ENV['AWS_ACCESS'],
-        secret_access_key: ENV['AWS_SECRET']
-      }
-    }
-
     # customize generators
     config.generators do |g|
       g.test_framework  :rspec, :fixture => false
