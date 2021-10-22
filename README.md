@@ -2,14 +2,13 @@
 
 Libraries included in this rails app (from speedrail boilerplate):
 * User authentication via [Devise](https://github.com/plataformatec/devise)
-* Design via [Bootstrap](http://getbootstrap.com) + [Sass](https://github.com/twbs/bootstrap-sass)
+* Design via [Tailwind UI](https://tailwindui.com/)
 * Easy user inputs with [simple_form](https://github.com/plataformatec/simple_form)
 * Safely store ENV variables with [Figaro](https://github.com/laserlemon/figaro)
 * Responsive toggle navbar w/ logic for login, signup, settings
 * SEO toolbelt via [metamagic](https://github.com/lassebunk/metamagic)
 * Rename your app in 1 command with [Rename](https://github.com/get/Rename)
 * Increased debugging power with [Pry](https://github.com/pry/pry) and [Better Errors](https://github.com/charliesome/better_errors)
-* Document upload management via [Paperclip](https://github.com/thoughtbot/paperclip) + [S3](https://github.com/aws/aws-sdk-ruby)
 * Seed your DB in seconds via [Seed Dump](https://github.com/rroblak/seed_dump)
 * Production-ready DB setup via postgres
 * Google Analytics with Turbolinks support
