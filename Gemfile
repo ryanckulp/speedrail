@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.7.1'
+ruby '3.0.2'
 
 # basic
 gem 'rails', '~> 6.0.2.2'
@@ -24,8 +24,6 @@ gem 'devise'
 gem 'metamagic' # easily insert metatags for SEO / opengraph
 gem 'rails_12factor'
 gem 'pg'
-gem 'paperclip', '~> 5.2.0' # incomplete setup - must add resource to existing model
-gem 'aws-sdk-s3' # configure in config/application.rb
 gem 'seed_dump' # import / export seed data from existing db (https://github.com/rroblak/seed_dump)
 gem 'figaro' # private ENV vars for safe deployment
 gem 'rename' # rails g rename:into new_app_name
@@ -51,7 +49,7 @@ group :test do
   gem 'spring-commands-rspec'
   gem 'factory_bot_rails', '~> 4.8.0'
   gem 'rails-controller-testing'
-  gem 'chromedriver-helper'
+  gem 'webdrivers'
   gem 'selenium-webdriver'
   gem 'capybara'
   gem 'database_cleaner'
