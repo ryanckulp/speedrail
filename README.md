@@ -28,6 +28,14 @@ bin/webpack-dev-server # separate console tab
 ```
 
 ## Notes
+Turbolinks behavior for same-page anchors.
+
+```
+<!-- if you have event listeners on anchor tags, Turbolinks will trigger a page reload on click -->
+data-turbolinks="false"
+<!-- add this attribute to elements to avoid this behavior -->
+```
+
 Rails 6 and Webpack changes to know about.
 
 ```scss

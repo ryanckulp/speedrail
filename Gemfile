@@ -4,8 +4,6 @@ ruby '2.7.4'
 # basic
 gem 'rails', '~> 6.0.2.2'
 gem 'uglifier', '>= 1.3.0'
-gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 2.10.0'
 gem 'sdoc', '1.1.0', group: :doc
 gem 'sassc-rails'
@@ -19,7 +17,6 @@ gem 'webpacker'
 # speedrail
 gem 'font-awesome-rails'
 gem 'simple_form'
-gem 'jquery-turbolinks'
 gem 'devise'
 gem 'metamagic' # easily insert metatags for SEO / opengraph
 gem 'rails_12factor'
