@@ -28,29 +28,22 @@ bin/webpack-dev-server # separate console tab
 ```
 
 ## Notes
-using webpack as well as old school Rails asset pipeline to serve images and js/css. learn more [here](https://dev.to/shivashankarror/rails-6-using-images-with-webpacker-and-asset-pipeline-4gk3). examples:
+Rails 6 and Webpack changes to know about.
 
-```
-/* assume 1.jpeg present in app/javascript/src/images folder */
+```scss
+/* styles in app/javascript/src/stylesheets/_custom.scss (assumes image.jpeg in app/javascript/images) */
 body{
   background-color: green;
-  background-image: url("~1.jpeg");
+  background-image: url("~image.jpeg"); // '~' tilda required
 }
+```
 
-/* assume lake.jpeg present in app/assets/images folder */
-div{
-  background-color: red;
-  background-image: url("~lake.jpeg");
-}
-
-# how to call image from app/javascript/src/images/2.jpeg path
-<%= image_pack_tag "media/images/2.jpeg" %>
-
-# how to call image present in app/assets/images folder.
-<%= image_tag "lake.jpeg" %>
+```erb
+<!-- how to call image from app/javascript/images path (assumes image.jpeg in app/javascript/images) -->
+<%= image_pack_tag "image.jpeg" %>
 ```
 
 ## Additional Options
-1. New Reg/Sessions controllers override Devise, prepend 'super' to your custom action logic
-2. Put your UA-XXX property code for Google Analytics in shared/footer
+1. new Reg/Sessions controllers override Devise, prepend `super` to your custom action logic
+2. put Google Analytics snippet in `shared/footer`
 3. Install Sendgrid add-on (Heroku), visit [settings](https://app.sendgrid.com/settings/tracking) to disable click, open tracking and enable subscription tracking
