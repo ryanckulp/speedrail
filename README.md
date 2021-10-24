@@ -27,8 +27,30 @@ rails s
 bin/webpack-dev-server # separate console tab
 ```
 
+## Notes
+using webpack as well as old school Rails asset pipeline to serve images and js/css. learn more [here](https://dev.to/shivashankarror/rails-6-using-images-with-webpacker-and-asset-pipeline-4gk3). examples:
+
+```
+/* assume 1.jpeg present in app/javascript/src/images folder */
+body{
+  background-color: green;
+  background-image: url("~1.jpeg");
+}
+
+/* assume lake.jpeg present in app/assets/images folder */
+div{
+  background-color: red;
+  background-image: url("~lake.jpeg");
+}
+
+# how to call image from app/javascript/src/images/2.jpeg path
+<%= image_pack_tag "media/images/2.jpeg" %>
+
+# how to call image present in app/assets/images folder.
+<%= image_tag "lake.jpeg" %>
+```
+
 ## Additional Options
-1. Configure AWS S3 in config/application.rb
-2. New Reg/Sessions controllers override Devise, prepend 'super' to your custom action logic
-3. Put your UA-XXX property code for Google Analytics in shared/footer
-4. Install Sendgrid add-on (Heroku), visit [settings](https://app.sendgrid.com/settings/tracking) to disable click, open tracking and enable subscription tracking
+1. New Reg/Sessions controllers override Devise, prepend 'super' to your custom action logic
+2. Put your UA-XXX property code for Google Analytics in shared/footer
+3. Install Sendgrid add-on (Heroku), visit [settings](https://app.sendgrid.com/settings/tracking) to disable click, open tracking and enable subscription tracking
