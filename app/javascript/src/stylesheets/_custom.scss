@@ -1,0 +1,4 @@
+// fixes 'invisible' borders by default
+input, textarea {
+    @apply border rounded p-2;
+}
