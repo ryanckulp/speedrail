@@ -22,6 +22,7 @@ module Speedrail
     end
 
     # mailers via postmark
+    config.action_mailer.default_url_options = { :host => ENV['base_url'] } # TODO: set 'base_url' in application.yml!
     config.action_mailer.default_options = { from: 'support@speedrail.com' }
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = { api_token: ENV['postmark_api_token'] }
