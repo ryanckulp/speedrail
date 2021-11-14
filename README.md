@@ -11,6 +11,7 @@ Libraries included in this rails app (from speedrail boilerplate):
 * Increased debugging power with [Pry](https://github.com/pry/pry) and [Better Errors](https://github.com/charliesome/better_errors)
 * Seed your DB in seconds via [Seed Dump](https://github.com/rroblak/seed_dump)
 * Production-ready DB setup via postgres
+* Postmark for transactional emails
 * Google Analytics with Turbolinks support
 
 ## Installation
@@ -19,7 +20,7 @@ Libraries included in this rails app (from speedrail boilerplate):
 3. `gem install bundle && bundle install`
 4. `rails g rename:into new_app_name_here`
 5. `rails db:setup && rails db:migrate` to create db and included Users table
-6. To use Figaro / application.yml, run `bundle exec figaro install`
+6. `bundle exec figaro install` to put ENV vars in `config/application.yml`
 
 ## Development
 ```sh
@@ -52,6 +53,6 @@ body{
 ```
 
 ## Additional Options
-1. new Reg/Sessions controllers override Devise, prepend `super` to your custom action logic
+1. use Postmark for emails. set `postmark_api_token` inside `application.yml`, `from` address inside `application.rb` / `application_mailer.rb`, then [verify your domain](https://account.postmarkapp.com/signature_domains/initialize_verification)
 2. put Google Analytics snippet in `shared/footer`
-3. Install Sendgrid add-on (Heroku), visit [settings](https://app.sendgrid.com/settings/tracking) to disable click, open tracking and enable subscription tracking
+3. new Reg/Sessions controllers override Devise, prepend `super` to your custom action logic

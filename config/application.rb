@@ -21,16 +21,10 @@ module Speedrail
       end
     end
 
-    # sendgrid
-    ActionMailer::Base.smtp_settings = {
-      user_name: ENV['SENDGRID_USERNAME'],
-      password: ENV['SENDGRID_PASSWORD'],
-      domain: 'speedrail.com',
-      address: 'smtp.sendgrid.net',
-      port: 587,
-      authentication: 'plain',
-      enable_starttls_auto: true
-    }
+    # mailers via postmark
+    config.action_mailer.default_options = { from: 'support@speedrail.com' }
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = { api_token: ENV['postmark_api_token'] }
 
     # customize generators
     config.generators do |g|
