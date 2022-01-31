@@ -1,24 +1,45 @@
-# README
+# Speedrail
+a Rails 7 boilerplate repo by [@ryanckulp](https://twitter.com/ryanckulp), created to accelerate development of side projects.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+features included in this template:
+* user authentication via [Devise](https://github.com/plataformatec/devise)
+* design via [Tailwind UI](https://tailwindui.com/)
+* safely manage ENV variables with [Figaro](https://github.com/laserlemon/figaro)
+* responsive toggle navbar w/ logic for login, signup, settings
+* SEO toolbelt via [metamagic](https://github.com/lassebunk/metamagic)
+* rename your app in 1 command with [Rename](https://github.com/get/Rename)
+* increased debugging power with [Better Errors](https://github.com/charliesome/better_errors)
+* seed your DB in seconds via [Seed Dump](https://github.com/rroblak/seed_dump)
+* production-ready DB via Postgres
+* easy API requests with [HTTParty](https://github.com/jnunemaker/httparty)
+* Postmark for transactional emails, [letter_opener](https://github.com/ryanb/letter_opener) for local dev mailers
+* script tag partial (Google Analytics, etc)
+* testing suite via [RSpec](https://github.com/rspec/rspec-rails/)
+* cron job task scheduler (`lib/tasks/scheduler.rake`)
+* random data generation with [Faker](https://github.com/faker-ruby/faker)
+* Heroku <> Cloudflare HTTPS via `lib/cloudflare_proxy.rb`
+* background job queue via [Delayed](https://rubygems.org/gems/delayed)
+* [Coming Soon] full billing CRUD via Stripe Checkout
 
-Things you may want to cover:
+## Installation
+1. clone the repo
+2. `bundle`
+3. `rails g rename:into new_app_name_here`
+4. `rails db:setup && rails db:migrate` (optional) to create db and Users table
+5. `bundle exec figaro install` to put ENV vars in `config/application.yml`
 
-* Ruby version
+## Development
+```sh
+bin/dev # uses foreman to boot server + frontend
+```
 
-* System dependencies
+## Troubleshooting
+`Turbo Drive` lazy-loads pages following form submission, causing script tags at the bottom of following views to not always load.
 
-* Configuration
+```html
+<!-- add data-turbo=false to form submission buttons if the following view needs a full render -->
+<button data-turbo="false" type="submit" ...>Submit</button>
+```
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Miscellaneous
+to use Postmark for emails, set `postmark_api_token` inside `application.yml`, `from` address inside `application.rb`, then [verify your sending domain](https://account.postmarkapp.com/signature_domains/initialize_verification)
