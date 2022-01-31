@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Speedrail</title>
+    <%= metamagic site: "Speedrail", title: [:site, :title], separator: " | " %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,11 +9,16 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container mx-auto mt-14 px-5">
+      <%= render "shared/flash" %>
+      <%= render "shared/header" %>
       <%= yield %>
     </main>
+
+    <%= render partial: "shared/script_tags" %>
   </body>
 </html>

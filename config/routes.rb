@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  root 'pages#home'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  devise_for :users
+  get 'logout', to: 'pages#logout', as: 'logout'
+
+  # static pages
+  get 'terms', to: 'pages#terms'
+  get 'privacy', to: 'pages#privacy'
 end
