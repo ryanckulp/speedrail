@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.8.8",
-    "postcss": "^7.0.39",
+    "postcss": "^8.2.13",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "webpack-dev-server": "^3.10.3"
   }
