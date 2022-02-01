@@ -24,8 +24,8 @@ features included in this template:
 
 ## Installation
 1. clone the repo
-2. `bundle`
-3. `rails g rename:into new_app_name`
+2. `cd speedrail && bundle`
+3. `rails g rename:into new_app_name` (then `cd` back into new directory)
 4. `rails db:setup && rails db:migrate` (optional) to create db and Users table
 5. `bundle exec figaro install`
 6. `cp config/application-sample.yml config/application.yml`
