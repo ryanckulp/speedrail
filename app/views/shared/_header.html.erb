@@ -5,7 +5,7 @@
       <%= link_to logo_path do %>
         <%= image_tag "avatar.png",  style: "max-height: 28px" %>
       <% end %>
-      <span class="font-semibold text-xl tracking-tight">Speedrail</span>
+      <span class="font-semibold text-xl tracking-tight"><%= ENV['company_name'] %></span>
     </div>
     <div class="block sm:hidden">
       <button class="navbar-burger flex items-center px-3 py-2 border rounded text-white border-white hover:text-white hover:border-white">
