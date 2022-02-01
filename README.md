@@ -35,8 +35,8 @@ bin/dev # uses foreman to boot server + frontend
 
 ## Testing
 ```
-rspec # will run all tests inside spec/
-rspec spec/dir_name # will run all tests inside given directory
+rspec # run all tests inside spec/
+rspec spec/dir_name # run all tests inside given directory
 ```
 
 ## Troubleshooting
