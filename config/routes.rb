@@ -15,4 +15,10 @@ Rails.application.routes.draw do
   # static pages
   get 'terms', to: 'pages#terms'
   get 'privacy', to: 'pages#privacy'
+
+  # admin panels
+  authenticated :user, -> user { user.admin? }  do
+    get 'admin', to: 'admin#index', as: 'admin'
+    get 'admin/impersonate', to: 'admin#impersonate', as: 'impersonate_user'
+  end
 end
