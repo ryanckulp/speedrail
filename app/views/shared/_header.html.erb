@@ -17,6 +17,7 @@
         <% contact_url = 'https://twitter.com/intent/tweet?text=@ryanckulp%20question...' %>
         <% if current_user %>
           <%= link_to 'Contact', contact_url, target: '_blank', class: 'ml-8 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900'  %>
+          <%= link_to 'Account', account_index_path, class: 'ml-8 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900'  %>
           <%= link_to 'Logout', logout_path, class: 'ml-8 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900' %>
         <% else %>
           <%= link_to 'Contact', contact_url, target: '_blank', class: 'ml-8 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900'  %>
