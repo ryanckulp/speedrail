@@ -4,6 +4,7 @@ a Rails 7 boilerplate repo by [@ryanckulp](https://twitter.com/ryanckulp), creat
 features included in this template:
 * user authentication via [Devise](https://github.com/plataformatec/devise)
 * design via [Tailwind UI](https://tailwindui.com/)
+* user billing management via [Stripe Checkout](https://stripe.com/payments/checkout) portal
 * safely manage ENV variables with [Figaro](https://github.com/laserlemon/figaro)
 * responsive toggle navbar w/ logic for login, signup, settings
 * SEO toolbelt via [metamagic](https://github.com/lassebunk/metamagic)
