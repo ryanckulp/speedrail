@@ -1,0 +1,10 @@
+postmark_api_token: xxxx-yyy-zzzz
+admin_email: support@speedrail.com
+development:
+  base_url: http://localhost:3000
+  stripe_secret_key: sk_test_asdfasdfasdf
+  stripe_product_price_id: price_1asdfasdf
+production:
+  base_url: https://speedrail.com
+  stripe_secret_key: sk_live_asdfasdfasdf
+  stripe_product_price_id: price_1asdfasdf

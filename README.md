@@ -27,7 +27,8 @@ features included in this template:
 2. `bundle`
 3. `rails g rename:into new_app_name_here`
 4. `rails db:setup && rails db:migrate` (optional) to create db and Users table
-5. `bundle exec figaro install` to put ENV vars in `config/application.yml`
+5. `bundle exec figaro install`
+6. copy contents of `config/application-sample.yml` into `config/application.yml`
 
 ## Development
 ```sh

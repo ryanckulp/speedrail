@@ -3,13 +3,11 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable
 
+  scope :subscribed, -> { where(paying_customer: true) }
+
   after_create do
     delay.send_welcome_email
     delay.setup_stripe_customer
-  end
-
-  def subscribed?
-    true # add your own logic, used by views/account/index
   end
 
   def send_welcome_email

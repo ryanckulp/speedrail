@@ -7,7 +7,7 @@
       <h3 class="mb-2 text-2xl leading-9 font-extrabold text-gray-900">Subscription</h3>
       <div class="flex">
         <div class="flex-auto">
-          Billing Status: <%= red_green_message(current_user.subscribed?, 'Active', 'Inactive') %><br>
+          Billing Status: <%= red_green_message(current_user.paying_customer?, 'Active', 'Inactive') %><br>
         </div>
         <div class="flex-shrink">
           <%= link_to 'Manage >>', billing_portal_path, class: "font-medium text-indigo-500" %>
