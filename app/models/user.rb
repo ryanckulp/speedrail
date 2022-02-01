@@ -10,8 +10,12 @@ class User < ApplicationRecord
     delay.setup_stripe_customer
   end
 
+  def finished_onboarding?
+    paying_customer? # insert logic, used by 'offer_setup_assistance' cron mailer
+  end
+
   def send_welcome_email
-    UserMailer.new_signup(self).deliver
+    UserMailer.welcome(self).deliver
   end
 
   def setup_stripe_customer
