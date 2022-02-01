@@ -20,7 +20,7 @@ features included in this template:
 * random data generation with [Faker](https://github.com/faker-ruby/faker)
 * Heroku <> Cloudflare HTTPS via `lib/cloudflare_proxy.rb`
 * background job queue via [Delayed](https://rubygems.org/gems/delayed)
-* [Coming Soon] full billing CRUD via Stripe Checkout
+* full billing CRUD via [Stripe Checkout](https://stripe.com/checkout)
 
 ## Installation
 1. clone the repo
