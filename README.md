@@ -33,6 +33,12 @@ features included in this template:
 bin/dev # uses foreman to boot server + frontend
 ```
 
+## Testing
+```
+rspec # will run all tests inside spec/
+rspec spec/dir_name # will run all tests inside given directory
+```
+
 ## Troubleshooting
 `Turbo Drive` lazy-loads pages following form submission, causing script tags at the bottom of following views to not always load.
 
