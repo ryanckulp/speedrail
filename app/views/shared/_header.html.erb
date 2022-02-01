@@ -1,7 +1,7 @@
 <div class="py-4 px-2">
   <nav class="flex items-center justify-between flex-wrap">
     <div class="flex items-center flex-no-shrink text-white mr-6">
-      <% logo_path = current_user && current_user.paying_customer ? dashboard_path : root_path %>
+      <% logo_path = current_user ? dashboard_index_path : root_path %>
       <%= link_to logo_path do %>
         <%= image_tag "avatar.png",  style: "max-height: 28px" %>
       <% end %>
@@ -20,6 +20,8 @@
           <%= link_to 'Logout', logout_path, class: 'no-underline font-bold block mt-4 sm:inline-block sm:mt-0 text-grey-lighter hover:text-grey-light mr-4' %>
         <% else %>
           <%= link_to 'Contact', contact_url, target: '_blank', class: 'no-underline font-bold block mt-4 sm:inline-block sm:mt-0 text-grey-lighter hover:text-grey-light mr-4'  %>
+          <%= link_to 'Signup', new_user_registration_path, class: 'no-underline font-bold block mt-4 sm:inline-block sm:mt-0 text-grey-lighter hover:text-grey-light mr-4' %>
+          <%= link_to 'Login', new_user_session_path, class: 'no-underline font-bold block mt-4 sm:inline-block sm:mt-0 text-grey-lighter hover:text-grey-light mr-4' %>
         <% end %>
       </div>
     </div>

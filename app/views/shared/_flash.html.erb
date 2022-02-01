@@ -22,3 +22,13 @@
     <% end %>
   </div>
 </div>
+
+<!-- Flash management -->
+<script type="text/javascript">
+  var flashAlert = document.getElementById('flash_alert_close');
+  if (flashAlert !== null) {
+    document.getElementById('flash_alert_close').addEventListener('click', function() {
+      this.parentElement.remove();
+    });
+  }
+</script>
