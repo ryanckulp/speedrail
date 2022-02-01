@@ -11,13 +11,14 @@ class User < ApplicationRecord
   end
 
   def finished_onboarding?
-    paying_customer? # insert logic, used by 'offer_setup_assistance' cron mailer
+    stripe_subscription_id?
   end
 
   def send_welcome_email
     UserMailer.welcome(self).deliver
   end
 
+  # done after signup, for easy acquisition metrics inside Stripe UI
   def setup_stripe_customer
     customer = Stripe::Customer.create({
       email: self.email,
@@ -27,5 +28,15 @@ class User < ApplicationRecord
     })
 
     update(stripe_customer_id: customer.id)
+  end
+
+  # done after user adds payment method, for easy CVR metrics inside Stripe UI
+  def set_stripe_subscription
+    cust = Stripe::Customer.retrieve({
+      id: stripe_customer_id,
+      expand: ['subscriptions']
+    })
+    subscription_id = cust.subscriptions.first.id
+    update(stripe_subscription_id: subscription_id)
   end
 end

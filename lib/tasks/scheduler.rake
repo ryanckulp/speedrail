@@ -10,12 +10,13 @@ task :reminder_to_start_trial => :environment do
   end
 end
 
-task :offer_setup_assistance => :environment do
-  User.subscribed.where(created_at: 48.hours.ago..47.hours.ago).each do |user|
-    next if user.finished_onboarding?
-    UserMailer.offer_setup_assistance(user).deliver_later
-  end
-end
+# enable after improving 'finished_onboarding' logic
+# task :offer_setup_assistance => :environment do
+#   User.subscribed.where(created_at: 48.hours.ago..47.hours.ago).each do |user|
+#     next if user.finished_onboarding?
+#     UserMailer.offer_setup_assistance(user).deliver_later
+#   end
+# end
 
 # enable if Stripe subscriptions exist
 # task :sync_with_stripe => :environment do
