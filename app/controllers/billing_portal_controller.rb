@@ -3,15 +3,11 @@ class BillingPortalController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create] # ajax
 
   def create
-    if customer_is_onboarding?
-      redirect_url = begin_subscription
-    else
-      redirect_url = modify_subscription
-    end
+    url = customer_is_onboarding? ? begin_subscription : modify_subscription
 
     respond_to do |format|
-      format.html { redirect_to redirect_url }
-      format.json { render json: { url: redirect_url } }
+      format.html { redirect_to url }
+      format.json { render json: { url: url } }
     end
   end
 
@@ -22,7 +18,7 @@ class BillingPortalController < ApplicationController
   private
 
   def customer_is_onboarding?
-    request.referer.include?('subscribe') # creating portal session from onboarding wizard
+    request.referer.include?('subscribe') # assumes /subscribe view is used after registration
   end
 
   # invoked from /subscribe during onboarding
