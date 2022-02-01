@@ -32,7 +32,15 @@ features included in this template:
 
 ## Development
 ```sh
-bin/dev # uses foreman to boot server + frontend
+bin/dev # uses foreman to boot server, frontend, and bg job queue
+```
+
+**troubleshooting**
+`Turbo Drive` lazy-loads pages following form submission, causing script tags at the bottom of following views to not always load.
+
+```html
+<!-- add data-turbo=false to form submission buttons if the following view needs a full render -->
+<button data-turbo="false" type="submit" ...>Submit</button>
 ```
 
 ## Testing
@@ -41,13 +49,17 @@ rspec # run all tests inside spec/
 rspec spec/dir_name # run all tests inside given directory
 ```
 
-## Troubleshooting
-`Turbo Drive` lazy-loads pages following form submission, causing script tags at the bottom of following views to not always load.
-
-```html
-<!-- add data-turbo=false to form submission buttons if the following view needs a full render -->
-<button data-turbo="false" type="submit" ...>Submit</button>
+## Deploying
+```sh
+heroku git:remote -a heroku_app_name_here # you only need to do this once
 ```
 
+```sh
+git push heroku master # deploys master branch
+git push heroku some_branch_name:master # deploys non-master branch
+```
+
+**note**: Heroku must have 2 'dynos' enabled, `web` + `worker`, to process background jobs. if you don't need a queue, simply remove the `worker` task from `Procfile` and don't invoke `.delayed` functions.
+
 ## Miscellaneous
-to use Postmark for emails, set `postmark_api_token` inside `application.yml`, `from` address inside `application.rb`, then [verify your sending domain](https://account.postmarkapp.com/signature_domains/initialize_verification)
+to use Postmark for emails, set `postmark_api_token` inside `application.yml`, `from` address inside `application.rb`, then [verify your sending domain](https://account.postmarkapp.com/signature_domains/initialize_verification).
