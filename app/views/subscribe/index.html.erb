@@ -1,0 +1,39 @@
+<%= render partial: "shared/heading", locals: { title: 'Start Trial', description: "Start your 14 day free trial of #{ENV['company_name']}." } %>
+
+<div class="text-center">
+  <!-- provide an image to compel user to add payment details -->
+  <!-- <%= image_path "", style: "display: inline-block; max-height: 375px;", class: "mt-6 object-center" %> -->
+</div>
+
+<p class="mt-12 text-center">Click here to choose a plan and activate your account.</p>
+<div class="mt-2 justify-center text-center">
+  <div class="text-center inline-flex rounded-md shadow">
+    <button onclick="beginSubscription()" type="submit" class="items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700">
+      Start Free
+    </button>
+  </div>
+  <div class="mt-2 text-center">
+    <!-- bind this element to a live chat tool or mailto address -->
+    <a id="open-live-chat" href="#" onclick="return false;" class="font-medium text-indigo-300 hover:text-indigo-500">Still have questions?</a>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var beginSubscription = function() {
+    console.log('building subscription...');
+
+    $.ajax({
+      url: '<%= billing_portal_index_path %>',
+      method: 'POST',
+      dataType: 'json',
+      data: {},
+      success: function(data) {
+        console.log('success! portal url: ', data.url)
+        window.location.href = data.url;
+      },
+      error: function(data) {
+        window.alert('Sorry, something went wrong. Please try again.');
+      }
+    })
+  }
+</script>

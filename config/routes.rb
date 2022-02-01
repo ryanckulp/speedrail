@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   #   get 'login', to: 'devise/sessions#new'
   # end
 
+  resources :subscribe, only: [:index]
   resources :dashboard, only: [:index]
   resources :account, only: [:index, :update]
   resources :billing_portal, only: [:create]
