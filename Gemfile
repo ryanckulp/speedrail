@@ -15,7 +15,8 @@ gem 'jbuilder'
 gem 'redis', '~> 4.0'
 gem 'httparty'
 gem 'figaro'
-gem 'rename' # rails g rename:into new_app_name; then delete
+# gem 'rename' # rails g rename:into new_app_name; then delete
+gem 'rename', git: 'https://github.com/ryanckulp/rename' # remove this gem after use
 gem 'delayed' # delayed_job_active_record rails 7 fork: https://github.com/betterment/delayed
 gem 'metamagic' # easily insert metatags for SEO / opengraph
 gem 'rack-cors', :require => 'rack/cors'

@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/ryanckulp/rename
+  revision: c1e395923334ea735ce309a3b44f4d00bd187b88
+  specs:
+    rename (1.0.8)
+      activesupport
+      rails (>= 3.0.0)
+      thor (>= 0.19.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -213,10 +222,6 @@ GEM
     regexp_parser (2.2.0)
     reline (0.3.1)
       io-console (~> 0.5)
-    rename (1.0.8)
-      activesupport
-      rails (>= 3.0.0)
-      thor (>= 0.19.1)
     responders (3.0.1)
       actionpack (>= 5.0)
       railties (>= 5.0)
@@ -308,7 +313,7 @@ DEPENDENCIES
   rack-cors
   rails (~> 7.0.0)
   redis (~> 4.0)
-  rename
+  rename!
   rspec-rails
   selenium-webdriver
   shoulda-callback-matchers
