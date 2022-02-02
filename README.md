@@ -51,6 +51,7 @@ rspec spec/dir_name # run all tests inside given directory
 
 ## Deploying
 ```sh
+figaro heroku:set -e production # you only need to do this once
 heroku git:remote -a heroku_app_name_here # you only need to do this once
 ```
 

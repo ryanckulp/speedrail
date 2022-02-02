@@ -11,10 +11,10 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
-      colors: {
-        'primary': '#DA5827',
+      colors: { // custom color palette for branding
+        'primary': 'rgb(79, 70, 229)',
         'primary-hover-700': {
-          '700': '#a4411c', // darkened primary 25% https://pinetools.com/darken-color
+          '700': '#a4411c', // use https://pinetools.com/darken-color
           '500': '#EA9A72'
         }
       }
