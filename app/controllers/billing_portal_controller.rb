@@ -6,7 +6,7 @@ class BillingPortalController < ApplicationController
     url = current_user.finished_onboarding? ? modify_subscription : begin_subscription
 
     respond_to do |format|
-      format.html { redirect_to url }
+      format.html { redirect_to url, allow_other_host: true }
       format.json { render json: { url: url } }
     end
   end
