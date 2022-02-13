@@ -3,6 +3,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :recoverable, :rememberable
 
+  validates :email, uniqueness: { case_sensitive: false }, presence: true
+
   scope :subscribed, -> { where(paying_customer: true) }
 
   after_create do
