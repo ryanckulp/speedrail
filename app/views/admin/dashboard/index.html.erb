@@ -18,6 +18,9 @@
                       email
                     </th>
                     <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                      actions
+                    </th>
+                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                       impersonate
                     </th>
                   </tr>
@@ -31,8 +34,11 @@
                       <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
                         <%= user.email %>
                       </td>
+                      <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
+                        <%= link_to 'edit', edit_admin_user_path(id: user.id), class: 'text-indigo-500' %>
+                      </td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <%= link_to impersonate_user_path(user_id: user.id) do %>
+                        <%= link_to new_admin_impersonation_path(user_id: user.id) do %>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                         </svg>

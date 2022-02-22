@@ -21,8 +21,14 @@ Rails.application.routes.draw do
   get 'privacy', to: 'pages#privacy'
 
   # admin panels
-  authenticated :user, -> user { user.admin? }  do
-    get 'admin', to: 'admin#index', as: 'admin'
-    get 'admin/impersonate', to: 'admin#impersonate', as: 'impersonate_user'
+  authenticated :user, -> user { user.admin? } do
+    namespace :admin do
+      resources :dashboard, only: [:index]
+      resources :impersonations, only: [:new]
+      resources :users, only: [:edit, :update]
+    end
+
+    # convenience helper
+    get 'admin', to: 'admin/dashboard#index'
   end
 end

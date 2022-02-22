@@ -1,0 +1,25 @@
+<div class="flex">
+  <div class="basis-1/3"></div>
+  <div class="basis-1/3">
+    <%= form_for(@user, url: admin_user_path(id: @user.id)) do |f| %>
+      <div class="mb-2">
+        <label for="company_name">Email Address</label>
+        <%= f.text_field :email, required: true, class: "appearance-none rounded-b-md rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5", placeholder: "Acme Co" %>
+      </div>
+
+      <div class="form-check">
+        <input name="user[admin]" id="user_admin" <%= "checked" if @user.admin %> required="false" class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox">
+        <label class="form-check-label inline-block text-gray-800" for="user_admin">
+          Admin?
+        </label>
+      </div>
+
+      <div class="mt-6">
+        <button type="submit" data-turbo="false" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-primary hover:bg-primary-hover-700 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo transition duration-150 ease-in-out">
+          Update
+        </button>
+      </div>
+    <% end %>
+  </div>
+  <div class="basis-1/3"></div>
+</div>
