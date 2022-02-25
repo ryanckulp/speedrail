@@ -1,10 +1,8 @@
 module Billable
   extend ActiveSupport::Concern
 
-  scope :subscribed, -> { where(paying_customer: true) }
-
-  after_create do
-    delay.setup_stripe_customer
+  included do
+    after_create :setup_stripe_customer
   end
 
   # done after signup, for easy acquisition metrics inside Stripe UI
@@ -18,6 +16,7 @@ module Billable
 
     update(stripe_customer_id: customer.id)
   end
+  # handle_asynchronously :setup_stripe_customer
 
   # done after user adds payment method, for easy CVR metrics inside Stripe UI
   def set_stripe_subscription

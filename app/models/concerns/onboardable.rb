@@ -1,8 +1,8 @@
 module Onboardable
   extend ActiveSupport::Concern
 
-  after_create do
-    delay.send_welcome_email
+  included do
+    after_create :send_welcome_email
   end
 
   def finished_onboarding?
@@ -12,4 +12,5 @@ module Onboardable
   def send_welcome_email
     UserMailer.welcome(self).deliver
   end
+  # handle_asynchronously :send_welcome_email
 end
