@@ -9,6 +9,8 @@ class PagesController < ApplicationController
     redirect_to root_path
   end
 
-  def terms; end
-  def privacy; end
+  def page
+    @page_key = request.path[1..-1]
+    render "pages/#{@page_key}"
+  end
 end

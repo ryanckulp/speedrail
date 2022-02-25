@@ -4,11 +4,6 @@ Rails.application.routes.draw do
   devise_for :users
   get 'logout', to: 'pages#logout', as: 'logout'
 
-  # devise_scope :user do
-  #   get 'signup', to: 'devise/registrations#new'
-  #   get 'login', to: 'devise/sessions#new'
-  # end
-
   resources :subscribe, only: [:index]
   resources :dashboard, only: [:index]
   resources :account, only: [:index, :update]
@@ -17,8 +12,13 @@ Rails.application.routes.draw do
   match '/cancel' => 'billing_portal#destroy', via: [:get]
 
   # static pages
-  get 'terms', to: 'pages#terms'
-  get 'privacy', to: 'pages#privacy'
+  pages = %w(
+    privacy terms
+  )
+
+  pages.each do |page|
+    get "/#{page}", to: "pages##{page}", as: "#{page.gsub('-', '_')}"
+  end
 
   # admin panels
   authenticated :user, -> user { user.admin? } do
