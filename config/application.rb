@@ -31,6 +31,9 @@ module Speedrail
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = { api_token: ENV['postmark_api_token'] }
 
+    # serve images from asset pipeline in mailers
+    config.asset_host = ENV['base_url']
+
     # customize generators
     config.generators do |g|
       g.test_framework  :rspec, :fixture => false
