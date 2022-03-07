@@ -45,8 +45,8 @@ bin/dev # uses foreman to boot server, frontend, and bg job queue
 
 ## Testing
 ```
-rspec # run all tests inside spec/
-rspec spec/dir_name # run all tests inside given directory
+bundle exec rspec # run all tests inside spec/
+bundle exec rspec spec/dir_name # run all tests inside given directory
 ```
 
 ## Deploying
@@ -63,4 +63,4 @@ git push heroku some_branch_name:master # deploys non-master branch
 **note**: Heroku must have 2 'dynos' enabled, `web` + `worker`, to process background jobs. if you don't need a queue, simply remove the `worker` task from `Procfile` and don't invoke `.delayed` functions.
 
 ## Miscellaneous
-to use Postmark for emails, set `postmark_api_token` inside `application.yml`, `from` address inside `application.rb`, then [verify your sending domain](https://account.postmarkapp.com/signature_domains/initialize_verification).
+to use Postmark for emails, set `postmark_api_token` inside `application.yml`, then [verify your sending domain](https://account.postmarkapp.com/signature_domains/initialize_verification).
