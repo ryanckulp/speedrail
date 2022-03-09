@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :dashboard, only: [:index]
       resources :impersonations, only: [:new]
-      resources :users, only: [:edit, :update]
+      resources :users, only: [:edit, :update, :destroy]
     end
 
     # convenience helper
