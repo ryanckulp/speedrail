@@ -1,3 +1,4 @@
+base_url: http://localhost:3000 # used by test ENV when user.create callback sends welcome email
 company_name: Speedrail
 admin_email: support@speedrail.com
 postmark_api_token: xxxx-yyy-zzzz
