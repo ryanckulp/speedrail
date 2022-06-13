@@ -1,7 +1,7 @@
 # Speedrail
-a Rails 7 boilerplate repo by [@ryanckulp](https://twitter.com/ryanckulp), created to accelerate development of side projects.
+a Rails 7 boilerplate repo by [@ryanckulp](https://twitter.com/ryanckulp), created to accelerate side project development.
 
-features included in this template:
+features include:
 * user authentication via [Devise](https://github.com/plataformatec/devise)
 * design via [Tailwind UI](https://tailwindui.com/)
 * user billing management via [Stripe Checkout](https://stripe.com/payments/checkout) portal
