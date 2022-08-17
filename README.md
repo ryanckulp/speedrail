@@ -49,7 +49,7 @@ bundle exec rspec # run all tests inside spec/
 bundle exec rspec spec/dir_name # run all tests inside given directory
 ```
 
-## Deploying
+## Deploying (Heroku)
 ```sh
 figaro heroku:set -e production # you only need to do this once
 heroku git:remote -a heroku_app_name_here # you only need to do this once
