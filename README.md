@@ -1,5 +1,5 @@
-# Speedrail
-a Rails 7 boilerplate repo by [@ryanckulp](https://twitter.com/ryanckulp), created to accelerate side project development.
+# Speedrail (Rails 7 template)
+boilerplate Rails repo by [@ryanckulp](https://twitter.com/ryanckulp), created to accelerate side project development.
 
 features include:
 * user authentication via [Devise](https://github.com/plataformatec/devise)
