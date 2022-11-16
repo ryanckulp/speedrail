@@ -1,7 +1,7 @@
 # Speedrail
-a Rails 7 boilerplate repo by [@ryanckulp](https://twitter.com/ryanckulp), created to accelerate development of side projects.
+a Rails 7 boilerplate template by [@ryanckulp](https://twitter.com/ryanckulp), created to ship SaaS apps quickly. Learn how to use this at [24 Hour MVP](https://founderhacker.com/24-hour-mvp).
 
-features included in this template:
+features:
 * user authentication via [Devise](https://github.com/plataformatec/devise)
 * design via [Tailwind UI](https://tailwindui.com/)
 * user billing management via [Stripe Checkout](https://stripe.com/payments/checkout) portal
@@ -14,21 +14,21 @@ features included in this template:
 * production-ready DB via Postgres
 * easy API requests with [HTTParty](https://github.com/jnunemaker/httparty)
 * Postmark for transactional emails, [letter_opener](https://github.com/ryanb/letter_opener) for local dev mailers
-* script tag partial (Google Analytics, etc)
+* script tag component (Google Analytics, etc)
 * testing suite via [RSpec](https://github.com/rspec/rspec-rails/)
 * cron job task scheduler (`lib/tasks/scheduler.rake`)
 * random data generation with [Faker](https://github.com/faker-ruby/faker)
 * Heroku <> Cloudflare HTTPS via `lib/cloudflare_proxy.rb`
 * background job queue via [Delayed](https://rubygems.org/gems/delayed)
-* full billing CRUD via [Stripe Checkout](https://stripe.com/checkout)
+* paid subscriptions CRUD via [Stripe Checkout](https://stripe.com/checkout)
 
 ## Installation
 1. clone the repo
-2. `cd speedrail && bundle`
-3. `rails g rename:into new_app_name` (then `cd` back into new directory)
-4. `rails db:setup && rails db:migrate` (optional) to create db and Users table
+2. `cd speedrail && bundle` (installs dependencies)
+3. `rails g rename:into new_app_name` (then `cd ../new_app_name` to refresh)
+4. remove `gem 'rename'` from Gemfile, then `bin/setup` to create DB
 5. `bundle exec figaro install`
-6. `cp config/application-sample.yml config/application.yml`
+6. `cp config/application-sample.yml config/application.yml` (put ENV vars here)
 
 ## Development
 ```sh
