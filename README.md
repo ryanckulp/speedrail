@@ -29,8 +29,7 @@ features:
 1. remove `gem 'rename'` from Gemfile, then `bin/setup` to create DB
 1. `bundle exec figaro install`
 1. `cp config/application-sample.yml config/application.yml` (put ENV vars here)
-1. `rm -rf .git` to remove git references to this repo
-1. `git init` to reinitialize git 
+1. `rm -rf .git && git init && git add . && git commit -m 'first commit'` to remove git references to this repo and reinitialize git 
 
 ## Development
 ```sh
