@@ -1,58 +1,61 @@
 <%= render partial: "shared/heading", locals: { title: 'Admin Dashboard', description: '' } %>
 
-<div class="flex">
-  <div class="basis-1/4"></div>
-  <div class="basis-2/4">
-    <div class="max-w-2xl mx-auto px-4 sm:py-8 sm:px-6 lg:max-w-7xl">
-      <div class="flex flex-col">
-        <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-          <div class="py-2 align-middle inline-block sm:px-6 lg:px-8">
-            <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-              <table class="divide-y divide-gray-200">
-                <thead class="bg-gray-50">
-                  <tr>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      signed up
-                    </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      email
-                    </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      actions
-                    </th>
-                    <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      impersonate
-                    </th>
-                  </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                  <% @users.each do |user| %>
-                    <tr>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <%= user.created_at.in_time_zone('Asia/Seoul').strftime('%F %H:%M') %>
-                      </td>
-                      <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
-                        <%= user.email %>
-                      </td>
-                      <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
-                        <%= link_to 'edit', edit_admin_user_path(id: user.id), class: 'text-indigo-500' %>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <%= link_to new_admin_impersonation_path(user_id: user.id) do %>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                        <% end %>
-                      </td>
-                    </tr>
+<div class="max-w-3xl mx-auto px-4">
+  <div class="mb-4">
+    <h3 class="font-semibold">Signups</h3>
+    <%= line_chart User.where(created_at: 3.months.ago..Time.now).group_by_week(:created_at).count %>
+  </div>
+
+  <div class="overflow-x-auto">
+    <div class="py-2 align-middle inline-block sm:px-6 lg:px-8">
+      <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+        <table class="divide-y divide-gray-200 border">
+          <thead class="bg-gray-50">
+            <tr>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                signed up
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                email
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                paying customer?
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                actions
+              </th>
+              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                impersonate
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <% @users.each do |user| %>
+              <tr>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <%= user.created_at.in_time_zone('Asia/Seoul').strftime('%F %H:%M') %>
+                </td>
+                <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
+                  <%= user.email %>
+                </td>
+                <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
+                  <%= user.paying_customer? %>
+                </td>
+                <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
+                  <%= link_to 'edit', edit_admin_user_path(id: user.id), class: 'text-indigo-500' %>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                  <%= link_to new_admin_impersonation_path(user_id: user.id) do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
                   <% end %>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+                </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-  <div class="basis-1/4"></div>
 </div>
