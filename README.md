@@ -21,6 +21,7 @@ features:
 * Heroku <> Cloudflare HTTPS via `lib/cloudflare_proxy.rb`
 * background job queue via [Delayed](https://rubygems.org/gems/delayed)
 * paid subscriptions CRUD via [Stripe Checkout](https://stripe.com/checkout)
+* interactive charts via [Chartkick](https://chartkick.com)
 
 ## Installation
 1. clone the repo
@@ -29,7 +30,7 @@ features:
 1. remove `gem 'rename'` from Gemfile, then `bin/setup` to create DB
 1. `bundle exec figaro install`
 1. `cp config/application-sample.yml config/application.yml` (put ENV vars here)
-1. `rm -rf .git && git init && git add . && git commit -m 'first commit'` to remove git references to this repo and reinitialize git 
+1. `rm -rf .git && git init && git add . && git commit -m 'first commit'` to remove git references to this repo and reinitialize git
 
 ## Development
 ```sh

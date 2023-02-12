@@ -22,6 +22,8 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'postmark-rails'
 gem 'devise'
 gem 'stripe'
+gem 'chartkick'
+gem 'groupdate' # used by Chartkick
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
