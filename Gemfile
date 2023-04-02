@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.1.2'
+ruby '3.2.0'
 
 gem 'rails'
 gem 'sprockets-rails'
@@ -14,7 +14,7 @@ gem 'tailwindcss-rails'
 gem 'jbuilder'
 gem 'redis'
 gem 'httparty'
-gem 'figaro'
+gem 'figaro', git: 'https://github.com/ryanckulp/figaro' # patched version for Ruby 3.2.0 File.exist?()
 gem 'rename', '1.1.3', git: 'https://github.com/ryanckulp/rename' # remove this gem after use
 gem 'delayed' # delayed_job_active_record rails 7 fork: https://github.com/betterment/delayed
 gem 'metamagic' # easily insert metatags for SEO / opengraph

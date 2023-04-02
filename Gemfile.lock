@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/ryanckulp/figaro
+  revision: e7aa9e456a60d479c2eadcb9104da3af6929548d
+  specs:
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
+
+GIT
   remote: https://github.com/ryanckulp/rename
   revision: d94fed474a4c50844c6b264ea8b502c63c7e2cf4
   specs:
@@ -117,8 +124,6 @@ GEM
       railties (>= 5.0.0)
     faker (3.0.0)
       i18n (>= 1.8.11, < 2)
-    figaro (1.2.0)
-      thor (>= 0.14.0, < 2)
     globalid (1.1.0)
       activesupport (>= 5.0)
     groupdate (6.2.0)
@@ -293,6 +298,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -304,7 +310,7 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
-  figaro
+  figaro!
   groupdate
   httparty
   importmap-rails
@@ -332,7 +338,7 @@ DEPENDENCIES
   webdrivers
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.2.0p0
 
 BUNDLED WITH
    2.3.19
