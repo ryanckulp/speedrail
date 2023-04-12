@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/ryanckulp/rename
-  revision: d94fed474a4c50844c6b264ea8b502c63c7e2cf4
+  revision: c747f30cbd85f72d8c57ab9e0d1b1797ed444ccc
   specs:
     rename (1.1.3)
       activesupport
