@@ -17,15 +17,14 @@
 
     <div id="main-nav" class="w-full flex-grow sm:flex text-right sm:w-auto hidden" data-header-target="mainNav">
       <div class="text-sm sm:flex-grow">
-        <% nav_link_classes = 'ml-8 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900' %>
         <% if current_user %>
-          <%= link_to 'Admin', admin_dashboard_index_path, class: nav_link_classes if current_user.admin? %>
-          <%= link_to 'Dashboard', dashboard_index_path, class: nav_link_classes %>
-          <%= link_to 'Account', account_index_path, class: nav_link_classes %>
+          <%= link_to 'Admin', admin_dashboard_index_path, class: nav_link_classes('admin') if current_user.admin? %>
+          <%= link_to 'Dashboard', dashboard_index_path, class: nav_link_classes('dashboard') %>
+          <%= link_to 'Account', account_index_path, class: nav_link_classes('account') %>
           <%= link_to 'Logout', logout_path, class: nav_link_classes %>
         <% else %>
-          <%= link_to 'Contact', 'https://twitter.com/intent/tweet?text=@ryanckulp%20question...', target: '_blank', class: nav_link_classes  %>
-          <%= link_to 'Login', new_user_session_path, class: nav_link_classes %>
+          <%= link_to 'Contact', "mailto:#{ENV['ADMIN_EMAIL']}", target: '_blank', class: nav_link_classes  %>
+          <%= link_to 'Login', new_user_session_path, class: nav_link_classes('users/sign_in') %>
           <%= link_to 'Signup', new_user_registration_path, class: 'ml-8 whitespace-nowrap text-base font-medium inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700' %>
         <% end %>
       </div>

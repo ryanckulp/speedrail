@@ -22,4 +22,10 @@ module ApplicationHelper
 
     "<strong style='color: #{color}'>#{msg}</strong>".html_safe
   end
+
+  def nav_link_classes(path = nil)
+    defaults = 'ml-8 whitespace-nowrap text-base font-medium text-gray-500 hover:text-gray-900'
+    defaults.gsub!('gray', 'black').gsub!('-medium', '-bold') if request.path == "/#{path}"
+    defaults
+  end
 end
