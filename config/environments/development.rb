@@ -33,8 +33,8 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  # allow requests as dynamic domains, e.g. ngrok
-  config.hosts << /[a-z0-9-]+\.ngrok\.io/
+  # allow requests as dynamic domains, e.g. ngrok.io, ngrok.app
+  config.hosts << /[a-z0-9-]+\.ngrok..*/
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
