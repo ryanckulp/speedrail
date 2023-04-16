@@ -13,7 +13,7 @@
           <thead class="bg-gray-50">
             <tr>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                signed up
+                signed up (ET)
               </th>
               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 email
@@ -33,7 +33,7 @@
             <% @users.each do |user| %>
               <tr>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                  <%= user.created_at.in_time_zone('Asia/Seoul').strftime('%F %H:%M') %>
+                  <%= user.created_at.in_time_zone('Eastern Time (US & Canada)').strftime('%F %H:%M') %>
                 </td>
                 <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
                   <%= user.email %>
