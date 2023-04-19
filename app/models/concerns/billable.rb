@@ -5,8 +5,10 @@ module Billable
     after_create :setup_stripe_customer
   end
 
-  # done after signup, for easy acquisition metrics inside Stripe UI
+  # done after signup for easy CVR metrics via Stripe UI
   def setup_stripe_customer
+    return unless ENV['STRIPE_SECRET_KEY']
+
     customer = Stripe::Customer.create({
       email: self.email,
       metadata: {
