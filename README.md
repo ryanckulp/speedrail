@@ -38,6 +38,7 @@ bin/dev # uses foreman to boot server, frontend, and bg job queue
 ```
 
 **troubleshooting**
+
 ActionCable - to support WebSockets, run `rails g channel channel_name --assets` then add `mount ActionCable.server => '/cable'` to `config/routes.rb`.
 
 `Turbo Drive` lazy-loads pages following form submission, causing script tags at the bottom of following views to not always load.
