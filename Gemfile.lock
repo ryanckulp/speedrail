@@ -176,6 +176,8 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.14.3-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.14.3-x86_64-darwin)
+      racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.4.6)
     postmark (1.24.0)
@@ -268,6 +270,8 @@ GEM
     stripe (8.5.0)
     tailwindcss-rails (2.0.27-arm64-darwin)
       railties (>= 6.0.0)
+    tailwindcss-rails (2.0.27-x86_64-darwin)
+      railties (>= 6.0.0)
     thor (1.2.1)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -297,6 +301,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  x86_64-darwin-21
 
 DEPENDENCIES
   bootsnap
