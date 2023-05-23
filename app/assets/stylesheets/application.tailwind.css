@@ -12,11 +12,12 @@
 
 */
 
-.tooltip {
-  @apply invisible absolute;
+.speedrail-tooltip {
+  display: none;
+  position: absolute;
 }
 
-.has-tooltip:hover .tooltip {
+.has-tooltip:hover .speedrail-tooltip {
   @apply visible z-50;
 }
 
