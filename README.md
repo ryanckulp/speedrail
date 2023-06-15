@@ -39,7 +39,12 @@ bin/dev # uses foreman to boot server, frontend, and bg job queue
 
 **troubleshooting**
 
-ActionCable - to support WebSockets, run `rails g channel channel_name --assets` then add `mount ActionCable.server => '/cable'` to `config/routes.rb`.
+ActionCable - to support WebSockets, run `rails g channel channel_name --assets` then add `mount ActionCable.server => '/cable'` to `config/routes.rb`. update `cable.yml` -> `production:` to include the following for Heroku to connect w/ Redis for `ActionCable.broadcast`:
+
+```
+ssl_params:
+    verify_mode: <%= OpenSSL::SSL::VERIFY_NONE %>
+```
 
 `Turbo Drive` lazy-loads pages following form submission, causing script tags at the bottom of following views to not always load.
 
