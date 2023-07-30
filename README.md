@@ -25,12 +25,7 @@ features:
 
 ## Installation
 1. clone the repo
-1. `cd speedrail && bundle` (installs dependencies)
-1. `rails g rename:into new_app_name` (then `cd ../new_app_name` to refresh)
-1. remove `gem 'rename'` from Gemfile, then `bin/setup` to create DB
-1. `bundle exec figaro install`
-1. `cp config/application-sample.yml config/application.yml` (put ENV vars here)
-1. `rm -rf .git && git init && git add . && git commit -m 'first commit'` to remove git references to this repo and reinitialize git
+2. `bin/speedrail new_app_name`
 
 ## Development
 ```sh

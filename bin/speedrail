@@ -9,9 +9,6 @@ def system!(*args)
 end
 
 FileUtils.chdir APP_ROOT do
-  # This script is a way to set up or update your development environment automatically.
-  # This script is idempotent, so that you can run it at any time and get an expectable outcome.
-  # Add necessary setup steps to this file.
 
   unless ARGV.count == 1
     abort "Please pass in a new name for your app, ie: bin/speedrail new_app_name"
@@ -30,16 +27,10 @@ FileUtils.chdir APP_ROOT do
 
   puts "== Setting up Figaro Secrets =="
   system! "bundle exec figaro install"
-  # system! "cp config/application-sample.yml config/application.yml"
   FileUtils.cp "config/application-sample.yml", "config/application.yml"
 
   puts "== Initializing new Git Repository =="
   system! "rm -rf .git && git init && git add . && git commit -m 'first commit'"
-
-  # puts "\n== Copying sample files =="
-  # unless File.exist?("config/database.yml")
-  #   FileUtils.cp "config/database.yml.sample", "config/database.yml"
-  # end
 
   puts "== Starting Server =="
   system! "bin/dev"
