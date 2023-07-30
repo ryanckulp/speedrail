@@ -1,0 +1,37 @@
+#!/usr/bin/env ruby
+require "fileutils"
+
+# path to your application root.
+APP_ROOT = File.expand_path("..", __dir__)
+
+def system!(*args)
+  system(*args) || abort("\n== Command #{args} failed ==")
+end
+
+FileUtils.chdir APP_ROOT do
+
+  unless ARGV.count == 1
+    abort "Please pass in a new name for your app, ie: bin/speedrail new_app_name"
+  end
+
+  new_app_name = ARGV[0]
+
+  puts "== Installing Speedrail =="
+  system! "gem install bundler --conservative"
+  system("bundle check") || system!("bundle install")
+
+  puts "== Renaming App =="
+  system! "rails g rename:into #{new_app_name}"
+  system! "cd ../#{new_app_name}"
+  system! "bin/setup"
+
+  puts "== Setting up Figaro Secrets =="
+  system! "bundle exec figaro install"
+  FileUtils.cp "config/application-sample.yml", "config/application.yml"
+
+  puts "== Initializing new Git Repository =="
+  system! "rm -rf .git && git init && git add . && git commit -m 'first commit'"
+
+  puts "== Starting Server =="
+  system! "bin/dev"
+end
