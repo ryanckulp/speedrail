@@ -42,7 +42,7 @@
                   <%= user.paying_customer? %>
                 </td>
                 <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
-                  <%= link_to 'edit', edit_admin_user_path(id: user.id), class: 'text-indigo-500' %>
+                  <%= link_to 'edit', edit_admin_user_path(id: user.id), class: 'text-primary-500' %>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                   <%= link_to new_admin_impersonation_path(user_id: user.id) do %>

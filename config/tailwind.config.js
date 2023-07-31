@@ -1,4 +1,6 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const colors = require('tailwindcss/colors')
+
 
 module.exports = {
   content: [
@@ -11,12 +13,9 @@ module.exports = {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans]
       },
-      colors: { // custom color palette for branding
-        'primary': 'rgb(79, 70, 229)',
-        'primary-hover': {
-          '700': '#a4411c',
-          '500': '#EA9A72'
-        }
+      // custom color palette for branding, see https://tailwindcss.com/docs/customizing-colors
+      colors: {
+        primary: colors.lime
       }
     },
   },
