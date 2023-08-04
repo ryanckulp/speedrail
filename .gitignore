@@ -32,3 +32,10 @@
 
 /app/assets/builds/*
 !/app/assets/builds/.keep
+
+# JetBrains IDE (RubyMine) specifics
+.idea/.gitignore
+.idea/misc.xml
+.idea/modules.xml
+.idea/*.iml
+.idea/vcs.xml

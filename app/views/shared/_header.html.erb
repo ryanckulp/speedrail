@@ -5,7 +5,7 @@
       <%= link_to logo_path do %>
         <%= image_tag "avatar.png",  style: "max-height: 42px" %>
       <% end %>
-      <span class="font-semibold text-xl tracking-tight"><%= ENV['COMPANY_NAME'] %></span>
+      <span class="font-semibold text-xl tracking-tight text-primary-600"><%= ENV['COMPANY_NAME'] %></span>
     </div>
     <div class="block sm:hidden">
       <button class="navbar-burger flex items-center px-3 py-2 border rounded text-white border-white hover:text-white hover:border-white" data-action="click->header#toggleMobileNav">
@@ -25,7 +25,7 @@
         <% else %>
           <%= link_to 'Contact', "mailto:#{ENV['ADMIN_EMAIL']}", target: '_blank', class: nav_link_classes('contact')  %>
           <%= link_to 'Login', new_user_session_path, class: nav_link_classes('login') %>
-          <%= link_to 'Signup', new_user_registration_path, class: 'ml-8 whitespace-nowrap text-base font-medium inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700' %>
+          <%= link_to 'Signup', new_user_registration_path, class: 'ml-8 whitespace-nowrap text-base font-medium inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700' %>
         <% end %>
       </div>
     </div>
