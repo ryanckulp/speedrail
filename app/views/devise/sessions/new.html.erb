@@ -6,15 +6,15 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="mb-2">
-        <input aria-label="Email address" autofocus name="user[email]" id="user_email" type="email" required class="appearance-none rounded-b-md rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email address" />
+        <input aria-label="Email address" autofocus name="user[email]" id="user_email" type="email" required class="appearance-none rounded-b-md rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-primary-300 focus:ring-primary-500 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email address" />
       </div>
       <div class="mb-2">
-        <input aria-label="Password" name="user[password]" id="user_password" type="password" required class="appearance-none rounded-b-md rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Password" />
+        <input aria-label="Password" name="user[password]" id="user_password" type="password" required class="appearance-none rounded-b-md rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-primary-300 focus:ring-primary-500 focus:z-10 sm:text-sm sm:leading-5" placeholder="Password" />
       </div>
 
       <div class="mt-6 flex items-center justify-between">
         <div class="flex items-center">
-          <input name="user[remember_me]" id="user_remember_me" type="checkbox" class="form-checkbox h-4 w-4 text-primary transition duration-150 ease-in-out" />
+          <input name="user[remember_me]" id="user_remember_me" type="checkbox" class="form-checkbox h-4 w-4 text-primary transition duration-150 ease-in-out text-primary-500 focus:border-primary-300 focus:ring-primary-500 rounded" />
           <label for="user_remember_me" class="ml-2 block text-sm leading-5 text-gray-900">
             Remember Me
           </label>

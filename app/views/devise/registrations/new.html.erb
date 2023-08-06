@@ -7,10 +7,10 @@
 
       <div class="mb-2">
         <% prefilled_email = params[:email].present? ? params[:email] : '' %>
-        <input aria-label="Email address" name="user[email]" id="user_email" type="email" required value="<%= prefilled_email %>" class="appearance-none rounded-b-md rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email address" />
+        <input aria-label="Email address" name="user[email]" id="user_email" type="email" required value="<%= prefilled_email %>" class="appearance-none rounded-b-md rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-primary-300 focus:ring-primary-500 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email address" />
       </div>
       <div class="mb-2">
-        <input aria-label="Password" name="user[password]" id="user_password" type="password" required <%= "autofocus" if prefilled_email.present? %> class="appearance-none rounded-b-md rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:shadow-outline-blue focus:border-blue-300 focus:z-10 sm:text-sm sm:leading-5" placeholder="Password" />
+        <input aria-label="Password" name="user[password]" id="user_password" type="password" required <%= "autofocus" if prefilled_email.present? %> class="appearance-none rounded-b-md rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-primary-300 focus:ring-primary-500 focus:z-10 sm:text-sm sm:leading-5" placeholder="Password" />
       </div>
 
       <div class="mt-6">
