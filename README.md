@@ -67,5 +67,15 @@ git push heroku some_branch_name:master # deploys non-master branch
 
 **note**: Heroku must have 2 'dynos' enabled, `web` + `worker`, to process background jobs. if you don't need a queue, simply remove the `worker` task from `Procfile` and don't invoke `.delayed` functions.
 
-## Miscellaneous
-to use Postmark for emails, set `postmark_api_token` inside `application.yml`, then [verify your sending domain](https://account.postmarkapp.com/signature_domains/initialize_verification).
+## Mailers
+Speedrail is configured for transactional mailers by [Postmark](https://postmarkapp.com/), which costs $10 /month for 10k emails. to activate this, set `postmark_api_token` inside `application.yml` and then [verify your sending domain](https://account.postmarkapp.com/signature_domains/initialize_verification).
+
+if you prefer a free email service for low volume applications, consider [Resend](https://resend.com/). before [installing it](https://github.com/resendlabs/resend-ruby#setup), first uninstall Postmark from Speedrail by 1) removing `gem 'postmark-rails'` from the Gemfile, 2) running `bundle`, then 3) deleting the following lines from `application.rb`:
+
+```
+config.action_mailer.delivery_method = :postmark
+config.action_mailer.postmark_settings = { api_token: ENV['POSTMARK_API_TOKEN'] }
+```
+
+## Contributing
+anyone is welcome to submit a pull request with improvements of any kind.
