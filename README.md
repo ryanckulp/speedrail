@@ -65,6 +65,18 @@ git push heroku master # deploys master branch
 git push heroku some_branch_name:master # deploys non-master branch
 ```
 
+If you get `error: src refspec master does not match any` the probable cause is that you're using a new Github repo which defaults to master being called "main." You can deploy to Heroku using the branch deployment strategy pushing main over master:
+
+```sh
+git push heroku main:master
+```
+
+or update your Heroku account to also default to main and then deploy with:
+
+```sh
+git push heroku main
+```
+
 **note**: Heroku must have 2 'dynos' enabled, `web` + `worker`, to process background jobs. if you don't need a queue, simply remove the `worker` task from `Procfile` and don't invoke `.delayed` functions.
 
 ## Mailers
