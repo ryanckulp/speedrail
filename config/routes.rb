@@ -20,6 +20,9 @@ Rails.application.routes.draw do
     get "/#{page}", to: "pages##{page}", as: "#{page.gsub('-', '_')}"
   end
 
+  get 'oauth/authorize', to: 'oauth#authorize'
+  get 'oauth/callback', to: 'oauth#callback'
+
   # admin panels
   authenticated :user, -> user { user.admin? } do
     namespace :admin do
