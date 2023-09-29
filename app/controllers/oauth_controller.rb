@@ -9,10 +9,10 @@ class OauthController < ApplicationController
   # 2. after accepting oauth2 permissions, user is sent here with a '?code=' param
   def callback
     headers = { 'content-type' => 'application/x-www-form-urlencoded' }
-    auth = { username: client_id, password: ENV['TWITTER_OAUTH_CLIENT_SECRET'] }
+    auth = { username: ENV['TWITTER_OAUTH_CLIENT_ID'], password: ENV['TWITTER_OAUTH_CLIENT_SECRET'] }
 
     # 3. send the 'code' param back to twitter to swap it for an API token
-    @resp = HTTParty.post("https://api.twitter.com/2/oauth2/token?code=#{params[:code]}&grant_type=authorization_code&client_id=#{client_id}&redirect_uri=#{redirect_uri}&code_verifier=challenge",
+    @resp = HTTParty.post("https://api.twitter.com/2/oauth2/token?code=#{params[:code]}&grant_type=authorization_code&client_id=#{ENV['TWITTER_OAUTH_CLIENT_ID']}&redirect_uri=#{redirect_uri}&code_verifier=challenge",
       headers: headers,
       basic_auth: auth
     )
