@@ -31,4 +31,8 @@ Rails.application.routes.draw do
     # convenience helper
     get 'admin', to: 'admin/dashboard#index'
   end
+
+  # oauth routes
+  get 'oauth/authorize', to: 'oauth#authorize'
+  get 'oauth/callback', to: 'oauth#callback'
 end
