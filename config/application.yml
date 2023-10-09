@@ -1,0 +1,11 @@
+ADMIN_EMAIL: support@speedrail.com
+COMPANY_NAME: Speedrail
+POSTMARK_API_TOKEN: xxxx-yyy-zzzz
+development:
+  BASE_URL: http://localhost:3000
+  STRIPE_PRODUCT_PRICE_ID: price_1asdfasdf
+  STRIPE_SECRET_KEY:
+production:
+  BASE_URL: https://speedrail.com
+  STRIPE_PRODUCT_PRICE_ID: price_1asdfasdf
+  STRIPE_SECRET_KEY:
