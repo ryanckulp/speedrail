@@ -14,7 +14,7 @@ gem 'jbuilder'
 gem 'metamagic' # easily insert metatags for SEO / opengraph
 gem 'pg'
 gem 'postmark-rails'
-gem 'puma', '6'
+gem 'puma', '6.4.0'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rails', '7.1.0'
 gem 'redis'
