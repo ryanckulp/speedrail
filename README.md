@@ -43,7 +43,7 @@ get remote add speedrail
 # when you notice Speedrail updates on GitHub
 git pull
 git fetch speedrail
-git merge speedrail/master
+git merge speedrail/master --allow-unrelated-histories
 git checkout -b speedrail_updates
 git add .
 git push speedrail_updates
