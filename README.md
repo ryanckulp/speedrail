@@ -32,6 +32,22 @@ features:
 bin/dev # uses foreman to boot server, frontend, and bg job queue
 ```
 
+To keep your project up-to-date with the latest Speedrail changes over time:
+
+```
+# one time only
+get remote add speedrail
+
+# when you notice Speedrail updates on GitHub
+git pull
+git fetch speedrail
+git merge speedrail/master
+git checkout -b speedrail_updates
+git add .
+git push speedrail_updates
+# use GitHub UI to handle conflicts
+```
+
 **troubleshooting**
 
 ActionCable - to support WebSockets, run `rails g channel channel_name --assets` then add `mount ActionCable.server => '/cable'` to `config/routes.rb`. update `cable.yml` -> `production:` to include the following for Heroku to connect w/ Redis for `ActionCable.broadcast`:
