@@ -58,6 +58,18 @@ bundle exec rspec spec/dir_name # run all tests inside given directory
 HEADED=TRUE bundle exec rspec
 ```
 
+## Code Quality
+
+clean code helps keep projects manageable as they grow in complexity.
+
+```sh
+rubocop # checks your code against Ruby styling standards and calls out issues
+rubocop -A # automatically fixes issues, can lead to false negatives
+rubocop -a # automatically fixes "safe" issues, less aggressive than -A (uppercase)
+```
+
+**Rubocop is an optional feature**, however it runs automatically during GitHub CI checks. if you don't want to enforce the Rubocop styleguide, simply disable the `Rubocop Check` step inside `ci.yml`.
+
 ## Deploying
 ```sh
 figaro heroku:set -e production # you only need to do this once
