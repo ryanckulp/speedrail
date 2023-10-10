@@ -50,8 +50,12 @@ ssl_params:
 
 ## Testing
 ```
+# headless
 bundle exec rspec # run all tests inside spec/
 bundle exec rspec spec/dir_name # run all tests inside given directory
+
+# headed (in a real browser)
+HEADED=TRUE bundle exec rspec
 ```
 
 ## Deploying
