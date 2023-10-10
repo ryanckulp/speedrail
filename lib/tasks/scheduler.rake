@@ -6,6 +6,7 @@ end
 task :reminder_to_start_trial => :environment do
   User.where(created_at: 24.hours.ago..23.hours.ago).each do |user|
     next if user.paying_customer?
+
     UserMailer.reminder_to_start_trial(user).deliver_later
   end
 end

@@ -1,0 +1,98 @@
+inherit_mode:
+  merge:
+    - Exclude
+
+AllCops:
+  TargetRubyVersion: 3.2
+  DisplayCopNames: true
+  Exclude:
+    - bin/*
+    - tmp/**/*
+    - db/schema.rb
+    - vendor/*/**
+  SuggestExtensions:
+    rubocop-capybara: true
+    rubocop-factory_bot: true
+    rubocop-rails: true
+    rubocop-rspec: true
+
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/HashAlignment:
+  Enabled: true
+
+Lint/ConstantDefinitionInBlock:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Naming/VariableNumber:
+  Enabled: false
+
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/NumericLiterals:
+  Enabled: false
+
+Style/RedundantFreeze:
+  Enabled: false
+
+Style/RedundantSelf:
+  Enabled: false
+
+Style/StringLiterals:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Max: 20
+
+Metrics/MethodLength:
+  Max: 60
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/AbcSize:
+  Max: 50
+
+Metrics/PerceivedComplexity:
+  Max: 20
+
+Layout/LineLength:
+  Severity: warning
+  Max: 250
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+# Global variable is the only way to subscribe for more tickers in the websocket connection between Rails <-> Polygon
+Style/GlobalVars:
+  Enabled: false
