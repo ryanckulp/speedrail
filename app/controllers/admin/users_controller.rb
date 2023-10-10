@@ -2,8 +2,7 @@ class Admin::UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user
 
-  def edit
-  end
+  def edit; end
 
   def update
     @user.update(user_params)

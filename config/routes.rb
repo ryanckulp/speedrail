@@ -12,16 +12,16 @@ Rails.application.routes.draw do
   match '/cancel' => 'billing_portal#destroy', via: [:get]
 
   # static pages
-  pages = %w(
+  pages = %w[
     privacy terms
-  )
+  ]
 
   pages.each do |page|
-    get "/#{page}", to: "pages##{page}", as: "#{page.gsub('-', '_')}"
+    get "/#{page}", to: "pages##{page}", as: page.gsub('-', '_').to_s
   end
 
   # admin panels
-  authenticated :user, -> user { user.admin? } do
+  authenticated :user, ->(user) { user.admin? } do
     namespace :admin do
       resources :dashboard, only: [:index]
       resources :impersonations, only: [:new]

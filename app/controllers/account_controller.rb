@@ -2,8 +2,7 @@ class AccountController < ApplicationController
   before_action :authenticate_user!
   before_action :set_flashes
 
-  def index
-  end
+  def index; end
 
   def update
     current_user.update(account_update_params)
