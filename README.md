@@ -22,6 +22,8 @@ features:
 * background job queue via [Delayed](https://rubygems.org/gems/delayed)
 * paid subscriptions CRUD via [Stripe Checkout](https://stripe.com/checkout)
 * interactive charts via [Chartkick](https://chartkick.com)
+* automated testing via GitHub actions + PR status check
+* Rubocop for code style enforcement and linting auto-fixes
 
 ## Installation
 1. clone the repo
