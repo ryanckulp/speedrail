@@ -3,5 +3,5 @@ class User < ApplicationRecord
   include Onboardable
   include Billable
 
-  scope :subscribed, -> { where(paying_customer: true) }
+  scope :subscribed, -> { where.not(stripe_subscription_id: [nil, '']) }
 end

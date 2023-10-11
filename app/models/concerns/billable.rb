@@ -27,6 +27,6 @@ module Billable
       expand: ['subscriptions']
     })
     subscription_id = cust.subscriptions.first.id
-    update(stripe_subscription_id: subscription_id)
+    update(stripe_subscription_id: subscription_id, paying_customer: true)
   end
 end
