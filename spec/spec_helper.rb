@@ -1,8 +1,6 @@
 require 'capybara'
 server_port = 3055
 Capybara.server_port = server_port
-require 'webdrivers/chromedriver'
-require 'webdrivers/geckodriver'
 require 'selenium/webdriver'
 
 # https://github.com/teamcapybara/capybara#selenium
