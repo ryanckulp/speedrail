@@ -36,7 +36,7 @@ bin/dev # uses foreman to boot server, frontend, and bg job queue
 
 To keep your project up-to-date with the latest Speedrail changes over time:
 
-```
+```sh
 # one time only
 get remote add speedrail
 
@@ -54,7 +54,7 @@ git push speedrail_updates
 
 ActionCable - to support WebSockets, run `rails g channel channel_name --assets` then add `mount ActionCable.server => '/cable'` to `config/routes.rb`. update `cable.yml` -> `production:` to include the following for Heroku to connect w/ Redis for `ActionCable.broadcast`:
 
-```
+```rb
 ssl_params:
     verify_mode: <%= OpenSSL::SSL::VERIFY_NONE %>
 ```
@@ -67,7 +67,7 @@ ssl_params:
 ```
 
 ## Testing
-```
+```sh
 # headless
 bundle exec rspec # run all tests inside spec/
 bundle exec rspec spec/dir_name # run all tests inside given directory
@@ -118,7 +118,7 @@ Speedrail is configured for transactional mailers by [Postmark](https://postmark
 
 if you prefer a free email service for low volume applications, consider [Resend](https://resend.com/). before [installing it](https://github.com/resendlabs/resend-ruby#setup), first uninstall Postmark from Speedrail by 1) removing `gem 'postmark-rails'` from the Gemfile, 2) running `bundle`, then 3) deleting the following lines from `application.rb`:
 
-```
+```rb
 config.action_mailer.delivery_method = :postmark
 config.action_mailer.postmark_settings = { api_token: ENV['POSTMARK_API_TOKEN'] }
 ```
