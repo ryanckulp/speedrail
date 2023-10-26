@@ -10,7 +10,7 @@
           Billing Status: <%= red_green_message(current_user.paying_customer?, 'Active', 'Inactive') %><br>
         </div>
         <div class="flex-shrink">
-          <%= link_to 'Manage >>', billing_portal_path, data: { turbo: false }, class: "font-medium text-primary-500" %>
+          <%= button_to 'Manage >>', billing_portal_index_path, method: :post, data: { turbo: false }, class: "font-medium text-primary-500" %>
         </div>
       </div>
 

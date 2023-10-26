@@ -17,7 +17,6 @@ class AccountController < ApplicationController
   end
 
   def set_flashes
-    flash.now[:alert] = 'Subscription declined' if params[:aborted] == 'true'
     flash.now[:notice] = 'Subscription updated successfully' if params[:updated] == 'true'
   end
 end

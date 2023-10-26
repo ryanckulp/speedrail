@@ -18,15 +18,22 @@ module Billable
 
     update(stripe_customer_id: customer.id)
   end
-  # handle_asynchronously :setup_stripe_customer
 
-  # done after user adds payment method, for easy CVR metrics inside Stripe UI
+  # done after user adds payment method, for easy CVR metrics inside database
   def set_stripe_subscription
-    cust = Stripe::Customer.retrieve({
+    subscription_id = stripe_subscriptions&.first&.id
+    paying_customer = subscription_id ? true : false
+    update(stripe_subscription_id: subscription_id, paying_customer: paying_customer)
+  end
+
+  def stripe_subscriptions
+    stripe_customer.subscriptions
+  end
+
+  def stripe_customer
+    Stripe::Customer.retrieve({
       id: stripe_customer_id,
       expand: ['subscriptions']
     })
-    subscription_id = cust.subscriptions.first.id
-    update(stripe_subscription_id: subscription_id, paying_customer: true)
   end
 end
