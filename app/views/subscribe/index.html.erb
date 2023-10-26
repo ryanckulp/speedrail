@@ -1,39 +1,29 @@
 <%= render partial: "shared/heading", locals: { title: 'Start Trial', description: "Start your 14 day free trial of #{ENV['COMPANY_NAME']}." } %>
 
-<div class="text-center">
-  <!-- provide an image to compel user to add payment details -->
-  <!-- <%= image_path "", style: "display: inline-block; max-height: 375px;", class: "mt-6 object-center" %> -->
+<div id="checkout">
+  <!-- Checkout will insert the payment form here -->
 </div>
 
-<p class="mt-12 text-center">Click here to choose a plan and activate your account.</p>
-<div class="mt-2 justify-center text-center">
-  <div class="text-center inline-flex rounded-md shadow">
-    <button onclick="beginSubscription()" type="submit" class="items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700">
-      Start Free
-    </button>
-  </div>
-  <div class="mt-2 text-center">
-    <!-- bind this element to a live chat tool or mailto address -->
-    <a id="open-live-chat" href="#" onclick="return false;" class="font-medium text-primary-300 hover:text-primary-500">Still have questions?</a>
-  </div>
-</div>
-
+<script src="https://js.stripe.com/v3/"></script>
 <script type="text/javascript">
-  var beginSubscription = function() {
-    console.log('building subscription...');
+  // This is your test publishable API key.
+const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
 
-    $.ajax({
-      url: '<%= billing_portal_index_path %>',
-      method: 'POST',
-      dataType: 'json',
-      data: {},
-      success: function(data) {
-        console.log('success! portal url: ', data.url)
-        window.location.href = data.url;
-      },
-      error: function(data) {
-        window.alert('Sorry, something went wrong. Please try again.');
-      }
-    })
-  }
+initialize();
+
+// Create a Checkout Session as soon as the page loads
+async function initialize() {
+  const response = await fetch("/billing_portal", {
+    method: "POST",
+  });
+
+  const { clientSecret } = await response.json();
+
+  const checkout = await stripe.initEmbeddedCheckout({
+    clientSecret,
+  });
+
+  // Mount Checkout
+  checkout.mount('#checkout');
+}
 </script>
