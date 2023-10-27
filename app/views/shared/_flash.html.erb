@@ -1,6 +1,6 @@
 <% visibility = 'hidden' unless (flash[:alert].present? || flash[:notice].present?) %>
 
-<div class="<%= visibility %> md:grid md:grid-cols-3 md:gap-6 mt-12">
+<div class="<%= visibility %> md:grid md:grid-cols-3 md:gap-6 mt-12 animate-[flashfade_4s_both]" data-controller="removals" data-action="animationend->removals#remove">
   <div class="md:col-span-1"></div>
   <div class="flex justify-center">
     <% if flash[:alert].present? %>
