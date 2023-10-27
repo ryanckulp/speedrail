@@ -41,4 +41,11 @@
       this.parentElement.remove();
     });
   }
+
+  // Remove flash messages after the animation ends
+  document.addEventListener('animationend', function(event) {
+    if (event.animationName === 'flashfade') {
+      event.target.remove();
+    }
+  });
 </script>
