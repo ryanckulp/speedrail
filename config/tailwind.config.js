@@ -18,7 +18,7 @@ module.exports = {
         primary: colors.lime
       },
       keyframes: {
-        flashfade: { "0%, 100%": { opacity: "0" }, "5%, 60%": { opacity: "1" } },
+        flashfade: { "0%, 100%": { opacity: "0" }, "5%, 80%": { opacity: "1" } },
       },
     },
   },
