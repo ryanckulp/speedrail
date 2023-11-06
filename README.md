@@ -39,7 +39,7 @@ To keep your project up-to-date with the latest Speedrail changes over time:
 
 ```sh
 # one time only
-get remote add speedrail
+git remote add speedrail
 
 # when you notice Speedrail updates on GitHub
 git pull
