@@ -29,6 +29,7 @@ class BillingPortalController < ApplicationController
     session = Stripe::Checkout::Session.create({
       ui_mode: 'embedded',
       customer: current_user.stripe_customer_id,
+      customer_email: current_user.email,
       allow_promotion_codes: true,
       payment_method_types: ['card'],
       line_items: [{
