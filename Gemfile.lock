@@ -190,6 +190,8 @@ GEM
     net-smtp (0.4.0)
       net-protocol
     nio4r (2.5.9)
+    nokogiri (1.15.4-arm64-darwin)
+      racc (~> 1.4)
     nokogiri (1.15.4-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-linux)
@@ -329,6 +331,8 @@ GEM
       railties (>= 6.0.0)
     stringio (3.0.8)
     stripe (9.4.0)
+    tailwindcss-rails (2.0.32-arm64-darwin)
+      railties (>= 6.0.0)
     tailwindcss-rails (2.0.32-x86_64-darwin)
       railties (>= 6.0.0)
     tailwindcss-rails (2.0.32-x86_64-linux)
@@ -359,6 +363,7 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
+  arm64-darwin-22
   x86_64-darwin-21
   x86_64-linux
 
@@ -403,7 +408,7 @@ DEPENDENCIES
   web-console
 
 RUBY VERSION
-   ruby 3.2.0p0
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.4.18
