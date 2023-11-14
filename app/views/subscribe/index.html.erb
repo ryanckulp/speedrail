@@ -1,4 +1,4 @@
-<%= render partial: "shared/heading", locals: { title: 'Start Trial', description: "Start your 14 day free trial of #{ENV['COMPANY_NAME']}." } %>
+<%= render partial: "shared/heading", locals: { title: 'Start Trial', description: "Subscribe to #{ENV['COMPANY_NAME']}." } %>
 
 <div id="checkout">
   <!-- Checkout will insert the payment form here -->
@@ -13,8 +13,8 @@ initialize();
 
 // Create a Checkout Session as soon as the page loads
 async function initialize() {
-  const response = await fetch("/billing_portal", {
-    method: "POST",
+  const response = await fetch("/billing_portal.json", {
+    method: 'POST'
   });
 
   const { clientSecret } = await response.json();
