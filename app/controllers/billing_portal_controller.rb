@@ -16,9 +16,12 @@ class BillingPortalController < ApplicationController
 
   def create
     if current_user.finished_onboarding?
-      redirect_to modify_subscription, allow_other_host: true
+      redirect_to modify_subscription, allow_other_host: true # /account view
     else
-      render json: create_subscription
+      respond_to do |format|
+        format.html { redirect_to subscribe_index_path } # /account view
+        format.json { render json: create_subscription } # /subscribe view
+      end
     end
   end
 
@@ -29,7 +32,6 @@ class BillingPortalController < ApplicationController
     session = Stripe::Checkout::Session.create({
       ui_mode: 'embedded',
       customer: current_user.stripe_customer_id,
-      customer_email: current_user.email,
       allow_promotion_codes: true,
       payment_method_types: ['card'],
       line_items: [{
