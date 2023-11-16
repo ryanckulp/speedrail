@@ -7,7 +7,7 @@ class BillingPortalController < ApplicationController
 
     # can add more checks, just inspect the 'session' and 'session.customer_details' object
     if session.status == 'complete'
-      current_user.delay.set_stripe_subscription
+      current_user.set_stripe_subscription
       redirect_to dashboard_index_path, notice: 'Your account is now active!'
     else
       redirect_to subscribe_index_path, alert: "Please subscribe to continue."
