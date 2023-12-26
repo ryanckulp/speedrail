@@ -1,32 +1,33 @@
 <div class="min-h-screen flex justify-center py-12 px-4 sm:px-6 lg:px-8">
   <div class="max-w-md w-full">
-    <%= render 'devise/shared/devise_heading', title: 'Log In' %>
+    <%= render 'devise/shared/devise_heading', title: 'Log in to your account' %>
+    <%= render "devise/shared/devise_sub_heading", subtitle: "Welcome back! Please enter your details." %>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: "mt-8"}) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="mb-2">
-        <input aria-label="Email address" autofocus name="user[email]" id="user_email" type="email" required class="appearance-none rounded-b-md rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-primary-300 focus:ring-primary-500 focus:z-10 sm:text-sm sm:leading-5" placeholder="Email address" />
+        <input aria-label="Email address" autofocus name="user[email]" id="user_email" type="email" required class="my-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring focus:ring-primary-500 focus:ring-opacity-50" placeholder="Email address" />
       </div>
       <div class="mb-2">
-        <input aria-label="Password" name="user[password]" id="user_password" type="password" required class="appearance-none rounded-b-md rounded-t-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:border-primary-300 focus:ring-primary-500 focus:z-10 sm:text-sm sm:leading-5" placeholder="Password" />
+        <input aria-label="Password" name="user[password]" id="user_password" type="password" required class="my-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-500 focus:ring focus:ring-primary-500 focus:ring-opacity-50" placeholder="Password" />
       </div>
 
       <div class="mt-6 flex items-center justify-between">
         <div class="flex items-center">
-          <input name="user[remember_me]" id="user_remember_me" type="checkbox" class="form-checkbox h-4 w-4 text-primary transition duration-150 ease-in-out text-primary-500 focus:border-primary-300 focus:ring-primary-500 rounded" />
+          <input name="user[remember_me]" id="user_remember_me" type="checkbox" class="form-checkbox h-4 w-4 transition duration-150 ease-in-out text-primary-700 focus:border-primary-300 focus:ring-primary-500 rounded" />
           <label for="user_remember_me" class="ml-2 block text-sm leading-5 text-gray-900">
             Remember Me
           </label>
         </div>
 
         <div class="text-sm leading-5">
-          <%= link_to 'Forgot password?', new_user_password_path, class: 'font-medium text-primary hover:text-primary-500 focus:outline-none focus:underline transition ease-in-out duration-150' %>
+          <%= link_to 'Forgot password?', new_user_password_path, class: 'font-medium hover:text-gray-500 focus:outline-none focus:underline transition ease-in-out duration-150' %>
         </div>
       </div>
 
       <div class="mt-6">
-        <button type="submit" data-turbo="false" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none transition duration-150 ease-in-out">
+        <button type="submit" data-turbo="false" class="group relative w-full flex justify-center py-2.5 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none">
           <span class="absolute left-0 inset-y-0 flex items-center pl-3">
             <svg class="h-5 w-5 transition ease-in-out duration-150" fill="white" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
@@ -36,5 +37,10 @@
         </button>
       </div>
     <% end %>
+
+    <div class="mt-6 text-center text-gray-400">
+      Don't have an account?
+      <%= link_to 'Sign up', new_user_registration_path, class: 'font-medium text-gray-500 hover:text-gray-600 focus:outline-none focus:underline transition ease-in-out duration-150' %>
+    </div>
   </div>
 </div>
