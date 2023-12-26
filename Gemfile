@@ -12,6 +12,7 @@ gem 'httparty'
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'metamagic' # easily insert metatags for SEO / opengraph
+gem 'methodz' # query db-backed object methods by partial name or type
 gem 'pg'
 gem 'postmark-rails'
 gem 'puma', '6.4.0'
