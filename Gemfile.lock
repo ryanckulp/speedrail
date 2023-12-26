@@ -175,7 +175,7 @@ GEM
     matrix (0.4.2)
     metamagic (3.1.7)
       rails (>= 3.0.0)
-    methodz (0.1.6)
+    methodz (0.1.8)
     mini_mime (1.1.5)
     minitest (5.20.0)
     msgpack (1.7.2)
