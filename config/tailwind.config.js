@@ -16,7 +16,10 @@ module.exports = {
       // custom color palette for branding, see https://tailwindcss.com/docs/customizing-colors
       colors: {
         primary: colors.lime
-      }
+      },
+      keyframes: {
+        flashfade: { "0%, 100%": { opacity: "0" }, "5%, 80%": { opacity: "1" } },
+      },
     },
   },
   plugins: [
