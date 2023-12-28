@@ -17,7 +17,7 @@ gem 'pg'
 gem 'postmark-rails'
 gem 'puma', '6.4.0'
 gem 'rack-cors', :require => 'rack/cors'
-gem 'rails', '7.1.1'
+gem 'rails', '7.1.2'
 gem 'redis'
 gem 'rename', '1.1.3', git: 'https://github.com/ryanckulp/rename' # remove this gem after use
 gem 'sprockets-rails'
