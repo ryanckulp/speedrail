@@ -16,10 +16,10 @@ class BlogPost < ApplicationRecord
       base_slug = slug.blank? ? title.parameterize : slug
       other = self.class.where("slug LIKE ?", "#{base_slug}%")
       self.slug = if other.exists?
-        "#{base_slug}-#{other.count + 1}"
-      else
-        base_slug
-      end
+                    "#{base_slug}-#{other.count + 1}"
+                  else
+                    base_slug
+                  end
     end
   end
 end

@@ -9,6 +9,7 @@ gem 'devise'
 gem 'figaro', git: 'https://github.com/ryanckulp/figaro' # patched version for Ruby 3.2.0 File.exist?()
 gem 'groupdate' # used by Chartkick
 gem 'httparty'
+gem "image_processing", ">= 1.2"
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'metamagic' # easily insert metatags for SEO / opengraph
@@ -25,7 +26,6 @@ gem 'stimulus-rails'
 gem 'stripe'
 gem 'tailwindcss-rails'
 gem 'turbo-rails'
-gem "image_processing", ">= 1.2"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

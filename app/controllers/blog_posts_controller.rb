@@ -10,18 +10,15 @@ class BlogPostsController < ApplicationController
   end
 
   # GET /blog_posts/slug
-  def show
-  end
+  def show; end
 
   # GET /blog_posts/new
   def new
     @blog_post = BlogPost.new
-
   end
 
   # GET /blog_posts/slug/edit
-  def edit
-  end
+  def edit; end
 
   # POST /blog_posts
   def create
