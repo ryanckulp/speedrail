@@ -1,0 +1,235 @@
+/*
+ * Provides a drop-in pointer for the default Trix stylesheet that will format the toolbar and
+ * the trix-editor content (whether displayed or under editing). Feel free to incorporate this
+ * inclusion directly in any other asset bundle and remove this file.
+ *
+ *= require trix
+*/
+
+/*
+ * We need to override trix.css’s image gallery styles to accommodate the
+ * <action-text-attachment> element we wrap around attachments. Otherwise,
+ * images in galleries will be squished by the max-width: 33%; rule.
+*/
+
+.link_to_embed {
+  white-space: normal;
+  margin-top: 1rem;
+  margin-left: 1rem;
+
+  [data-behavior="embed_url"] {
+    display: inline-block;
+    margin-left: 0.75rem;
+  }
+}
+
+trix-editor:empty:not(:focus)::before {
+  color: #9ca3af;
+}
+
+.trix-content img {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.trix-content a {
+  color: #1b64f3;
+  text-decoration: underline;
+}
+
+.trix-content a:hover {
+  color: #1c4ed8;
+}
+
+.trix-content {
+  .attachment-gallery {
+    > action-text-attachment,
+    > .attachment {
+      flex: 1 0 33%;
+      padding: 0 0.5em;
+      max-width: 33%;
+    }
+
+    &.attachment-gallery--2,
+    &.attachment-gallery--4 {
+      > action-text-attachment,
+      > .attachment {
+        flex-basis: 50%;
+        max-width: 50%;
+      }
+    }
+  }
+
+  .embed {
+    display: inline-block;
+    line-height: 1;
+    margin: 1em 0 !important;
+    padding: 0 !important;
+    width: 100%;
+  }
+
+  iframe,
+  twitter-widget {
+    display: inline-block !important;
+  }
+}
+
+/* Trix attachment formatting */
+.attachment--preview {
+  margin: 0.6em 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Tribute styles */
+
+.tribute-container ul {
+  list-style-type: disc;
+  margin: 0;
+  padding: 0;
+}
+
+.tribute-container {
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1), 0 5px 20px rgba(0, 0, 0, 0.05);
+
+  ul {
+    list-style-type: disc;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    background: #fff;
+    padding: 0.2em 1em;
+    min-width: 15em;
+    max-width: 100%;
+  }
+
+  .highlight {
+    background: #f2f2f2;
+    color: #fff;
+
+    span {
+      font-weight: bold;
+    }
+  }
+}
+
+/* Tweet embeds */
+blockquote.twitter-tweet {
+  display: inline-block;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  border-color: #eee #ddd #bbb;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin: 10px 5px;
+  padding: 0 16px 16px;
+  max-width: 468px;
+}
+
+blockquote.twitter-tweet p {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+blockquote.twitter-tweet a {
+  color: inherit;
+  font-weight: normal;
+  text-decoration: none;
+  outline: 0 none;
+}
+
+blockquote.twitter-tweet a:hover,
+blockquote.twitter-tweet a:focus {
+  text-decoration: underline;
+}
+
+blockquote.twitter-tweet {
+  position: relative;
+  background: white;
+  padding: 72px 20px 28px !important;
+  box-shadow: none;
+  border: 1px solid #e1e8ed;
+  border-radius: 4px;
+  margin: 0;
+  font-style: normal;
+  text-align: left;
+  width: 500px;
+  max-width: 100%;
+}
+
+@media (max-width: 369px) {
+  blockquote.twitter-tweet {
+    padding: 60px 17.5px 21.5px !important;
+  }
+}
+
+blockquote.twitter-tweet:before {
+  content: "Follow";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5.5px 12px 6.5px 33px;
+  background: url("data:image/svg+xml,%3Csvg height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m18.89 7.012c.808-.496 1.343-1.173 1.605-2.034-.786.417-1.569.703-2.351.861-.703-.756-1.593-1.14-2.66-1.14-1.043 0-1.924.366-2.643 1.078-.715.717-1.076 1.588-1.076 2.605 0 .309.039.585.117.819-3.076-.105-5.622-1.381-7.628-3.837-.34.601-.51 1.213-.51 1.846 0 1.301.549 2.332 1.645 3.089-.625-.053-1.176-.211-1.645-.47 0 .929.273 1.705.82 2.388.549.676 1.254 1.107 2.115 1.291-.312.08-.641.118-.979.118-.312 0-.533-.026-.664-.083.23.757.664 1.371 1.291 1.841.625.472 1.344.721 2.152.743-1.332 1.045-2.855 1.562-4.578 1.562-.422 0-.721-.006-.902-.038 1.697 1.102 3.586 1.649 5.676 1.649 2.139 0 4.029-.542 5.674-1.626 1.645-1.078 2.859-2.408 3.639-3.974.784-1.564 1.172-3.192 1.172-4.892v-.468c.758-.57 1.371-1.212 1.84-1.921-.68.293-1.383.492-2.11.593z' fill='%23ccc'/%3E%3C/svg%3E") 9px center no-repeat;
+  background-size: 21px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #ccc;
+  font-size: 14px;
+}
+
+@media (max-width: 369px) {
+  blockquote.twitter-tweet:before {
+    display: none;
+  }
+}
+
+blockquote.twitter-tweet:after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 36px;
+  height: 36px;
+  background: #eee url("data:image/svg+xml,%3Csvg height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m12 12c2.21 0 4-1.795 4-4 0-2.21-1.79-4-4-4s-4 1.79-4 4c0 2.205 1.79 4 4 4zm0 2c-2.665 0-8 1.335-8 4v2h16v-2c0-2.665-5.335-4-8-4z' fill='%23444'/%3E%3C/svg%3E") center center no-repeat;
+  border-radius: 4px;
+}
+
+@media (max-width: 369px) {
+  blockquote.twitter-tweet:after {
+    top: 17.5px;
+    left: 17.5px;
+  }
+}
+
+blockquote.twitter-tweet p {
+  white-space: pre-wrap;
+  margin: 0 0 28px;
+}
+
+@media (max-width: 369px) {
+  blockquote.twitter-tweet p {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+}
+
+blockquote.twitter-tweet a {
+  border: 0;
+  box-shadow: none;
+  color: #2b7bb9;
+}
+
+blockquote.twitter-tweet > a {
+  color: #888;
+}
