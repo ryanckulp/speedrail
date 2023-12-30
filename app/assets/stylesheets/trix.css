@@ -549,6 +549,7 @@ trix-editor .attachment__metadata .attachment__size {
   border-radius: 4px;
   overflow-x: auto;
   text-wrap: wrap;
+  color: #333;
 }
 .trix-content img {
   max-width: 100%;
