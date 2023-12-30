@@ -2,10 +2,10 @@
   <nav class="flex items-center justify-between flex-wrap">
     <div class="flex items-center flex-no-shrink text-white mr-6">
       <% logo_path = current_user ? dashboard_index_path : root_path %>
-      <%= link_to logo_path do %>
+      <%= link_to logo_path, class:"flex items-center hover:opacity-80" do %>
         <%= image_tag "avatar.png",  style: "max-height: 42px" %>
+        <span class="font-semibold text-xl tracking-tight text-primary-600"><%= ENV['COMPANY_NAME'] %></span>
       <% end %>
-      <span class="font-semibold text-xl tracking-tight text-primary-600"><%= ENV['COMPANY_NAME'] %></span>
     </div>
     <div class="block sm:hidden">
       <button class="navbar-burger flex items-center px-3 py-2 border rounded text-white border-white hover:text-white hover:border-white" data-action="click->header#toggleMobileNav">
@@ -17,6 +17,7 @@
 
     <div id="main-nav" class="w-full flex-grow sm:flex text-right sm:w-auto hidden" data-header-target="mainNav">
       <div class="text-sm sm:flex-grow">
+        <%= link_to 'Blog', blog_posts_path, class: nav_link_classes('blog') %>
         <% if current_user %>
           <%= link_to 'Admin', admin_dashboard_index_path, class: nav_link_classes('admin/dashboard') if current_user.admin? %>
           <%= link_to 'Dashboard', dashboard_index_path, class: nav_link_classes('dashboard') %>

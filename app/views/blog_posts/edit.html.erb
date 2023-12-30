@@ -1,0 +1,17 @@
+<% meta title: "Edit blog post", description: "Edit blog post." %>
+
+<h1 class="text-xl text-center font-bold leading-tight text-gray-900 mx-4 lg:mx-0 mt-8 lg:mt-16">Edit blog post</h1>
+
+<div class="flex justify-center flex-col space-y-3 mt-4 text-center">
+  <%= link_to "Show blog post", blog_post_path(@blog_post.slug), class:"mx-auto w-fit shrink-0 mt-4 md:mt-0 inline-flex items-center justify-center sm:justify-start px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" %>
+  <%= link_to "Back to blog posts", blog_posts_path, class:"mx-auto w-fit shrink-0 mt-4 md:mt-0 inline-flex items-center justify-center sm:justify-start px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" %>
+</div>
+
+<div class="max-w-2xl mx-auto mt-8">
+  <%= render "form", blog_post: @blog_post %>
+</div>
+
+<div class="flex justify-center flex-col space-y-3 mt-4 mb-8 text-center">
+  <%= link_to "Show blog post", blog_post_path(@blog_post.slug), class:"mx-auto w-fit shrink-0 mt-4 md:mt-0 inline-flex items-center justify-center sm:justify-start px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" %>
+  <%= link_to "Back to blog posts", blog_posts_path, class:"mx-auto w-fit shrink-0 mt-4 md:mt-0 inline-flex items-center justify-center sm:justify-start px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" %>
+</div>

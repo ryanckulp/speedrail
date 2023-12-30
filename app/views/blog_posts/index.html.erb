@@ -1,0 +1,60 @@
+<% meta title: "Blog posts", description: "All blog posts from #{ENV['COMPANY_NAME']}." %>
+
+<%# Title %>
+<div class="mt-16 mx-auto max-w-3xl px-4 sm:mt-24">
+  <div class="text-center">
+    <h1 class="text-2xl tracking-tight font-extrabold sm:text-3xl md:text-4xl font-display text-gray-800">
+      <span class="block">Blog posts</span>
+    </h1>
+    <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+      All <%= ENV['COMPANY_NAME'] %> blog posts.
+    </p>
+  </div>
+</div>
+
+<% if current_user&.admin? %>
+  <%# New blog post button, only accessibly by admins %>
+  <div class="mt-8 mx-auto max-w-fit">
+    <div class="group relative w-full flex justify-center py-2.5 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none">
+      <div class="text-base flex justify-center items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 -ml-1 mr-2" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path>
+        </svg>
+        <%= link_to new_blog_post_path, class: "focus:outline-none" do %>
+          <span class="absolute inset-0" aria-hidden="true"></span>
+          New blog post
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="font-inter antialiased text-gray-800 tracking-tight my-16">
+  <main class="grow">
+    <section>
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <%# Blog post list %>
+          <% @blog_posts.each do |blog_post| %>
+            <%= render blog_post %>
+          <% end %>
+        </div>
+      </div>
+
+      <% if current_user && current_user.admin? && @drafts.any? %>
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 mt-16 border border-dashed bg-white py-12">
+          <p class="text-2xl tracking-tight font-extrabold sm:text-2xl md:text-3xl font-display text-gray-800">
+            Drafts
+          </p>
+          <div class="mx-auto mt-8 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+            <%# Drafts %>
+            <% @drafts.each do |blog_post| %>
+              <%= render blog_post %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </section>
+  </main>
+
+</div>
