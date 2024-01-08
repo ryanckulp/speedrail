@@ -15,7 +15,7 @@ gem 'metamagic' # easily insert metatags for SEO / opengraph
 gem 'methodz' # query db-backed object methods by partial name or type
 gem 'pg'
 gem 'postmark-rails'
-gem 'puma', '6.4.0'
+gem 'puma', '6.4.2'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rails', '7.1.2'
 gem 'redis'

@@ -191,7 +191,7 @@ GEM
       timeout
     net-smtp (0.4.0)
       net-protocol
-    nio4r (2.5.9)
+    nio4r (2.7.0)
     nokogiri (1.15.4-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.15.4-x86_64-darwin)
@@ -212,7 +212,7 @@ GEM
     psych (5.1.1.1)
       stringio
     public_suffix (5.0.3)
-    puma (6.4.0)
+    puma (6.4.2)
       nio4r (~> 2.0)
     racc (1.7.3)
     rack (3.0.8)
@@ -388,7 +388,7 @@ DEPENDENCIES
   methodz
   pg
   postmark-rails
-  puma (= 6.4.0)
+  puma (= 6.4.2)
   rack-cors
   rails (= 7.1.2)
   redis
