@@ -13,9 +13,8 @@
   <div class="flex flex-col space-y-6">
     <% unless turbo_native_app? %>
     <% end %>
-    <div class="bg-white border shadow px-4 py-5 lg:rounded-lg sm:p-6">
-      <div>
-
+    <div class="bg-white border shadow pt-5 lg:rounded-lg">
+      <div class="px-4">
         <div class="mt-5 md:mt-0 md:col-span-2">
           <div class="space-y-6">
             <div class="sm:col-span-3">
@@ -69,15 +68,14 @@
               </div>
             </div>
 
-            <div class="field relative border rounded-md mt-2 p-2 min-h-[175px] border-gray-300 group">
-              <%= form.rich_text_area :body, placeholder: "Write your blog post...", required: true, class:"group-focus:ring-gray-500 group-focus:border-gray-500" %>
-            </div>
-
-            <div class="flex justify-center items-center mt-4">
-              <%= form.submit "Save", class:"group relative w-full flex justify-center py-2.5 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none cursor-pointer"%>
+            <div class="field relative border rounded-lg min-h-[175px] border-gray-300 group">
+              <%= form.rich_text_area :body, placeholder: "Write your blog post...", required: true, class:"group-focus:ring-gray-500 group-focus:border-gray-500 prose pb-5" %>
             </div>
           </div>
         </div>
+      </div>
+      <div class="flex justify-center items-center mt-4 sticky bottom-0 px-4 py-5 bg-gray-50 border-t rounded-b-lg">
+        <%= form.submit "Save", class:"group relative w-full flex justify-center py-2.5 px-4 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-primary-600 hover:bg-primary-700 focus:outline-none cursor-pointer"%>
       </div>
     </div>
   </div>

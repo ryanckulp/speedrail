@@ -1,81 +1,39 @@
-@charset "UTF-8";
+/* Change text placeholder color to gray */
+trix-editor:empty:not(:focus)::before {
+  color: #6c7280;
+}
+
+/* Trix editor */
 trix-editor {
   border-radius: 3px;
   margin-top: 4px;
-  padding: 0.2em 0.6em;
+  padding: 0.2em 1em;
   min-height: 5em;
   outline: none;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   border-color: #333;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
   line-height: 1.25rem;
 }
 
-/* Hide attachement file, link button, code snippet, increase level, decrease level, and title */
-
-.trix-button--icon-heading-1 {
-  display: none !important;
+trix-editor .attachment__caption-editor {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-align: center;
+  vertical-align: top;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
-/* Change text placeholder color to green */
-trix-editor:empty:not(:focus)::before {
-  color: #6c7280;
-}
-
-trix-editor a {
-  color: #1b64f3;
-  text-decoration: underline;
-}
-
-trix-editor a:hover {
-  color: #1c4ed8;
-}
-
-trix-editor h1 {
-  font-size: 2em;
-  line-height: 1.6;
-  font-weight: 700;
-}
-
-trix-editor h2 {
-  font-size: 1.8em;
-  line-height: 1.6;
-  font-weight: 700;
-}
-trix-editor h3 {
-  font-size: 1.5em;
-  line-height: 1.6;
-  font-weight: 700;
-}
-
-trix-editor blockquote {
-  border: 0 solid #ccc;
-  border-left-width: 0.3em;
-  margin-left: 0.3em;
-  padding-left: 0.6em;
-}
-trix-editor [dir="rtl"] blockquote,
-trix-editor blockquote[dir="rtl"] {
-  border-width: 0;
-  border-right-width: 0.3em;
-  margin-right: 0.3em;
-  padding-right: 0.6em;
-}
-trix-editor ol {
-  list-style-type: decimal;
-}
-
-trix-editor ul {
-  list-style-type: disc;
-}
-trix-editor li {
-  margin-left: 1.25em;
-}
-
-trix-editor [dir="rtl"] li {
-  margin-right: 1em;
-}
 trix-editor pre {
   display: inline-block;
   width: 100%;
@@ -83,8 +41,8 @@ trix-editor pre {
   font-family: monospace;
   font-size: 0.9em;
   padding: 0.5em;
-  white-space: pre;
   background-color: #eee;
+  color: #333;
   border-radius: 4px;
   overflow-x: auto;
   text-wrap: wrap;
@@ -92,17 +50,78 @@ trix-editor pre {
 trix-editor img {
   max-width: 100%;
   height: auto;
+  border-radius: 4px;
 }
 
+trix-editor .trix-button.trix-active {
+  background: #e0e0e0;
+}
+
+/* Trix content */
+
+.trix-content * {
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+
+.trix-content h1 {
+  font-size: 2em;
+  line-height: 1.6;
+  font-weight: 700;
+}
+.trix-content h2 {
+  font-size: 1.5em;
+  line-height: 1.6;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  font-weight: 700;
+}
+.trix-content h3 {
+  font-size: 1.3em;
+  line-height: 1.6;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+  .trix-content h1 {
+    font-size: 1.6em;
+  }
+
+  .trix-content h2 {
+    font-size: 1.3em;
+  }
+  .trix-content h3 {
+    font-size: 1.1em;
+  }
+}
+
+.trix-content pre {
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  font-family: monospace;
+  border-radius: 4px;
+  overflow-x: auto;
+  text-wrap: wrap;
+}
+
+/* Trix Toolbar */
+
+/* Make the toolbar sticky by adding a "relative" class for the rich text parent div */
 trix-toolbar {
-  border-bottom: none;
+  border-bottom: #d1d5dc 1px solid;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  padding: 0em 0.2em;
+  padding: 0.4em;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-top-right-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
 }
-trix-toolbar * {
-  box-sizing: border-box;
-}
+
 trix-toolbar .trix-button-row {
   display: flex;
   flex-wrap: nowrap;
@@ -112,11 +131,7 @@ trix-toolbar .trix-button-row {
 trix-toolbar .trix-button-group {
   display: flex;
 }
-@media (max-device-width: 768px) {
-  trix-toolbar .trix-button-group:not(:first-child) {
-    margin-left: 0;
-  }
-}
+
 trix-toolbar .trix-button-group-spacer {
   flex-grow: 1;
 }
@@ -147,21 +162,10 @@ trix-toolbar .trix-button.trix-active {
 trix-toolbar .trix-button:hover {
   background: #f1f1f1;
 }
-trix-toolbar .trix-button:not(:disabled) {
-  cursor: pointer;
-}
-trix-toolbar .trix-button:disabled {
-  color: rgba(0, 0, 0, 0.125);
-}
-@media (max-device-width: 768px) {
-  trix-toolbar .trix-button {
-    letter-spacing: -0.01em;
-    padding: 0 0.3em;
-  }
-}
+
 trix-toolbar .trix-button--icon {
-  width: 2.2em;
-  height: 2em;
+  width: 2.4em;
+  height: 2.2em;
   max-width: calc(0.8em + 4vw);
   text-indent: -9999px;
 }
@@ -170,6 +174,10 @@ trix-toolbar .trix-button--icon {
     height: 2em;
     max-width: calc(0.8em + 3.5vw);
   }
+}
+
+trix-toolbar .trix-button--icon:after {
+  display: none;
 }
 trix-toolbar .trix-button--icon::before {
   display: inline-block;
@@ -183,23 +191,7 @@ trix-toolbar .trix-button--icon::before {
   background-position: center;
   background-repeat: no-repeat;
 }
-@media (max-device-width: 768px) {
-  trix-toolbar .trix-button--icon::before {
-    right: 6%;
-    left: 6%;
-  }
-}
-trix-toolbar .trix-button--icon.trix-active::before {
-  opacity: 1;
-}
-trix-toolbar .trix-button--icon:disabled::before {
-  opacity: 0.125;
-}
-trix-toolbar .trix-button--icon-attach::before {
-  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M16.5%206v11.5a4%204%200%201%201-8%200V5a2.5%202.5%200%200%201%205%200v10.5a1%201%200%201%201-2%200V6H10v9.5a2.5%202.5%200%200%200%205%200V5a4%204%200%201%200-8%200v12.5a5.5%205.5%200%200%200%2011%200V6h-1.5z%22%2F%3E%3C%2Fsvg%3E);
-  top: 8%;
-  bottom: 4%;
-}
+
 trix-toolbar .trix-button--icon-bold::before {
   background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M15.6%2011.8c1-.7%201.6-1.8%201.6-2.8a4%204%200%200%200-4-4H7v14h7c2.1%200%203.7-1.7%203.7-3.8%200-1.5-.8-2.8-2.1-3.4zM10%207.5h3a1.5%201.5%200%201%201%200%203h-3v-3zm3.5%209H10v-3h3.5a1.5%201.5%200%201%201%200%203z%22%2F%3E%3C%2Fsvg%3E);
 }
@@ -216,7 +208,13 @@ trix-toolbar .trix-button--icon-quote::before {
   background-image: url(data:image/svg+xml,%3Csvg%20version%3D%221%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M6%2017h3l2-4V7H5v6h3zm8%200h3l2-4V7h-6v6h3z%22%2F%3E%3C%2Fsvg%3E);
 }
 trix-toolbar .trix-button--icon-heading-1::before {
-  background-image: url(data:image/svg+xml,%3Csvg%20version%3D%221%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M12%209v3H9v7H6v-7H3V9h9zM8%204h14v3h-6v12h-3V7H8V4z%22%2F%3E%3C%2Fsvg%3E);
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20class%3D%22lucide%20lucide-heading-1%22%3E%3Cpath%20d%3D%22M4%2012h8%22/%3E%3Cpath%20d%3D%22M4%2018V6%22/%3E%3Cpath%20d%3D%22M12%2018V6%22/%3E%3Cpath%20d%3D%22m17%2012%203-2v8%22/%3E%3C/svg%3E);
+}
+trix-toolbar .trix-button--icon-heading-2::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20class%3D%22lucide%20lucide-heading-2%22%3E%3Cpath%20d%3D%22M4%2012h8%22/%3E%3Cpath%20d%3D%22M4%2018V6%22/%3E%3Cpath%20d%3D%22M12%2018V6%22/%3E%3Cpath%20d%3D%22M21%2018h-4c0-4%204-3%204-6%200-1.5-2-2.5-4-1%22/%3E%3C/svg%3E);
+}
+trix-toolbar .trix-button--icon-heading-3::before {
+  background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20class%3D%22lucide%20lucide-heading-3%22%3E%3Cpath%20d%3D%22M4%2012h8%22/%3E%3Cpath%20d%3D%22M4%2018V6%22/%3E%3Cpath%20d%3D%22M12%2018V6%22/%3E%3Cpath%20d%3D%22M17.5%2010.5c1.7-1%203.5%200%203.5%201.5a2%202%200%200%201-2%202%22/%3E%3Cpath%20d%3D%22M17%2017.5c2%201.5%204%20.3%204-1.5a2%202%200%200%200-2-2%22/%3E%3C/svg%3E);
 }
 trix-toolbar .trix-button--icon-code::before {
   background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M18.2%2012L15%2015.2l1.4%201.4L21%2012l-4.6-4.6L15%208.8l3.2%203.2zM5.8%2012L9%208.8%207.6%207.4%203%2012l4.6%204.6L9%2015.2%205.8%2012z%22%2F%3E%3C%2Fsvg%3E);
@@ -244,18 +242,16 @@ trix-toolbar .trix-button--icon-decrease-nesting-level::before {
 trix-toolbar .trix-button--icon-increase-nesting-level::before {
   background-image: url(data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%3E%3Cpath%20d%3D%22M3%2019h19v-2H3v2zm7-6h12v-2H10v2zm-6.9-1L1%2014.2l1.4%201.4L6%2012l-.7-.7-2.8-2.8L1%209.9%203.1%2012zM3%205v2h19V5H3z%22%2F%3E%3C%2Fsvg%3E);
 }
-trix-toolbar .trix-dialogs {
-  position: relative;
-}
+
 trix-toolbar .trix-dialog {
   position: absolute;
-  top: 0;
+  top: 3.3em;
   left: 0;
   right: 0;
   font-size: 0.75em;
-  padding: 15px 10px;
+  padding: 15px 15px;
   background: #fff;
-  box-shadow: 0 0.3em 1em #ccc;
+  box-shadow: 0 0.3em 1em #00000038;
   border-top: 2px solid #888;
   border-radius: 5px;
   z-index: 5;
@@ -268,11 +264,17 @@ trix-toolbar .trix-input--dialog {
   border-radius: 3px;
   border: 1px solid #bbb;
   background-color: #fff;
+  border-radius: 0.4rem;
   box-shadow: none;
   outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
+trix-toolbar .trix-input--dialog:focus {
+  border-color: #888;
+  --tw-ring-color: #888;
+}
+
 trix-toolbar .trix-input--dialog.validate:invalid {
   box-shadow: #f00 0px 0px 1.5px 1px;
 }
@@ -290,319 +292,14 @@ trix-toolbar .trix-dialog__link-fields .trix-input {
   width: 100%;
 }
 trix-toolbar .trix-dialog__link-fields .trix-button-group {
-  flex: 0 0 content;
-  margin: 0;
+  .trix-button--dialog {
+    padding: 0.5em 0.8em;
+    border-radius: 3px;
+    border: 1px solid #e2e2e2;
+    cursor: pointer;
+  }
 
   .trix-button--dialog:last-of-type {
     margin-left: 0.25rem;
   }
-}
-@media (max-device-width: 768px) {
-  trix-toolbar .trix-dialog__link-fields {
-    display: block;
-
-    .trix-button-group {
-      margin-top: 0.5rem;
-    }
-  }
-}
-
-trix-editor [data-trix-mutable]:not(.attachment__caption-editor) {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-trix-editor [data-trix-mutable]::-moz-selection,
-trix-editor [data-trix-cursor-target]::-moz-selection,
-trix-editor [data-trix-mutable] ::-moz-selection {
-  background: none;
-}
-trix-editor [data-trix-mutable]::selection,
-trix-editor [data-trix-cursor-target]::selection,
-trix-editor [data-trix-mutable] ::selection {
-  background: none;
-}
-
-trix-editor [data-trix-mutable].attachment__caption-editor:focus::-moz-selection {
-  background: highlight;
-}
-trix-editor [data-trix-mutable].attachment__caption-editor:focus::selection {
-  background: highlight;
-}
-
-trix-editor [data-trix-mutable].attachment.attachment--file {
-  box-shadow: 0 0 0 2px highlight;
-  border-color: transparent;
-}
-trix-editor [data-trix-mutable].attachment img {
-  box-shadow: 0 0 0 2px highlight;
-}
-trix-editor .attachment {
-  position: relative;
-}
-trix-editor .attachment:hover {
-  cursor: default;
-}
-trix-editor .attachment--preview .attachment__caption:hover {
-  cursor: text;
-}
-trix-editor .attachment__progress {
-  position: absolute;
-  z-index: 1;
-  height: 20px;
-  top: calc(50% - 10px);
-  left: 5%;
-  width: 90%;
-  opacity: 0.9;
-  transition: opacity 200ms ease-in;
-}
-trix-editor .attachment__progress[value="100"] {
-  opacity: 0;
-}
-trix-editor .attachment__caption-editor {
-  display: inline-block;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  font-size: inherit;
-  font-family: inherit;
-  line-height: inherit;
-  color: inherit;
-  text-align: center;
-  vertical-align: top;
-  border: none;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
-trix-editor .attachment__toolbar {
-  position: absolute;
-  z-index: 1;
-  top: -0.9em;
-  left: 0;
-  width: 100%;
-  text-align: center;
-}
-trix-editor .trix-button-group {
-  display: inline-flex;
-}
-trix-editor .trix-button {
-  position: relative;
-  float: left;
-  color: #666;
-  white-space: nowrap;
-  font-size: 80%;
-  padding: 0 0.8em;
-  margin: 0;
-  outline: none;
-  border: none;
-  border-radius: 0;
-  background: transparent;
-}
-trix-editor .trix-button:not(:first-child) {
-  border-left: 1px solid #ccc;
-}
-trix-editor .trix-button.trix-active {
-  background: #e0e0e0;
-}
-trix-editor .trix-button:not(:disabled) {
-  cursor: pointer;
-}
-trix-editor .trix-button--remove {
-  text-indent: -9999px;
-  display: inline-block;
-  padding: 0;
-  outline: none;
-  width: 1.8em;
-  height: 1.8em;
-  line-height: 1.8em;
-  border-radius: 50%;
-  background-color: #fff;
-  border: 2px solid highlight;
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
-}
-trix-editor .trix-button--remove::before {
-  display: inline-block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  opacity: 0.7;
-  content: "";
-  background-image: url(data:image/svg+xml,%3Csvg%20height%3D%2224%22%20width%3D%2224%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M19%206.4L17.6%205%2012%2010.6%206.4%205%205%206.4l5.6%205.6L5%2017.6%206.4%2019l5.6-5.6%205.6%205.6%201.4-1.4-5.6-5.6z%22%2F%3E%3Cpath%20d%3D%22M0%200h24v24H0z%22%20fill%3D%22none%22%2F%3E%3C%2Fsvg%3E);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 90%;
-}
-trix-editor .trix-button--remove:hover {
-  border-color: #333;
-}
-trix-editor .trix-button--remove:hover::before {
-  opacity: 1;
-}
-trix-editor .attachment__metadata-container {
-  position: relative;
-}
-trix-editor .attachment__metadata {
-  position: absolute;
-  left: 50%;
-  top: 2em;
-  transform: translate(-50%, 0);
-  max-width: 90%;
-  padding: 0.1em 0.6em;
-  font-size: 0.8em;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.7);
-  border-radius: 3px;
-}
-trix-editor .attachment__metadata .attachment__name {
-  display: inline-block;
-  max-width: 100%;
-  vertical-align: bottom;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-trix-editor .attachment__metadata .attachment__size {
-  margin-left: 0.2em;
-  white-space: nowrap;
-}
-
-.trix-content {
-  line-height: 1.5;
-}
-.trix-content * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  margin-bottom: 10px;
-  margin-top: 5px;
-}
-.trix-content h1 {
-  font-size: 2em;
-  line-height: 1.6;
-  font-weight: 700;
-}
-.trix-content h2 {
-  font-size: 1.5em;
-  line-height: 1.6;
-  margin-top: 1.2em;
-  margin-bottom: 0.6em;
-  font-weight: 700;
-}
-.trix-content h3 {
-  font-size: 1.3em;
-  line-height: 1.6;
-  margin-top: 1.2em;
-  margin-bottom: 0.6em;
-  font-weight: 700;
-}
-
-@media screen and (max-width: 768px) {
-  .trix-content h2 {
-    font-size: 1.3em;
-  }
-  .trix-content h3 {
-    font-size: 1.1em;
-  }
-}
-
-.trix-content blockquote {
-  border: 0 solid #ccc;
-  border-left-width: 0.3em;
-  margin-left: 0.3em;
-  padding-left: 0.6em;
-}
-.trix-content [dir="rtl"] blockquote,
-.trix-content blockquote[dir="rtl"] {
-  border-width: 0;
-  border-right-width: 0.3em;
-  margin-right: 0.3em;
-  padding-right: 0.6em;
-}
-.trix-content ol {
-  list-style-type: decimal;
-}
-
-.trix-content ul {
-  list-style-type: disc;
-}
-.trix-content li {
-  margin-left: 1em;
-}
-
-.trix-content [dir="rtl"] li {
-  margin-right: 1em;
-}
-.trix-content pre {
-  display: inline-block;
-  width: 100%;
-  vertical-align: top;
-  font-family: monospace;
-  font-size: 0.9em;
-  padding: 0.5em;
-  white-space: pre;
-  background-color: #eee;
-  border-radius: 4px;
-  overflow-x: auto;
-  text-wrap: wrap;
-  color: #333;
-}
-.trix-content img {
-  max-width: 100%;
-  height: auto;
-}
-.trix-content .attachment {
-  display: inline-block;
-  position: relative;
-  max-width: 100%;
-}
-.trix-content .attachment a {
-  color: #1b64f3;
-  text-decoration: underline;
-}
-.trix-content .attachment a:hover,
-.trix-content .attachment a:visited:hover {
-  color: inherit;
-}
-.trix-content .attachment__caption {
-  text-align: center;
-}
-.trix-content .attachment__caption .attachment__name + .attachment__size::before {
-  content: " · ";
-}
-.trix-content .attachment--preview {
-  width: 100%;
-  text-align: center;
-}
-.trix-content .attachment--preview .attachment__caption {
-  color: #666;
-  font-size: 0.9em;
-  line-height: 1.2;
-}
-.trix-content .attachment--file {
-  color: #333;
-  line-height: 1;
-  margin: 0 2px 2px 2px;
-  padding: 0.4em 1em;
-  border: 1px solid #bbb;
-  border-radius: 5px;
-}
-.trix-content .attachment-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  position: relative;
-}
-.trix-content .attachment-gallery .attachment {
-  flex: 1 0 33%;
-  padding: 0 0.5em;
-  max-width: 33%;
-}
-.trix-content .attachment-gallery.attachment-gallery--2 .attachment,
-.trix-content .attachment-gallery.attachment-gallery--4 .attachment {
-  flex-basis: 50%;
-  max-width: 50%;
 }
