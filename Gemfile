@@ -9,6 +9,7 @@ gem 'devise'
 gem 'figaro', git: 'https://github.com/ryanckulp/figaro' # patched version for Ruby 3.2.0 File.exist?()
 gem 'groupdate' # used by Chartkick
 gem 'httparty'
+gem "image_processing", ">= 1.2"
 gem 'importmap-rails'
 gem 'jbuilder'
 gem 'metamagic' # easily insert metatags for SEO / opengraph

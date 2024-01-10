@@ -1,0 +1,23 @@
+<div id="<%= dom_id blog_post %>">
+  <article class="flex flex-col items-start justify-between hover:opacity-80 transition-opacity duration-300 ease-in-out" >
+
+    <%= link_to blog_post_path(blog_post) do %>
+
+    <div class="relative w-full">
+      <%= image_tag blog_post.cover_image, class:"aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover" if blog_post.cover_image.attached? %>
+      <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+    </div>
+    <div class="w-full">
+      <div class="text-xs -mt-8 ml-auto text-right w-full pr-2.5">
+        <time class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 border" datetime="<%= blog_post.updated_at.strftime('%m-%d-%Y') %>" class="text-gray-500"><%= blog_post.created_at.strftime('%B %d, %Y') %></time>
+      </div>
+      <div class="group relative">
+        <h2 class="mt-9 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600">
+          <%= blog_post.title %>
+        </h2>
+        <p class="mt-3 line-clamp-3 text-sm leading-6 text-gray-600"><%= blog_post.description %></p>
+      </div>
+
+    <% end %>
+  </article>
+</div>

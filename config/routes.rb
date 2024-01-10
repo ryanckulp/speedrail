@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:index]
   resources :account, only: [:index, :update]
   resources :billing_portal, only: [:new, :create]
+  resources :blog_posts, controller: :blog_posts, path: "blog", param: :slug
 
   # static pages
   pages = %w[

@@ -1,0 +1,50 @@
+<% meta title: @blog_post.title, description: @blog_post.description %>
+
+<div class="font-inter antialiased text-gray-800 tracking-tight my-16">
+  <main class="grow">
+    <section>
+      <div class="mx-auto max-w-2xl px-4 lg:px-8">
+        <%= link_to "← Back to all articles", blog_posts_path, class:"hover:opacity-75 mr-1 w-fit font-semibold" %>
+        <article class="flex flex-col items-start justify-between mt-4">
+          <div class="relative w-full">
+            <%= image_tag @blog_post.cover_image, class:"aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover" if @blog_post.cover_image.attached? %>
+            <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10"></div>
+          </div>
+          <% if current_user&.admin? %>
+            <div class="mx-auto mt-4">
+              <div class="flex space-x-2 my-2 mx-auto justify-center items-center">
+                <%= link_to edit_blog_post_path(@blog_post.slug), class:"shrink-0 mt-4 md:mt-0 inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" do %>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 -ml-1 mr-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                    <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"></path>
+                  </svg>
+                  Edit
+                <% end %>
+                <%= button_to @blog_post.slug, method: :delete, class:"shrink-0 mt-4 md:mt-0 inline-flex items-center justify-center px-4 py-2 border border-gray-300 shadow-sm text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500" do %> <!-- Delete button -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 -ml-1 mr-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path fill-rule="evenodd" d="M16.5 4.478v.227a48.816 48.816 0 013.878.512.75.75 0 11-.256 1.478l-.209-.035-1.005 13.07a3 3 0 01-2.991 2.77H8.084a3 3 0 01-2.991-2.77L4.087 6.66l-.209.035a.75.75 0 01-.256-1.478A48.567 48.567 0 017.5 4.705v-.227c0-1.564 1.213-2.9 2.816-2.951a52.662 52.662 0 013.369 0c1.603.051 2.815 1.387 2.815 2.951zm-6.136-1.452a51.196 51.196 0 013.273 0C14.39 3.05 15 3.684 15 4.478v.113a49.488 49.488 0 00-6 0v-.113c0-.794.609-1.428 1.364-1.452zm-.355 5.945a.75.75 0 10-1.5.058l.347 9a.75.75 0 101.499-.058l-.346-9zm5.48.058a.75.75 0 10-1.498-.058l-.347 9a.75.75 0 001.5.058l.345-9z" clip-rule="evenodd"></path>
+                  </svg>
+                  Delete
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+          <div class="w-full prose prose-lg">
+            <div class="group relative">
+              <div class="text-xs mx-auto text-center w-full mb-6 mt-12">
+                <time class="relative z-10 rounded-full bg-white px-3 py-1.5 font-medium text-gray-600 border" datetime="<%= @blog_post.updated_at.strftime('%m-%d-%Y') %>" class="text-gray-500"><%= @blog_post.created_at.strftime('%B %d, %Y') %></time>
+              </div>
+              <h1 class=" text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold leading-6 text-gray-900 text-center mb-8">
+                <%= @blog_post.title %>
+              </h1>
+              <p class="text-base md:text-lg"><%= @blog_post.body %></p>
+            </div>
+          </article>
+          <div class="mx-auto mt-20 max-w-2xl grid-cols-2 gap-x-8 gap-y-16 text-center">
+            <%= image_tag "founder-avatar.png", class:"mx-auto h-24 w-24 rounded-full" %>
+            <h2 class="mt-2 text-base font-semibold leading-7 tracking-tight text-gray-900">Your name</h3>
+            <p class="text-sm leading-6 text-gray-600">Founder of <%= ENV['COMPANY_NAME'] %></p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
