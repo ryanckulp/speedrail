@@ -47,6 +47,11 @@ trix-editor pre {
   overflow-x: auto;
   text-wrap: wrap;
 }
+
+trix-editor pre strong {
+  color: #ffffff !important;
+}
+
 trix-editor img {
   max-width: 100%;
   height: auto;
@@ -105,6 +110,10 @@ trix-editor .trix-button.trix-active {
   border-radius: 4px;
   overflow-x: auto;
   text-wrap: wrap;
+}
+
+.trix-content pre strong {
+  color: #ffffff;
 }
 
 /* Trix Toolbar */
