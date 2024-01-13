@@ -1,5 +1,5 @@
 # Speedrail
-a Rails 7 boilerplate template by [@ryanckulp](https://twitter.com/ryanckulp), created to ship SaaS apps quickly. Learn how to use this at [24 Hour MVP](https://founderhacker.com/24-hour-mvp).
+a Rails 7 template by [@ryanckulp](https://twitter.com/ryanckulp), created to ship SaaS apps quickly. Learn how to use this at [24 Hour MVP](https://founderhacker.com/24-hour-mvp).
 
 features:
 * user authentication via [Devise](https://github.com/plataformatec/devise)
@@ -28,7 +28,7 @@ features:
 ## Installation
 1. clone the repo
 2. `bin/speedrail new_app_name`
-3. plug ENV vars into `config/application.yml`
+3. `cp config/application-sample.yml config/application.yml` (then add/update ENV vars here)
 
 ## Development
 ```sh
