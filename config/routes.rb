@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   resources :billing_portal, only: [:new, :create]
   resources :blog_posts, controller: :blog_posts, path: "blog", param: :slug
 
+  # demo - oauth with google/youtube
+  get 'oauth/callback', to: 'oauth#callback'
+
   # static pages
   pages = %w[
     privacy terms
