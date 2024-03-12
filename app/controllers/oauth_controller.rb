@@ -12,6 +12,8 @@ class OauthController
     }
 
     resp = HTTParty.post(url, body: body)
-    JSON.parse(resp.body) # => { 'access_token' => 'a29.xxx', 'refresh_token' => 'xxxx', 'expires_in' => 3599, 'token_type' => 'bearer' }
+    data = JSON.parse(resp.body) # => { 'access_token' => 'a29.xxx', 'refresh_token' => 'xxxx', 'expires_in' => 3599, 'token_type' => 'bearer' }
+
+    user.update(credentials: data) # must add 'credentials' attribute as jsonb for this to work!
   end
 end
