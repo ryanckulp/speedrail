@@ -16,9 +16,7 @@ class BlogPost < ApplicationRecord
 
     intended_slug = slug.blank? ? title&.parameterize : slug.downcase.parameterize
     self.slug = intended_slug
-    
-    while BlogPost.exists?(slug: self.slug)
-      self.slug = "#{intended_slug}-#{SecureRandom.hex(3)}"
-    end
+
+    self.slug = "#{intended_slug}-#{SecureRandom.hex(3)}" while BlogPost.exists?(slug: self.slug)
   end
 end
