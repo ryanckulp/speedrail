@@ -91,7 +91,7 @@ rubocop -a # automatically fixes "safe" issues, less aggressive than -A (upperca
 
 ## Deploying
 ```sh
-figaro heroku:set -e production # you only need to do this once
+bundle exec figaro heroku:set -e production # you only need to do this once
 heroku git:remote -a heroku_app_name_here # you only need to do this once
 ```
 
