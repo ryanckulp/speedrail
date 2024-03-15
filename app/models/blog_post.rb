@@ -12,14 +12,13 @@ class BlogPost < ApplicationRecord
   private
 
   def generate_unique_slug
-    if new_record? || slug_changed?
-      base_slug = slug.blank? ? title.parameterize : slug
-      other = self.class.where("slug LIKE ?", "#{base_slug}%")
-      self.slug = if other.exists?
-                    "#{base_slug}-#{other.count + 1}"
-                  else
-                    base_slug
-                  end
+    return unless new_record? || title_changed?
+
+    intended_slug = slug.blank? ? title&.parameterize : slug.downcase.parameterize
+    self.slug = intended_slug
+    
+    while BlogPost.exists?(slug: self.slug)
+      self.slug = "#{intended_slug}-#{SecureRandom.hex(3)}"
     end
   end
 end
