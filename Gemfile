@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
+gem 'aws-sdk-s3', require: false
 gem 'chartkick'
 gem 'delayed' # delayed_job_active_record rails 7 fork: https://github.com/betterment/delayed
 gem 'devise'
