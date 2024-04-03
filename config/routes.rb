@@ -23,13 +23,6 @@ Rails.application.routes.draw do
 
   # admin panels
   authenticated :user, ->(user) { user.admin? } do
-    namespace :admin do
-      resources :dashboard, only: [:index]
-      resources :impersonations, only: [:new]
-      resources :users, only: [:edit, :update, :destroy]
-    end
-
-    # convenience helper
-    get 'admin', to: 'admin/dashboard#index'
+    # insert sidekiq etc
   end
 end
