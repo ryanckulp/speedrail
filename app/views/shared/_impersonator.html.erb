@@ -1,0 +1,5 @@
+<% if true_user != current_user %>
+  <div class="mx-auto text-center text-white w-full bg-primary-600 py-2">
+    Impersonating <%= current_user.email %> | <%= link_to 'Back to admin', stop_impersonating_account_index_path, class: 'underline', data: { turbo: false } %>
+  </div>
+<% end %>

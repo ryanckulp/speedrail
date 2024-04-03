@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :subscribe, only: [:index]
   resources :dashboard, only: [:index]
-  resources :account, only: [:index, :update]
+  resources :account, only: %i[index update] do
+    get :stop_impersonating, on: :collection
+  end
   resources :billing_portal, only: [:new, :create]
   resources :blog_posts, controller: :blog_posts, path: "blog", param: :slug
 

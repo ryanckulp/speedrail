@@ -25,13 +25,8 @@ FileUtils.chdir APP_ROOT do
   system! "cd ../#{new_app_name}"
   system! "bin/setup"
 
-  puts "== Setting up Figaro Secrets =="
-  system! "bundle exec figaro install"
-  FileUtils.cp "config/application-sample.yml", "config/application.yml"
-
   puts "== Initializing new Git Repository =="
   system! "rm -rf .git && git init && git add . && git commit -m 'first commit'"
 
-  puts "== Starting Server =="
-  system! "bin/dev"
+  puts "== Ready! =="
 end

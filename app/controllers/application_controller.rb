@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  impersonates :user
+
   # uncomment to allow extra User model params during registration (beyond email/password)
   # before_action :configure_permitted_parameters, if: :devise_controller?
 
