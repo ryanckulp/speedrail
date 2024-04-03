@@ -35,9 +35,6 @@ jobs:
       - name: Precompile assets
         run: RAILS_ENV=test bundle exec rake assets:precompile
 
-      - name: Use sample application.yml file
-        run: mv config/application-sample.yml config/application.yml
-
       - name: Rubocop Check
         run: bundle exec rubocop
 

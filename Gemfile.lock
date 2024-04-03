@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/ryanckulp/figaro
-  revision: e7aa9e456a60d479c2eadcb9104da3af6929548d
-  specs:
-    figaro (1.2.0)
-      thor (>= 0.14.0, < 2)
-
-GIT
   remote: https://github.com/ryanckulp/rename
   revision: c747f30cbd85f72d8c57ab9e0d1b1797ed444ccc
   specs:
@@ -448,7 +441,6 @@ DEPENDENCIES
   devise
   factory_bot_rails
   faker
-  figaro!
   groupdate
   httparty
   image_processing (>= 1.2)
