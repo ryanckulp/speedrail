@@ -17,7 +17,7 @@
 
     <div id="main-nav" class="w-full flex-grow sm:flex text-right sm:w-auto hidden" data-header-target="mainNav">
       <div class="text-sm sm:flex-grow">
-        <%= link_to 'Admin', admin_dashboard_index_path, class: nav_link_classes('admin/dashboard') if current_user&.admin? %>
+        <%= link_to 'Admin', admin_root_path, class: nav_link_classes('admin/dashboard') if current_user&.admin? %>
 
         <%= link_to 'Blog', blog_posts_path, class: nav_link_classes('blog') %>
         <% if current_user %>

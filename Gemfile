@@ -3,11 +3,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
+gem 'activeadmin', '4.0.0.beta5'
 gem 'aws-sdk-s3', require: false
 gem 'chartkick'
 gem 'delayed' # delayed_job_active_record rails 7 fork: https://github.com/betterment/delayed
 gem 'devise'
-gem 'figaro', git: 'https://github.com/ryanckulp/figaro' # patched version for Ruby 3.2.0 File.exist?()
 gem 'groupdate' # used by Chartkick
 gem 'httparty'
 gem "image_processing", ">= 1.2"
