@@ -320,7 +320,7 @@ GEM
       unicode-display_width (>= 2.4.0, < 3.0)
     rubocop-ast (1.31.2)
       parser (>= 3.3.0.4)
-    rubocop-capybara (2.19.0)
+    rubocop-capybara (2.20.0)
       rubocop (~> 1.41)
     rubocop-factory_bot (2.24.0)
       rubocop (~> 1.33)
