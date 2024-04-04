@@ -13,6 +13,18 @@ RSpec.describe BlogPost, type: :model do
     it { expect(subject).to validate_presence_of(:body) }
   end
 
+  describe 'scopes' do
+    it 'returns published blog posts' do
+      post = create(:blog_post, slug: 'basic-slug') # published by default
+      expect(BlogPost.published).to include(post)
+    end
+
+    it 'returns draft blog posts' do
+      post = create(:blog_post, slug: 'basic-slug', draft: true)
+      expect(BlogPost.drafts).to include(post)
+    end
+  end
+
   describe 'slug generator' do
     it 'works with proper input data' do
       post = create(:blog_post, slug: 'basic-slug')

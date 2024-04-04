@@ -5,8 +5,8 @@ class BlogPostsController < ApplicationController
 
   # GET /blog_posts
   def index
-    @blog_posts = BlogPost.where(draft: false).order(created_at: :asc)
-    @drafts = BlogPost.where(draft: true).order(created_at: :desc)
+    @blog_posts = BlogPost.published.order(created_at: :asc)
+    @drafts = BlogPost.drafts.order(created_at: :desc)
   end
 
   # GET /blog_posts/slug

@@ -4,7 +4,7 @@ class CreateBlogPosts < ActiveRecord::Migration[7.1]
       t.string :title
       t.string :slug
       t.string :description
-      t.boolean :draft
+      t.boolean :draft, null: false, default: false
 
       t.timestamps
     end

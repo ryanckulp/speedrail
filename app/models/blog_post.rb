@@ -1,12 +1,20 @@
 class BlogPost < ApplicationRecord
   has_one_attached :cover_image
   has_rich_text :body
-  validates :slug, uniqueness: true
+
+  scope :published, -> { where(draft: false) }
+  scope :drafts, -> { where(draft: true) }
+
   before_validation :generate_unique_slug
+  validates :slug, uniqueness: true
   validates_presence_of :title, :slug, :body, :description
 
   def to_param
     slug
+  end
+
+  def self.ransackable_attributes(_auth_object)
+    ["created_at", "description", "draft", "id", "id_value", "slug", "title", "updated_at"]
   end
 
   private
