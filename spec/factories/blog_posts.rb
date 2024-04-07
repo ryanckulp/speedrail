@@ -4,5 +4,6 @@ FactoryBot.define do
     slug { 'kulp-equals-chad' }
     description { 'nothing more required' }
     body { 'we make our own luck' }
+    draft { false }
   end
 end

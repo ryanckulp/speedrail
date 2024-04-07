@@ -1,4 +1,4 @@
-<% meta title: "Blog posts", description: "All blog posts from #{ENV['COMPANY_NAME']}." %>
+<% meta title: "Blog posts", description: "All blog posts from #{Rails.application.credentials.company_name}." %>
 
 <%= render partial: "shared/heading", locals: { title: 'Blog Posts', description: '' } %>
 

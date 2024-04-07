@@ -4,7 +4,7 @@
       <% logo_path = current_user ? dashboard_index_path : root_path %>
       <%= link_to logo_path, class:"flex items-center hover:opacity-80" do %>
         <%= image_tag "avatar.png",  style: "max-height: 42px" %>
-        <span class="font-semibold text-xl tracking-tight text-primary-600"><%= ENV['COMPANY_NAME'] %></span>
+        <span class="font-semibold text-xl tracking-tight text-primary-600"><%= Rails.application.credentials.company_name %></span>
       <% end %>
     </div>
     <div class="block sm:hidden">
@@ -25,7 +25,7 @@
           <%= link_to 'Account', account_index_path, class: nav_link_classes('account') %>
           <%= link_to 'Logout', logout_path, class: nav_link_classes %>
         <% else %>
-          <%= link_to 'Contact', "mailto:#{ENV['ADMIN_EMAIL']}", target: '_blank', class: nav_link_classes('contact')  %>
+          <%= link_to 'Contact', "mailto:#{Rails.application.credentials.admin_email}", target: '_blank', class: nav_link_classes('contact')  %>
           <%= link_to 'Login', new_user_session_path, class: nav_link_classes('login') %>
           <%= link_to 'Signup', new_user_registration_path, class: 'ml-8 whitespace-nowrap text-base font-medium inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700' %>
         <% end %>

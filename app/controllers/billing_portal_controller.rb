@@ -36,11 +36,11 @@ class BillingPortalController < ApplicationController
       payment_method_types: ['card'],
       line_items: [{
         # Provide the Price ID (e.g. price_1234) of the product you want to sell
-        price: ENV['STRIPE_PRODUCT_PRICE_ID'],
+        price: Rails.application.credentials.stripe.product_price_id,
         quantity: 1
       }],
       mode: 'subscription', # use 'payment' for products with 1-time pricing
-      return_url: "#{ENV['BASE_URL']}#{new_billing_portal_path}?session_id={CHECKOUT_SESSION_ID}",
+      return_url: "#{Rails.application.credentials.base_url}#{new_billing_portal_path}?session_id={CHECKOUT_SESSION_ID}",
       automatic_tax: { enabled: false }
     })
 
@@ -51,7 +51,7 @@ class BillingPortalController < ApplicationController
   def modify_subscription
     session = Stripe::BillingPortal::Session.create({
       customer: current_user.stripe_customer_id,
-      return_url: "#{ENV['BASE_URL']}#{account_index_path}?updated=true"
+      return_url: "#{Rails.application.credentials.base_url}#{account_index_path}?updated=true"
     })
 
     session.url

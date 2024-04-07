@@ -28,13 +28,13 @@ module Speedrail
     config.active_job.queue_adapter = :delayed
 
     # mailers via postmark
-    config.action_mailer.default_url_options = { host: ENV['BASE_URL'] }
-    config.action_mailer.default_options = { from: ENV['ADMIN_EMAIL'] }
+    config.action_mailer.default_url_options = { host: Rails.application.credentials.base_url }
+    config.action_mailer.default_options = { from: Rails.application.credentials.admin_email }
     config.action_mailer.delivery_method = :postmark
-    config.action_mailer.postmark_settings = { api_token: ENV['POSTMARK_API_TOKEN'] }
+    config.action_mailer.postmark_settings = { api_token: Rails.application.credentials.postmark_api_token }
 
     # serve images from asset pipeline in mailers
-    config.asset_host = ENV['BASE_URL']
+    config.asset_host = Rails.application.credentials.base_url
 
     # customize generators
     config.generators do |g|

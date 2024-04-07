@@ -56,7 +56,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_30_212422) do
     t.string "title"
     t.string "slug"
     t.string "description"
-    t.boolean "draft", default: false, null: false
+    t.boolean "draft"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

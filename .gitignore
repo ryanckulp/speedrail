@@ -39,3 +39,5 @@
 .idea/modules.xml
 .idea/*.iml
 .idea/vcs.xml
+
+/config/credentials/test.key
