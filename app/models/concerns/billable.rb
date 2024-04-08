@@ -7,7 +7,7 @@ module Billable
 
   # done after signup for easy CVR metrics via Stripe UI
   def setup_stripe_customer
-    return unless Rails.application.credentials.stripe.secret_key
+    return unless Stripe.api_key.present?
 
     customer = Stripe::Customer.create({
       email: self.email,
