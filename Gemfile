@@ -23,6 +23,7 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'rails', '7.1.3.2'
 gem 'redis'
 gem 'rename', '1.1.3', git: 'https://github.com/ryanckulp/rename' # remove this gem after use
+gem 'split', require: 'split/dashboard'
 gem 'sprockets-rails'
 gem 'stimulus-rails'
 gem 'stripe'

@@ -1,5 +1,5 @@
 ActiveAdmin.register BlogPost do
-  menu priority: 2
+  menu priority: 4
 
   # Specify parameters which should be permitted for assignment
   permit_params :title, :slug, :description, :draft, :body
