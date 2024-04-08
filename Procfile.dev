@@ -1,3 +1,4 @@
 web: bin/rails server -p 3000
 active_admin: bin/rails active_admin:watch
+redis: redis-server --port 6379
 worker: bundle exec rake delayed:work
