@@ -63,7 +63,7 @@ RSpec.configure do |config|
   config.before(:each) do
     # allow(Rails.application.credentials).to receive(:admin_email).and_return('support@speedrail.com')
     # allow(Rails.application.credentials).to receive(:company_name).and_return('Speedrail')
-    # allow(Rails.application.credentials).to receive(:base_url).and_return('https://speedrail.com')
+    allow(Rails.application.credentials).to receive(:base_url).and_return('https://speedrail.com')
     allow(Rails.application.credentials).to receive(:stripe).and_return(OpenStruct.new(api_key: 'sk_asdf', publishable_key: 'pk_asdf', product_price_id: 'pi_asdf'))
   end
 
