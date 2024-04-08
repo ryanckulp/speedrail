@@ -1,19 +1,8 @@
 ActiveAdmin.register BlogPost do
   menu priority: 4
 
-  # Specify parameters which should be permitted for assignment
-  permit_params :title, :slug, :description, :draft, :body
-
-  # or consider:
-  #
-  # permit_params do
-  #   permitted = [:title, :slug, :description, :draft]
-  #   permitted << :other if params[:action] == 'create' && current_user.admin?
-  #   permitted
-  # end
-
   # For security, limit the actions that should be available
-  actions :index, :destroy
+  actions :index
 
   # Add or remove filters to toggle their visibility
   filter :id
@@ -26,8 +15,13 @@ ActiveAdmin.register BlogPost do
 
   # Add or remove columns to toggle their visiblity in the index action
   index do
-    selectable_column
-    id_column
+    column 'cover image' do |blog_post|
+      if blog_post.cover_image.persisted?
+        link_to blog_post.cover_image, target: :_blank do
+          image_tag blog_post.cover_image, class: 'w-60 border'
+        end
+      end
+    end
     column :title
     column :slug
     column 'status' do |blog_post|
@@ -37,31 +31,5 @@ ActiveAdmin.register BlogPost do
     column :updated_at
 
     actions
-  end
-
-  # Add or remove rows to toggle their visiblity in the show action
-  show do
-    attributes_table_for(resource) do
-      row :id
-      row :title
-      row :slug
-      row :description
-      row :draft
-      row :created_at
-      row :updated_at
-    end
-  end
-
-  # Add or remove fields to toggle their visibility in the form
-  form do |f|
-    f.semantic_errors(*f.object.errors.attribute_names)
-    f.inputs do
-      f.input :title
-      f.input :slug
-      f.input :description
-      f.input :draft
-      f.input :body
-    end
-    f.actions
   end
 end
