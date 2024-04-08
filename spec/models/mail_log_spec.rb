@@ -13,11 +13,7 @@ RSpec.describe MailLog, type: :model do
 
   describe 'create' do
     it 'expects a mailer to generate a mail_log' do
-      expect {
-        UserMailer.welcome(@user).deliver
-      }.to change {
-        MailLog.count
-      }.by 1
+      expect { UserMailer.welcome(@user).deliver }.to change { MailLog.count }.by 1
     end
 
     it 'expects to have the properties of a sent mail' do
