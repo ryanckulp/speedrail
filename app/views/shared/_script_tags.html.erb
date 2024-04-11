@@ -1,11 +1,4 @@
-<script type="text/javascript">
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-              behavior: 'smooth'
-          });
-      });
-  });
-</script>
+<% script_tags.each do |script_tag| %>
+  <!-- Tag: <%= script_tag.name %> -->
+  <%== script_tag.code %>
+<% end %>
