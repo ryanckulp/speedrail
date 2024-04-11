@@ -391,7 +391,7 @@ GEM
       websocket (~> 1.0)
     shoulda-callback-matchers (1.1.4)
       activesupport (>= 3)
-    shoulda-matchers (5.3.0)
+    shoulda-matchers (6.2.0)
       activesupport (>= 5.2.0)
     sinatra (4.0.0)
       mustermann (~> 3.0)
