@@ -6,8 +6,7 @@
 
 <script src="https://js.stripe.com/v3/"></script>
 <script type="text/javascript">
-  // This is your test publishable API key.
-const stripe = Stripe('<%= Rails.application.credentials.stripe.publishable_key %>');
+const stripe = Stripe('<%= Rails.application.credentials.stripe&.publishable_key || '' %>');
 
 initialize();
 
