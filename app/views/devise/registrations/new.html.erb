@@ -3,7 +3,7 @@
     <%= render 'devise/shared/devise_heading', title: 'Sign up' %>
     <%= render "devise/shared/devise_sub_heading", subtitle: "Create your account." %>
 
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: "mt-8"}) do |f| %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { honeypot: true, class: "mt-8" }) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="mb-2">
