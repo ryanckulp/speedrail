@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/founderhacker/honeypot-captcha.git
+  revision: 1824767cefdbc59de7f7ab0dd48d41e52bbfbed6
+  specs:
+    honeypot-captcha (1.0.2)
+
+GIT
   remote: https://github.com/ryanckulp/rename
   revision: c747f30cbd85f72d8c57ab9e0d1b1797ed444ccc
   specs:
@@ -173,7 +179,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
     hashdiff (1.1.0)
-    honeypot-captcha (1.0.1)
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
@@ -472,7 +477,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   groupdate
-  honeypot-captcha
+  honeypot-captcha!
   httparty
   image_processing (>= 1.2)
   importmap-rails
