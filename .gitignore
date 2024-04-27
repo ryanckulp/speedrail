@@ -42,3 +42,4 @@ dump.rdb
 .idea/vcs.xml
 
 /config/credentials/test.key
+coverage

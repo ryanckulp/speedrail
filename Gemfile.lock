@@ -158,6 +158,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    docile (1.4.0)
     drb (2.2.1)
     erubi (1.12.0)
     factory_bot (6.4.6)
@@ -401,6 +402,14 @@ GEM
       activesupport (>= 3)
     shoulda-matchers (6.2.0)
       activesupport (>= 5.2.0)
+    simplecov (0.22.0)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov-tailwindcss (2.2.0)
+      simplecov (~> 0.16)
+    simplecov_json_formatter (0.1.4)
     sinatra (4.0.0)
       mustermann (~> 3.0)
       rack (>= 3.0.0, < 4)
@@ -502,6 +511,8 @@ DEPENDENCIES
   selenium-webdriver
   shoulda-callback-matchers
   shoulda-matchers
+  simplecov
+  simplecov-tailwindcss
   split
   sprockets-rails
   stimulus-rails

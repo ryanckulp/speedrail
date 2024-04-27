@@ -59,5 +59,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'shoulda-callback-matchers'
   gem 'shoulda-matchers'
+  gem 'simplecov'
+  gem 'simplecov-tailwindcss'
   gem 'webmock'
 end
