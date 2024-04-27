@@ -125,4 +125,4 @@ config.action_mailer.postmark_settings = { api_token: Rails.application.credenti
 ```
 
 ## Contributing
-anyone is welcome to submit a pull request with improvements of any kind.
+anyone is welcome to submit a PR with improvements of any kind.
