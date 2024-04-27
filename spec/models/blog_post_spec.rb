@@ -25,6 +25,12 @@ RSpec.describe BlogPost, type: :model do
     end
   end
 
+  describe 'instance methods' do
+    it 'should override id param' do
+      expect(subject.to_param).to eql subject.slug
+    end
+  end
+
   describe 'slug generator' do
     it 'works with proper input data' do
       post = create(:blog_post, slug: 'basic-slug')
