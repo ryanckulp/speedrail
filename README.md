@@ -27,7 +27,7 @@ features:
 
 ## Installation
 1. clone the repo
-2. `bin/speedrail-pro/speedrail new_app_name`
+2. `speedrail-pro/bin/speedrail new_app_name`
 
 ## Development
 ```sh
