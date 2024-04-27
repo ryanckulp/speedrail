@@ -13,9 +13,11 @@ class BlogPost < ApplicationRecord
     slug
   end
 
+  # :nocov:
   def self.ransackable_attributes(_auth_object)
     ["created_at", "description", "draft", "id", "id_value", "slug", "title", "updated_at"]
   end
+  # :nocov:
 
   private
 
