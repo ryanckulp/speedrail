@@ -60,5 +60,7 @@ Rails.application.configure do
   # config.action_view.annotate_rendered_view_with_filenames = true
 
   # Raise error when a before_action's only/except options reference missing actions
-  config.action_controller.raise_on_missing_callback_actions = true
+  # Set to false to prevent honeypot-captcha breaking flow
+  # via https://www.shakacode.com/blog/rails-adds-ability-to-raise-error-on-missing-callback-actions/
+  config.action_controller.raise_on_missing_callback_actions = false
 end
