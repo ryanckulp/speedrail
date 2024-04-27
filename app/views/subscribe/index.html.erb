@@ -26,3 +26,9 @@ async function initialize() {
   checkout.mount('#checkout');
 }
 </script>
+
+<% if ScriptTag.enabled.exists?(name: 'Rewardful') %>
+<script>
+  rewardful('convert', { email: '<%= current_user.email %>' })
+</script>
+<% end %>
