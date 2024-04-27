@@ -10,6 +10,7 @@ require 'rspec/rails'
 # https://dev.to/adrianvalenz/setup-rspec-on-a-fresh-rails-7-project-5gp
 require_relative 'support/factory_bot'
 require_relative 'support/chrome'
+require_relative 'helpers/devise_helpers'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -65,6 +66,7 @@ RSpec.configure do |config|
     # allow(Rails.application.credentials).to receive(:company_name).and_return('Speedrail')
     allow(Rails.application.credentials).to receive(:base_url).and_return('https://speedrail.com')
     allow(Rails.application.credentials).to receive(:stripe).and_return(OpenStruct.new(api_key: 'sk_asdf', publishable_key: 'pk_asdf', product_price_id: 'pi_asdf'))
+    allow_any_instance_of(BillingPortalController).to receive(:create_subscription).and_return({ client_secret: 'qwerty' }.to_json)
   end
 
   # You can uncomment this line to turn off ActiveRecord support entirely.

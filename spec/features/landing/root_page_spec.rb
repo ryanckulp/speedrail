@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Root page', :js => true do
+feature 'Root page', js: true do
   before do
     visit root_path
   end
