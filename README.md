@@ -27,8 +27,7 @@ features:
 
 ## Installation
 1. clone the repo
-2. `bin/speedrail new_app_name`
-3. `cp config/application-sample.yml config/application.yml` (then add/update ENV vars here)
+2. `bin/speedrail-pro/speedrail new_app_name`
 
 ## Development
 ```sh
