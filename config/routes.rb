@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
-  devise_for :users, path: '', path_names: { sign_in: 'login', sign_up: 'signup' }
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_up: 'signup' }, controllers: { registrations: 'registrations' }
   get 'logout', to: 'pages#logout', as: 'logout'
 
   resources :subscribe, only: [:index]
