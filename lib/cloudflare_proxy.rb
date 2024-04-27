@@ -1,6 +1,8 @@
 # https://github.com/rails/rails/issues/22965
 # Heroku: disable SSL ACM (automated cert management)
 # Cloudflare: DNS w/ proxy enabled, SSL to 'flexible', force HTTPS
+
+# :nocov:
 require 'json'
 
 class CloudflareProxy
@@ -15,3 +17,4 @@ class CloudflareProxy
     @app.call(env)
   end
 end
+# :nocov:
