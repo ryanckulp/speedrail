@@ -1,0 +1,11 @@
+<div class="mx-auto max-w-3xl">
+  <div class="mx-auto">
+    <%%= render @<%= singular_table_name %> %>
+
+    <div class="inline-block ml-2">
+      <%%= button_to "Destroy this <%= singular_table_name %>", <%= singular_table_name %>_path(@<%= singular_table_name %>), method: :delete, data: { turbo_confirm: 'Are you sure?' }, class: "mt-2 rounded-lg py-3 px-5 bg-red-500 text-white font-medium" %>
+    </div>
+    <%%= link_to "Edit this <%= singular_table_name %>", edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%%= link_to "Back to <%= plural_table_name %>", <%= index_helper %>_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+  </div>
+</div>

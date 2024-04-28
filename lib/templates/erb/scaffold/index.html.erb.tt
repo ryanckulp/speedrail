@@ -1,0 +1,11 @@
+<%%= render partial: "shared/heading", locals: { title: "<%= human_name.pluralize %>", description: '' } %>
+
+<div class="mx-auto max-w-3xl">
+  <div class="text-center pt-8">
+    <%%= link_to "New <%= human_name.downcase %>", new_<%= singular_route_name %>_path, class: "rounded-lg py-3 px-5 bg-primary-600 text-white font-medium" %>
+  </div>
+
+  <div id="<%= plural_table_name %>" class="w-full">
+    <%%= render @<%= plural_table_name %> %>
+  </div>
+</div>
