@@ -40,10 +40,13 @@ module Speedrail
     config.generators do |g|
       g.test_framework :rspec, fixture: false
       g.fixture_replacement :factory_bot, dir: 'spec/factories'
-      g.view_specs = false
-      g.helper_specs = false
-      g.assets = false # stylesheets
-      g.helper = true
+      g.scaffold_controller :scaffold_controller # https://github.com/activeadmin/inherited_resources/issues/195#issuecomment-3556266
+      g.jbuilder false # disables json 'jbuilder' views, but still leaves json endpoint format
+      g.view_specs false
+      g.helper_specs false
+      g.routing_specs false
+      g.assets false # stylesheets
+      g.helper true
     end
   end
 end
