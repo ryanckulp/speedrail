@@ -28,15 +28,15 @@ features:
 ## Installation
 1. clone the repo
 2. `speedrail-pro/bin/speedrail new_app_name`
-3. `cd new_app_name`
-4. `rails credentials:edit` to create + open credentials file (then save/close)
+3. inspect+ save/close the generated credentials file
+4. `cd new_app_name`
 
 ## Development
 ```sh
 bin/dev # uses foreman to boot server, frontend, and bg job queue
 ```
 
-To keep your project up-to-date with the latest Speedrail changes over time:
+To sync your project with the latest Speedrail improvements:
 
 ```sh
 # one time only

@@ -28,5 +28,8 @@ FileUtils.chdir APP_ROOT do
   puts "== Initializing new Git Repository =="
   system! "rm -rf .git && git init && git add . && git commit -m 'first commit'"
 
+  puts "== Generating Credentials =="
+  system! "rails credentials:edit"
+
   puts "== Ready! =="
 end
