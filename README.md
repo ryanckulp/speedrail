@@ -29,8 +29,7 @@ features:
 1. clone the repo
 2. `speedrail-pro/bin/speedrail new_app_name`
 3. `cd new_app_name`
-4. `rails credentials:edit` to create + open credentials file
-5. copy/paste contents of `config/credential_stubs.yml` into the new file, save + close + delete stubs
+4. `rails credentials:edit` to create + open credentials file (then save/close)
 
 ## Development
 ```sh
