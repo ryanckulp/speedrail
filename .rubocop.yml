@@ -15,7 +15,7 @@ AllCops:
     rubocop-factory_bot: true
     rubocop-rails: true
     rubocop-rspec: true
-
+    rubocop-rspec_rails: false # set to true and add `require: rubocop-rspec` to enable (https://stackoverflow.com/a/74034344)
 
 Layout/EmptyLinesAroundClassBody:
   Enabled: false
