@@ -67,7 +67,7 @@ RSpec.describe "Blog Posts", type: :request do
       sign_in(@user)
       blog_post_2 = create(:blog_post, slug: 'something-new')
 
-      patch blog_post_path(slug: blog_post_2.slug, id: blog_post_2.id), params: { blog_post: { slug: @blog_post.slug }}
+      patch blog_post_path(slug: blog_post_2.slug, id: blog_post_2.id), params: { blog_post: { slug: @blog_post.slug } }
       expect(response).to redirect_to(blog_post_path(blog_post_2.reload.slug))
 
       follow_redirect!
