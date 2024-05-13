@@ -4,22 +4,3 @@
 
 @import "actiontext.css";
 @import "trix.css";
-
-.speedrail-tooltip {
-  display: none;
-  position: absolute;
-}
-
-.has-tooltip:hover .speedrail-tooltip {
-  @apply visible z-50;
-}
-
-.toggle-checkbox:checked {
-  @apply right-0 border-green-400;
-  right: 0;
-  border-color: #68d391;
-}
-.toggle-checkbox:checked + .toggle-label {
-  @apply bg-green-400;
-  background-color: #68d391;
-}
