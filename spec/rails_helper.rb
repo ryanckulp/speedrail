@@ -58,7 +58,7 @@ end
 RSpec.configure do |config|
   # helper to leverage Devise in Request specs, just invoke sign_in(user)
   config.include Devise::Test::IntegrationHelpers, type: :request
-  
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
