@@ -1,26 +1,25 @@
 class BlogPostsController < ApplicationController
-  before_action :set_blog_post, only: %i[show edit update destroy]
-  before_action :require_admin!, only: %i[new edit create update destroy]
-  # before_action :authenticate_user!, only: %i[new create edit update destroy]
+  before_action :set_blog_post, except: %i[index new create]
+  before_action :require_admin!, except: %i[index show]
 
-  # GET /blog_posts
+  # GET /blog
   def index
     @blog_posts = BlogPost.published.order(created_at: :asc)
     @drafts = BlogPost.drafts.order(created_at: :desc)
   end
 
-  # GET /blog_posts/slug
+  # GET /blog/:slug
   def show; end
 
-  # GET /blog_posts/new
+  # GET /blog/new
   def new
     @blog_post = BlogPost.new
   end
 
-  # GET /blog_posts/slug/edit
+  # GET /blog/:slug/edit
   def edit; end
 
-  # POST /blog_posts
+  # POST /blog
   def create
     @blog_post = BlogPost.new(blog_post_params)
 
@@ -31,17 +30,16 @@ class BlogPostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /blog_posts/slug
+  # PATCH /blog/:slug
   def update
-    @blog_post.slug = params[:blog_post][:slug]
-    if @blog_post.save && @blog_post.update(blog_post_params)
+    if @blog_post.update(blog_post_params)
       redirect_to blog_post_path(@blog_post.slug), notice: "Blog post was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
   end
 
-  # DELETE /blog_posts/1
+  # DELETE /blog/:slug
   def destroy
     @blog_post.destroy
     redirect_to blog_posts_url, notice: "Blog post was successfully destroyed."
@@ -49,20 +47,17 @@ class BlogPostsController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_blog_post
-    slug = params[:blog_post].present? ? params[:blog_post][:slug] : params[:slug]
-    @blog_post = BlogPost.find_by!(slug: slug)
+    @blog_post = params[:blog_post].present? ? BlogPost.find(params[:id]) : BlogPost.find_by(slug: params[:slug])
   end
 
-  # Only allow a list of trusted parameters through, but add :body, and use slug instead of id in the URL.
   def blog_post_params
     params.require(:blog_post).permit(:title, :slug, :description, :body, :cover_image, :draft)
   end
 
   def require_admin!
     unless current_user&.admin?
-      redirect_to root_path, alert: "You are not authorized to view this page."
+      redirect_to root_path, alert: "You are not authorized to do this."
     end
   end
 end
