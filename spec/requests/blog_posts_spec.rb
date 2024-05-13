@@ -10,6 +10,10 @@ RSpec.describe "Blog Posts", type: :request do
     { blog_post: { title: 'New title', slug: @blog_post.slug } }
   end
 
+  let(:invalid_attributes) do
+    { blog_post: { title: nil, slug: @blog_post.slug } }
+  end
+
   describe "GET /index" do
     it "returns all blog posts" do
       get blog_posts_path
@@ -18,6 +22,19 @@ RSpec.describe "Blog Posts", type: :request do
       expect(response.body).to include(@blog_post.title)
       expect(response.body).to include(@blog_post.description)
       expect(response.body).to_not include(@blog_post.body.to_plain_text)
+    end
+  end
+
+  describe "GET /new" do
+    it "returns an empty form as Admin" do
+      @user.update(admin: true)
+      sign_in(@user)
+
+      get new_blog_post_path
+      expect(response).to have_http_status(200)
+
+      expect(response.body).to include('New Post')
+      expect(response.body).to include('Back to all posts')
     end
   end
 
@@ -32,6 +49,50 @@ RSpec.describe "Blog Posts", type: :request do
 
       expect(response.body).to_not include(@blog_post.slug)
       expect(response.request.url).to include(@blog_post.slug)
+    end
+  end
+
+  describe "POST /create" do
+    it "creates a blog post as Admin" do
+      @user.update(admin: true)
+      sign_in(@user)
+
+      post blog_posts_path, params: { blog_post: { title: 'Some post', description: 'description goes here', slug: 'some-post', body: 'here goes nothing' } }
+      expect(response).to redirect_to(blog_post_path(BlogPost.last.slug))
+
+      follow_redirect!
+
+      expect(response.body).to include(BlogPost.last.title)
+      expect(response.body).to include(BlogPost.last.description)
+      expect(response.body).to include(BlogPost.last.body.to_plain_text)
+    end
+
+    it "does not create a blog post as non Admin" do
+      @user.update(admin: false)
+      sign_in(@user)
+
+      expect do
+        post blog_posts_path, params: { blog_post: { title: 'Some post', description: 'description goes here', slug: 'some-post', body: 'here goes nothing' } }
+      end.to change(BlogPost, :count).by(0)
+
+      expect(response).to redirect_to(root_path)
+
+      follow_redirect!
+
+      expect(response.body).to include('You are not authorized')
+    end
+
+    it "does not create a blog post with invalid attributes" do
+      @user.update(admin: true)
+      sign_in(@user)
+
+      expect do
+        post blog_posts_path, params: invalid_attributes
+      end.to change(BlogPost, :count).by(0)
+
+      expect(response.status).to eql 422
+      expect(response.body).to include 'errors prevented this post from being saved'
+      expect(response.body).to include "Title can&#39;t be blank"
     end
   end
 
@@ -60,6 +121,17 @@ RSpec.describe "Blog Posts", type: :request do
 
       expect(response.body).to include('You are not authorized')
       expect(@blog_post.reload.title).to eql old_title
+    end
+
+    it "does not update a blog post with invalid attributes" do
+      @user.update(admin: true)
+      sign_in(@user)
+
+      patch blog_post_path(slug: @blog_post.slug, id: @blog_post.id), params: invalid_attributes
+
+      expect(response.status).to eql 422
+      expect(response.body).to include 'error prevented this post from being saved'
+      expect(response.body).to include "Title can&#39;t be blank"
     end
 
     it "dynamically fixes a duplicate blog post slug" do

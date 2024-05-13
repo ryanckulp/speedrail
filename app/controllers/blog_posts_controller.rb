@@ -1,5 +1,5 @@
 class BlogPostsController < ApplicationController
-  before_action :set_blog_post, except: %i[index create]
+  before_action :set_blog_post, except: %i[index new create]
   before_action :require_admin!, except: %i[index show]
 
   # GET /blog
