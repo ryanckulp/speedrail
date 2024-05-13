@@ -22,11 +22,11 @@ class BlogPost < ApplicationRecord
   private
 
   def generate_unique_slug
-    return unless new_record? || title_changed?
+    return unless new_record? || slug_changed?
 
-    intended_slug = slug.blank? ? title&.parameterize : slug.downcase.parameterize
+    intended_slug = slug.downcase.parameterize
     self.slug = intended_slug
 
-    self.slug = "#{intended_slug}-#{SecureRandom.hex(3)}" while BlogPost.exists?(slug: self.slug)
+    self.slug = "#{intended_slug}-#{SecureRandom.hex(3)}" while BlogPost.excluding(self).exists?(slug: self.slug)
   end
 end
