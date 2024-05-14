@@ -28,6 +28,8 @@ features:
 3. inspect, then save/close the generated credentials file
 4. `cd new_app_name`
 
+**For detailed, step by step tutorials to using Speedrail, get lifetime access to the [Speedrail Docs](https://gitpaywall.com/p/ryanckulp/speedrail-docs) for a one-time fee of $49.**
+
 ## Development
 ```sh
 bin/dev # uses foreman to boot server, frontend, and bg job queue
