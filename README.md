@@ -1,12 +1,18 @@
 # Speedrail
-a Rails 7 template by [@ryanckulp](https://twitter.com/ryanckulp), created to ship SaaS apps quickly. learn how to use this at [24 Hour MVP](https://founderhacker.com/24-hour-mvp).
+a Rails 7 template by [@ryanckulp](https://twitter.com/ryanckulp), created to ship SaaS apps quickly. 
 
-features:
+learn to build 3 projects with Speedrail at [24 Hour MVP](https://founderhacker.com/24-hour-mvp), or check out the [premium documentation](https://gitpaywall.com/p/ryanckulp/speedrail-docs).
+
+**Speedrail features**
+* rich text blog CMS
+* embedded subscription payment portal via [Stripe Checkout](https://docs.stripe.com/payments/accept-a-payment?platform=web&ui=embedded-form)
+* admin panel with Tailwind CSS via [Active Admin](https://github.com/activeadmin/activeadmin/)
 * user authentication via [Devise](https://github.com/plataformatec/devise)
-* design via [Tailwind UI](https://tailwindui.com/)
-* embedded subscription payment portal via [Stripe Checkout](https://stripe.com/payments/checkout)
-* responsive and mobile friendly navigation
+* A/B testing with [Split](https://github.com/splitrb/split/)
+* design via [Flowbite](https://flowbite.com/) and [Tailwind UI](https://tailwindui.com/)
 * SEO toolbelt via [metamagic](https://github.com/lassebunk/metamagic)
+* responsive and mobile friendly navigation
+* beautiful code coverage GUI via [SimpleCov](https://github.com/simplecov-ruby/simplecov) and [TailwindCov](https://github.com/chiefpansancolt/simplecov-tailwindcss)
 * rename your app in 1 command with [Rename](https://github.com/get/Rename)
 * debugging with [Better Errors](https://github.com/charliesome/better_errors)
 * production-ready DB with Postgres
