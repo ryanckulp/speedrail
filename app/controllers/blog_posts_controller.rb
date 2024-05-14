@@ -1,6 +1,8 @@
 class BlogPostsController < ApplicationController
   before_action :set_blog_post, except: %i[index new create]
-  before_action :require_admin!, except: %i[index show]
+  before_action only: [:new, :edit, :create, :update, :destroy] do
+    authenticate_admin!(alert_message: 'You are not authorized')
+  end
 
   # GET /blog
   def index
@@ -53,11 +55,5 @@ class BlogPostsController < ApplicationController
 
   def blog_post_params
     params.require(:blog_post).permit(:title, :slug, :description, :body, :cover_image, :draft)
-  end
-
-  def require_admin!
-    unless current_user&.admin?
-      redirect_to root_path, alert: "You are not authorized to do this."
-    end
   end
 end

@@ -36,6 +36,15 @@ RSpec.describe "Blog Posts", type: :request do
       expect(response.body).to include('New Post')
       expect(response.body).to include('Back to all posts')
     end
+
+    it "redirects guest visitor to log in" do
+      get new_blog_post_path
+
+      expect(response).to redirect_to(new_user_session_path)
+      follow_redirect!
+
+      expect(response.body).to include('You are not authorized')
+    end
   end
 
   describe "GET show" do
@@ -67,6 +76,18 @@ RSpec.describe "Blog Posts", type: :request do
       expect(response.body).to include(BlogPost.last.body.to_plain_text)
     end
 
+    it "does not create a blog post as guest visitor" do
+      expect do
+        post blog_posts_path, params: { blog_post: { title: 'Some post', description: 'description goes here', slug: 'some-post', body: 'here goes nothing' } }
+      end.to change(BlogPost, :count).by(0)
+
+      expect(response).to redirect_to(new_user_session_path)
+
+      follow_redirect!
+
+      expect(response.body).to include('You are not authorized')
+    end
+
     it "does not create a blog post as non Admin" do
       @user.update(admin: false)
       sign_in(@user)
@@ -75,11 +96,13 @@ RSpec.describe "Blog Posts", type: :request do
         post blog_posts_path, params: { blog_post: { title: 'Some post', description: 'description goes here', slug: 'some-post', body: 'here goes nothing' } }
       end.to change(BlogPost, :count).by(0)
 
-      expect(response).to redirect_to(root_path)
-
+      expect(response).to redirect_to(new_user_session_path)
       follow_redirect!
 
-      expect(response.body).to include('You are not authorized')
+      expect(response).to redirect_to(subscribe_index_path)
+      follow_redirect!
+
+      expect(response.body).to include('Subscribe')
     end
 
     it "does not create a blog post with invalid attributes" do
@@ -109,13 +132,25 @@ RSpec.describe "Blog Posts", type: :request do
       expect(response.body).to include(valid_attributes[:blog_post][:title])
     end
 
+    it "does not update a blog post title as guest visitor" do
+      old_title = @blog_post.title
+      patch blog_post_path(slug: @blog_post.slug, id: @blog_post.id), params: valid_attributes
+
+      expect(response).to redirect_to(new_user_session_path)
+
+      follow_redirect!
+
+      expect(response.body).to include('You are not authorized')
+      expect(@blog_post.reload.title).to eql old_title
+    end
+
     it "does not update a blog post title as non Admin" do
       @user.update(admin: false)
       old_title = @blog_post.title
 
       patch blog_post_path(slug: @blog_post.slug, id: @blog_post.id), params: valid_attributes
 
-      expect(response).to redirect_to(root_path)
+      expect(response).to redirect_to(new_user_session_path)
 
       follow_redirect!
 
@@ -167,12 +202,13 @@ RSpec.describe "Blog Posts", type: :request do
         delete blog_post_path(id: @blog_post.id, slug: @blog_post.slug)
       end.to change(BlogPost, :count).by(0)
 
-      follow_redirect!
+      follow_redirect! # to login page
+      follow_redirect! # to subscribe page, since user is already logged in
 
-      expect(response.body).to include('You are not authorized')
+      expect(response.body).to include('Subscribe')
     end
 
-    it "does not destroy a blog post as logged out, non Admin" do
+    it "does not destroy a blog post as guest visitor" do
       expect do
         delete blog_post_path(id: @blog_post.id, slug: @blog_post.slug)
       end.to change(BlogPost, :count).by(0)

@@ -4,8 +4,8 @@ class ApplicationController < ActionController::Base
   # uncomment to allow extra User model params during registration (beyond email/password)
   # before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def authenticate_admin!
-    redirect_to new_user_session_path unless current_user&.admin?
+  def authenticate_admin!(alert_message: nil)
+    redirect_to new_user_session_path, alert: alert_message unless current_user&.admin?
   end
 
   def after_sign_in_path_for(resource)
