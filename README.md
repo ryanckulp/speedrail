@@ -6,6 +6,7 @@ learn to build 3 projects with Speedrail at [24 Hour MVP](https://founderhacker.
 **Speedrail features**
 * rich text blog CMS
 * embedded subscription payment portal via [Stripe Checkout](https://docs.stripe.com/payments/accept-a-payment?platform=web&ui=embedded-form)
+* built-in referral marketing via [Rewardful](https://www.rewardful.com/?via=speedrail)
 * admin panel with Tailwind CSS via [Active Admin](https://github.com/activeadmin/activeadmin/)
 * user authentication via [Devise](https://github.com/plataformatec/devise)
 * A/B testing with [Split](https://github.com/splitrb/split/)
