@@ -28,4 +28,8 @@ Rails.application.routes.draw do
     # insert sidekiq etc
     mount Split::Dashboard, at: 'admin/split'
   end
+
+  # oauth routes
+  get 'oauth/authorize', to: 'oauth#authorize'
+  get 'oauth/callback', to: 'oauth#callback'
 end
