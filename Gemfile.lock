@@ -65,7 +65,7 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
-    activeadmin (4.0.0.beta6)
+    activeadmin (4.0.0.beta7)
       arbre (~> 2.0)
       csv
       formtastic (>= 3.1)
@@ -123,7 +123,7 @@ GEM
       aws-eventstream (~> 1, >= 1.0.2)
     base64 (0.2.0)
     bcrypt (3.1.20)
-    bigdecimal (3.1.7)
+    bigdecimal (3.1.8)
     bindex (0.8.1)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
@@ -139,7 +139,7 @@ GEM
       xpath (~> 3.2)
     chartkick (5.0.6)
     childprocess (5.0.0)
-    concurrent-ruby (1.2.3)
+    concurrent-ruby (1.3.1)
     connection_pool (2.4.1)
     crack (1.0.0)
       bigdecimal
@@ -185,7 +185,7 @@ GEM
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    i18n (1.14.4)
+    i18n (1.14.5)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.2)
       mini_magick (>= 4.9.5, < 5)
@@ -200,8 +200,8 @@ GEM
       railties (>= 6.0)
       responders (>= 2)
     io-console (0.7.2)
-    irb (1.12.0)
-      rdoc
+    irb (1.13.1)
+      rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
@@ -241,7 +241,7 @@ GEM
     methodz (0.1.8)
     mini_magick (4.12.0)
     mini_mime (1.1.5)
-    minitest (5.22.3)
+    minitest (5.23.1)
     msgpack (1.7.2)
     multi_xml (0.6.0)
     mustermann (3.0.0)
@@ -281,8 +281,8 @@ GEM
     public_suffix (5.0.5)
     puma (6.4.2)
       nio4r (~> 2.0)
-    racc (1.7.3)
-    rack (3.0.10)
+    racc (1.8.0)
+    rack (3.0.11)
     rack-cors (2.0.2)
       rack (>= 2.0.0)
     rack-protection (4.0.0)
@@ -330,14 +330,14 @@ GEM
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
-    rdoc (6.6.3.1)
+    rdoc (6.7.0)
       psych (>= 4.0.0)
     redis (5.2.0)
       redis-client (>= 0.22.0)
     redis-client (0.22.1)
       connection_pool
     regexp_parser (2.9.1)
-    reline (0.5.4)
+    reline (0.5.8)
       io-console (~> 0.5)
     responders (3.1.1)
       actionpack (>= 5.2)
@@ -468,7 +468,7 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.13)
+    zeitwerk (2.6.15)
 
 PLATFORMS
   arm64-darwin-22
@@ -477,7 +477,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activeadmin (= 4.0.0.beta6)
+  activeadmin (= 4.0.0.beta7)
   aws-sdk-s3
   bootsnap
   capybara
