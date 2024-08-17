@@ -65,7 +65,7 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
-    activeadmin (4.0.0.beta6)
+    activeadmin (4.0.0.beta9)
       arbre (~> 2.0)
       csv
       formtastic (>= 3.1)
@@ -241,7 +241,7 @@ GEM
     methodz (0.1.8)
     mini_magick (4.12.0)
     mini_mime (1.1.5)
-    minitest (5.24.1)
+    minitest (5.25.1)
     msgpack (1.7.2)
     multi_xml (0.6.0)
     mustermann (3.0.0)
@@ -326,7 +326,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    ransack (4.1.1)
+    ransack (4.2.1)
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
@@ -477,7 +477,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activeadmin (= 4.0.0.beta6)
+  activeadmin (= 4.0.0.beta9)
   aws-sdk-s3
   bootsnap
   capybara
