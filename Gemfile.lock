@@ -65,7 +65,7 @@ GEM
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
-    activeadmin (4.0.0.beta6)
+    activeadmin (4.0.0.beta9)
       arbre (~> 2.0)
       csv
       formtastic (>= 3.1)
@@ -150,7 +150,7 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    delayed (0.5.3)
+    delayed (0.5.5)
       activerecord (>= 5.2)
       concurrent-ruby
     devise (4.9.4)
@@ -226,6 +226,7 @@ GEM
       childprocess (~> 5.0)
     letter_opener (1.10.0)
       launchy (>= 2.2, < 4)
+    logger (1.6.0)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -241,7 +242,7 @@ GEM
     methodz (0.1.8)
     mini_magick (4.12.0)
     mini_mime (1.1.5)
-    minitest (5.24.1)
+    minitest (5.25.1)
     msgpack (1.7.2)
     multi_xml (0.6.0)
     mustermann (3.0.0)
@@ -326,7 +327,7 @@ GEM
       zeitwerk (~> 2.6)
     rainbow (3.1.1)
     rake (13.2.1)
-    ransack (4.1.1)
+    ransack (4.2.1)
       activerecord (>= 6.1.5)
       activesupport (>= 6.1.5)
       i18n
@@ -342,7 +343,8 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.2.6)
+    rexml (3.3.5)
+      strscan
     rspec-core (3.12.2)
       rspec-support (~> 3.12.0)
     rspec-expectations (3.12.3)
@@ -396,7 +398,9 @@ GEM
     rubystats (0.4.1)
       matrix
     rubyzip (2.3.2)
-    selenium-webdriver (4.15.0)
+    selenium-webdriver (4.23.0)
+      base64 (~> 0.2)
+      logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
@@ -434,6 +438,7 @@ GEM
       railties (>= 6.0.0)
     stringio (3.1.1)
     stripe (11.2.0)
+    strscan (3.1.0)
     tailwindcss-rails (2.7.2-arm64-darwin)
       railties (>= 7.0.0)
     tailwindcss-rails (2.7.2-x86_64-darwin)
@@ -462,7 +467,7 @@ GEM
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
     webrick (1.8.1)
-    websocket (1.2.10)
+    websocket (1.2.11)
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -477,7 +482,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  activeadmin (= 4.0.0.beta6)
+  activeadmin (= 4.0.0.beta9)
   aws-sdk-s3
   bootsnap
   capybara
