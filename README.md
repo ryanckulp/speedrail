@@ -44,7 +44,27 @@ bin/dev # uses foreman to boot server, frontend, and bg job queue
 
 ## Project Directory
 
-.
+├── .cursorrules
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── HEAD
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   ├── index
+│   ├── info
+│   ├── logs
+│   ├── objects
+│   ├── packed-refs
+│   └── refs
+├── .gitattributes
+├── .github
+│   ├── dependabot.yml
+│   └── workflows
+├── .gitignore
+├── .rspec
+├── .rubocop.yml
+├── .ruby-version
 ├── Gemfile
 ├── Gemfile.lock
 ├── LICENSE
@@ -101,6 +121,7 @@ bin/dev # uses foreman to boot server, frontend, and bg job queue
 │   ├── tasks
 │   └── templates
 ├── log
+│   └── .keep
 ├── public
 │   ├── 404.html
 │   ├── 422.html
@@ -119,10 +140,13 @@ bin/dev # uses foreman to boot server, frontend, and bg job queue
 │   ├── spec_helper.rb
 │   └── support
 ├── storage
+│   └── .keep
 ├── tmp
+│   ├── .keep
 │   ├── pids
 │   └── storage
 └── vendor
+    ├── .keep
     └── javascript
 
 
