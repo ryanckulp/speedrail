@@ -40,6 +40,90 @@ learn to build 3 projects with Speedrail at [24 Hour MVP](https://founderhacker.
 ## Development
 ```sh
 bin/dev # uses foreman to boot server, frontend, and bg job queue
+
+
+## Project Directory
+```
+.
+├── Gemfile
+├── Gemfile.lock
+├── LICENSE
+├── Procfile
+├── Procfile.dev
+├── README.md
+├── Rakefile
+├── app
+│   ├── admin
+│   ├── assets
+│   ├── channels
+│   ├── controllers
+│   ├── helpers
+│   ├── javascript
+│   ├── jobs
+│   ├── mailers
+│   ├── models
+│   ├── services
+│   └── views
+├── bin
+│   ├── bundle
+│   ├── dev
+│   ├── importmap
+│   ├── rails
+│   ├── rake
+│   ├── setup
+│   ├── speedrail
+│   └── tailwindcss
+├── config
+│   ├── application.rb
+│   ├── application.yml
+│   ├── boot.rb
+│   ├── cable.yml
+│   ├── database.yml
+│   ├── environment.rb
+│   ├── environments
+│   ├── importmap.rb
+│   ├── initializers
+│   ├── locales
+│   ├── puma.rb
+│   ├── routes.rb
+│   ├── storage.yml
+│   ├── tailwind-active_admin.config.js
+│   └── tailwind.config.js
+├── config.ru
+├── db
+│   ├── migrate
+│   ├── schema.rb
+│   └── seeds.rb
+├── lib
+│   ├── assets
+│   ├── cloudflare_proxy.rb
+│   ├── seed_support
+│   ├── tasks
+│   └── templates
+├── log
+├── public
+│   ├── 404.html
+│   ├── 422.html
+│   ├── 500.html
+│   ├── apple-touch-icon-precomposed.png
+│   ├── apple-touch-icon.png
+│   ├── favicon.ico
+│   └── robots.txt
+├── spec
+│   ├── factories
+│   ├── features
+│   ├── helpers
+│   ├── models
+│   ├── rails_helper.rb
+│   ├── requests
+│   ├── spec_helper.rb
+│   └── support
+├── storage
+├── tmp
+│   ├── pids
+│   └── storage
+└── vendor
+    └── javascript
 ```
 
 To sync your project with the latest Speedrail improvements:
