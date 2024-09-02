@@ -40,7 +40,7 @@ learn to build 3 projects with Speedrail at [24 Hour MVP](https://founderhacker.
 ## Development
 ```sh
 bin/dev # uses foreman to boot server, frontend, and bg job queue
-
+```
 
 ## Project Directory
 
