@@ -43,7 +43,7 @@ bin/dev # uses foreman to boot server, frontend, and bg job queue
 
 
 ## Project Directory
-```
+
 .
 ├── Gemfile
 ├── Gemfile.lock
@@ -124,7 +124,7 @@ bin/dev # uses foreman to boot server, frontend, and bg job queue
 │   └── storage
 └── vendor
     └── javascript
-```
+
 
 To sync your project with the latest Speedrail improvements:
 
