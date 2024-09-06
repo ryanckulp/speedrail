@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
-gem 'activeadmin', '4.0.0.beta9'
+gem 'activeadmin', '4.0.0.beta11'
 gem 'aws-sdk-s3', require: false
 gem 'chartkick'
 gem 'delayed' # delayed_job_active_record rails 7 fork: https://github.com/betterment/delayed
@@ -21,7 +21,7 @@ gem 'postmark-rails'
 gem 'pretender'
 gem 'puma', '6.4.2'
 gem 'rack-cors', :require => 'rack/cors'
-gem 'rails', '7.2.0'
+gem 'rails', '7.2.1'
 gem 'redis'
 gem 'rename', '1.1.3', git: 'https://github.com/ryanckulp/rename' # remove this gem after use
 gem 'split', require: 'split/dashboard'
