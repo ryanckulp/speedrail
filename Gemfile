@@ -19,7 +19,7 @@ gem 'methodz' # query db-backed object methods by partial name or type
 gem 'pg'
 gem 'postmark-rails'
 gem 'pretender'
-gem 'puma', '6.4.2'
+gem 'puma', '6.4.3'
 gem 'rack-cors', :require => 'rack/cors'
 gem 'rails', '7.2.1'
 gem 'redis'
