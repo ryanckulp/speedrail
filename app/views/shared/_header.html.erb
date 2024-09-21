@@ -23,7 +23,7 @@
         <% if current_user %>
           <%= link_to 'Dashboard', dashboard_index_path, class: nav_link_classes('dashboard') %>
           <%= link_to 'Account', account_index_path, class: nav_link_classes('account') %>
-          <%= link_to 'Logout', logout_path, class: nav_link_classes %>
+          <%= link_to 'Logout', logout_path, class: nav_link_classes, data: { turbo: false } %>
         <% else %>
           <%= link_to 'Contact', "mailto:#{Rails.application.credentials.admin_email}", target: '_blank', class: nav_link_classes('contact')  %>
           <%= link_to 'Login', new_user_session_path, class: nav_link_classes('login') %>
