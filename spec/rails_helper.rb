@@ -76,7 +76,7 @@ RSpec.configure do |config|
     # allow(Rails.application.credentials).to receive(:company_name).and_return('Speedrail')
     allow(Rails.application.credentials).to receive(:base_url).and_return('https://speedrail.com')
     allow(Rails.application.credentials).to receive(:stripe).and_return(OpenStruct.new(api_key: 'sk_asdf', publishable_key: 'pk_asdf', product_price_id: 'pi_asdf'))
-    allow_any_instance_of(BillingPortalController).to receive(:create_subscription).and_return({ client_secret: 'qwerty' }.to_json)
+    allow_any_instance_of(BillingPortalController).to receive(:create_checkout).and_return({ client_secret: 'qwerty' }.to_json)
   end
 
   # You can uncomment this line to turn off ActiveRecord support entirely.

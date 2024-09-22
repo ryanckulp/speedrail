@@ -20,7 +20,7 @@ class BillingPortalController < ApplicationController
     else
       respond_to do |format|
         format.html { redirect_to subscribe_index_path } # /account view
-        format.json { render json: create_subscription } # /subscribe view
+        format.json { render json: create_checkout } # /subscribe view
       end
     end
   end
@@ -28,7 +28,7 @@ class BillingPortalController < ApplicationController
   private
 
   # invoked from /subscribe during onboarding
-  def create_subscription
+  def create_checkout
     session = Stripe::Checkout::Session.create({
       ui_mode: 'embedded',
       customer: current_user.stripe_customer_id,
