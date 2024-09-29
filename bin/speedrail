@@ -25,6 +25,9 @@ FileUtils.chdir APP_ROOT do
   system! "cd ../#{new_app_name}"
   system! "bin/setup"
 
+  puts "== Dropping OSS License =="
+  system! "rm LICENSE"
+
   puts "== Initializing new Git Repository =="
   system! "rm -rf .git && git init && git add . && git commit -m 'first commit'"
 
