@@ -23,6 +23,6 @@ end
 # task :sync_with_stripe => :environment do
 #   User.subscribed.each do |user|
 #     subscription = Stripe::Subscription.retrieve(user.stripe_subscription_id)
-#     user.update(paying_customer: false) unless ['trialing', 'active', 'past_due'].include?(subscription.status)
+#     user.update(paying_customer: false) unless ['trialing', 'active', 'past_due'].include?(subscription&.status)
 #   end
 # end
