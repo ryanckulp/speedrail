@@ -5,6 +5,14 @@ GIT
     honeypot-captcha (1.0.2)
 
 GIT
+  remote: https://github.com/ryanckulp/delayed.git
+  revision: 2051744a7cd33d0ad0afa441fe2861c90bd0949e
+  specs:
+    delayed (0.5.5)
+      activerecord (>= 5.2)
+      concurrent-ruby
+
+GIT
   remote: https://github.com/ryanckulp/rename
   revision: c747f30cbd85f72d8c57ab9e0d1b1797ed444ccc
   specs:
@@ -16,29 +24,29 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    actioncable (8.0.0.beta1)
-      actionpack (= 8.0.0.beta1)
-      activesupport (= 8.0.0.beta1)
+    actioncable (8.0.0.rc1)
+      actionpack (= 8.0.0.rc1)
+      activesupport (= 8.0.0.rc1)
       nio4r (~> 2.0)
       websocket-driver (>= 0.6.1)
       zeitwerk (~> 2.6)
-    actionmailbox (8.0.0.beta1)
-      actionpack (= 8.0.0.beta1)
-      activejob (= 8.0.0.beta1)
-      activerecord (= 8.0.0.beta1)
-      activestorage (= 8.0.0.beta1)
-      activesupport (= 8.0.0.beta1)
+    actionmailbox (8.0.0.rc1)
+      actionpack (= 8.0.0.rc1)
+      activejob (= 8.0.0.rc1)
+      activerecord (= 8.0.0.rc1)
+      activestorage (= 8.0.0.rc1)
+      activesupport (= 8.0.0.rc1)
       mail (>= 2.8.0)
-    actionmailer (8.0.0.beta1)
-      actionpack (= 8.0.0.beta1)
-      actionview (= 8.0.0.beta1)
-      activejob (= 8.0.0.beta1)
-      activesupport (= 8.0.0.beta1)
+    actionmailer (8.0.0.rc1)
+      actionpack (= 8.0.0.rc1)
+      actionview (= 8.0.0.rc1)
+      activejob (= 8.0.0.rc1)
+      activesupport (= 8.0.0.rc1)
       mail (>= 2.8.0)
       rails-dom-testing (~> 2.2)
-    actionpack (8.0.0.beta1)
-      actionview (= 8.0.0.beta1)
-      activesupport (= 8.0.0.beta1)
+    actionpack (8.0.0.rc1)
+      actionview (= 8.0.0.rc1)
+      activesupport (= 8.0.0.rc1)
       nokogiri (>= 1.8.5)
       rack (>= 2.2.4)
       rack-session (>= 1.0.1)
@@ -46,15 +54,15 @@ GEM
       rails-dom-testing (~> 2.2)
       rails-html-sanitizer (~> 1.6)
       useragent (~> 0.16)
-    actiontext (8.0.0.beta1)
-      actionpack (= 8.0.0.beta1)
-      activerecord (= 8.0.0.beta1)
-      activestorage (= 8.0.0.beta1)
-      activesupport (= 8.0.0.beta1)
+    actiontext (8.0.0.rc1)
+      actionpack (= 8.0.0.rc1)
+      activerecord (= 8.0.0.rc1)
+      activestorage (= 8.0.0.rc1)
+      activesupport (= 8.0.0.rc1)
       globalid (>= 0.6.0)
       nokogiri (>= 1.8.5)
-    actionview (8.0.0.beta1)
-      activesupport (= 8.0.0.beta1)
+    actionview (8.0.0.rc1)
+      activesupport (= 8.0.0.rc1)
       builder (~> 3.1)
       erubi (~> 1.11)
       rails-dom-testing (~> 2.2)
@@ -68,22 +76,22 @@ GEM
       kaminari (>= 1.2.1)
       railties (>= 6.1)
       ransack (>= 4.0)
-    activejob (8.0.0.beta1)
-      activesupport (= 8.0.0.beta1)
+    activejob (8.0.0.rc1)
+      activesupport (= 8.0.0.rc1)
       globalid (>= 0.3.6)
-    activemodel (8.0.0.beta1)
-      activesupport (= 8.0.0.beta1)
-    activerecord (8.0.0.beta1)
-      activemodel (= 8.0.0.beta1)
-      activesupport (= 8.0.0.beta1)
+    activemodel (8.0.0.rc1)
+      activesupport (= 8.0.0.rc1)
+    activerecord (8.0.0.rc1)
+      activemodel (= 8.0.0.rc1)
+      activesupport (= 8.0.0.rc1)
       timeout (>= 0.4.0)
-    activestorage (8.0.0.beta1)
-      actionpack (= 8.0.0.beta1)
-      activejob (= 8.0.0.beta1)
-      activerecord (= 8.0.0.beta1)
-      activesupport (= 8.0.0.beta1)
+    activestorage (8.0.0.rc1)
+      actionpack (= 8.0.0.rc1)
+      activejob (= 8.0.0.rc1)
+      activerecord (= 8.0.0.rc1)
+      activesupport (= 8.0.0.rc1)
       marcel (~> 1.0)
-    activesupport (8.0.0.beta1)
+    activesupport (8.0.0.rc1)
       base64
       benchmark (>= 0.3)
       bigdecimal
@@ -148,9 +156,6 @@ GEM
     debug (1.9.2)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    delayed (0.5.5)
-      activerecord (>= 5.2)
-      concurrent-ruby
     devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -310,20 +315,20 @@ GEM
     rackup (2.1.0)
       rack (>= 3)
       webrick (~> 1.8)
-    rails (8.0.0.beta1)
-      actioncable (= 8.0.0.beta1)
-      actionmailbox (= 8.0.0.beta1)
-      actionmailer (= 8.0.0.beta1)
-      actionpack (= 8.0.0.beta1)
-      actiontext (= 8.0.0.beta1)
-      actionview (= 8.0.0.beta1)
-      activejob (= 8.0.0.beta1)
-      activemodel (= 8.0.0.beta1)
-      activerecord (= 8.0.0.beta1)
-      activestorage (= 8.0.0.beta1)
-      activesupport (= 8.0.0.beta1)
+    rails (8.0.0.rc1)
+      actioncable (= 8.0.0.rc1)
+      actionmailbox (= 8.0.0.rc1)
+      actionmailer (= 8.0.0.rc1)
+      actionpack (= 8.0.0.rc1)
+      actiontext (= 8.0.0.rc1)
+      actionview (= 8.0.0.rc1)
+      activejob (= 8.0.0.rc1)
+      activemodel (= 8.0.0.rc1)
+      activerecord (= 8.0.0.rc1)
+      activestorage (= 8.0.0.rc1)
+      activesupport (= 8.0.0.rc1)
       bundler (>= 1.15.0)
-      railties (= 8.0.0.beta1)
+      railties (= 8.0.0.rc1)
     rails-dom-testing (2.2.0)
       activesupport (>= 5.0.0)
       minitest
@@ -331,9 +336,9 @@ GEM
     rails-html-sanitizer (1.6.0)
       loofah (~> 2.21)
       nokogiri (~> 1.14)
-    railties (8.0.0.beta1)
-      actionpack (= 8.0.0.beta1)
-      activesupport (= 8.0.0.beta1)
+    railties (8.0.0.rc1)
+      actionpack (= 8.0.0.rc1)
+      activesupport (= 8.0.0.rc1)
       irb (~> 1.13)
       rackup (>= 1.0.0)
       rake (>= 12.2)
@@ -510,7 +515,7 @@ DEPENDENCIES
   capybara
   chartkick
   debug
-  delayed
+  delayed!
   devise
   factory_bot_rails
   faker
@@ -528,7 +533,7 @@ DEPENDENCIES
   pretender
   puma (= 6.4.2)
   rack-cors
-  rails (= 8.0.0.beta1)
+  rails (= 8.0.0.rc1)
   redis
   rename (= 1.1.3)!
   rspec-rails (= 7.0.1)
