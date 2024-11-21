@@ -1,5 +1,5 @@
 # Speedrail
-a Rails 7 template by [@ryanckulp](https://twitter.com/ryanckulp), created to ship SaaS apps quickly. 
+a Rails 8 template by [@ryanckulp](https://twitter.com/ryanckulp), created to ship SaaS apps quickly. 
 
 learn to build 3 projects with Speedrail at [24 Hour MVP](https://founderhacker.com/24-hour-mvp), or check out the [premium documentation](https://gitpaywall.com/p/ryanckulp/speedrail-docs).
 
