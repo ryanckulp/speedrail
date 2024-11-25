@@ -23,6 +23,9 @@ Rails.application.routes.draw do
     get "/#{page}", to: "pages##{page}", as: page.gsub('-', '_').to_s
   end
 
+  get 'oauth/authorize', to: 'oauth#authorize'
+  get 'oauth/callback', to: 'oauth#callback'
+
   # admin panels
   authenticated :user, lambda(&:admin?) do
     # insert sidekiq etc
